@@ -1,14 +1,13 @@
-package ¼³°è.µµ¸ÞÀÎ2;
-
+import java.util.ArrayList;
 
 /**
- * @author SWÀÎÀçÀ°¼º»ç¾÷´Ü
+ * @author SWï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
  * @version 1.0
- * @created 29-5-2024 ¿ÀÈÄ 10:34:51
+ * @created 29-5-2024 ï¿½ï¿½ï¿½ï¿½ 10:34:51
  */
 public class CustomerListImpl implements CustomerList {
 
-	private ArrayList<Cutomer> CustomerList;
+	private ArrayList<Customer> CustomerList;
 	public Customer m_Customer;
 
 	public CustomerListImpl(){

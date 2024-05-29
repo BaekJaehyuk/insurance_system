@@ -1,17 +1,16 @@
-package ¼³°è.µµ¸ÞÀÎ2;
-
+import java.util.Date;
 
 /**
- * @author SWÀÎÀçÀ°¼º»ç¾÷´Ü
+ * @author SWï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
  * @version 1.0
- * @created 29-5-2024 ¿ÀÈÄ 10:34:52
+ * @created 29-5-2024 ï¿½ï¿½ï¿½ï¿½ 10:34:52
  */
 public class Driver extends Car {
 
 	/**
-	 * @author SWÀÎÀçÀ°¼º»ç¾÷´Ü
+	 * @author SWï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	 * @version 1.0
-	 * @created 29-5-2024 ¿ÀÈÄ 10:34:52
+	 * @created 29-5-2024 ï¿½ï¿½ï¿½ï¿½ 10:34:52
 	 */
 	public class Class1 {
 
@@ -25,8 +24,8 @@ public class Driver extends Car {
 
 	}
 
-	private date drivingExperience;
-	public »ç°íÀÌ·Â m_»ç°íÀÌ·Â;
+	private Date drivingExperience;
+	public ï¿½ï¿½ï¿½ï¿½Ì·ï¿½ m_ï¿½ï¿½ï¿½ï¿½Ì·ï¿½;
 
 	public Driver(){
 

@@ -1,17 +1,14 @@
-package ¼³°è.µµ¸ÞÀÎ2;
-
-
 /**
- * @author SWÀÎÀçÀ°¼º»ç¾÷´Ü
+ * @author SWï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
  * @version 1.0
- * @created 29-5-2024 ¿ÀÈÄ 10:34:52
+ * @created 29-5-2024 ï¿½ï¿½ï¿½ï¿½ 10:34:52
  */
 public class Education {
 
 	private Data Data;
 	private int instructor;
 	private int sessionDate;
-	private Array Á÷¿ø Âü°¡ÀÚ;
+	private Array ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½;
 	public Data m_Data;
 
 	public Education(){
