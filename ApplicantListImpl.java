@@ -1,10 +1,9 @@
-package ¼³°è.µµ¸ÞÀÎ2;
-
+import java.util.ArrayList;
 
 /**
  * @author tiemo
  * @version 1.0
- * @created 29-5-2024 ¿ÀÈÄ 10:34:49
+ * @created 29-5-2024 ï¿½ï¿½ï¿½ï¿½ 10:34:49
  */
 public class ApplicantListImpl implements ApplicantList {
 

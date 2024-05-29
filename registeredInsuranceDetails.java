@@ -1,10 +1,7 @@
-package ¼³°è.µµ¸ŞÀÎ2;
-
-
 /**
  * @author tiemo
  * @version 1.0
- * @created 29-5-2024 ¿ÀÈÄ 10:34:57
+ * @created 29-5-2024 ï¿½ï¿½ï¿½ï¿½ 10:34:57
  */
 public interface registeredInsuranceDetails {
 

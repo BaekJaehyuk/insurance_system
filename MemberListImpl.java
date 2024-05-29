@@ -1,8 +1,3 @@
-package
-
-import java.util.ArrayList;����.������2;
-
-
 /**
  * @author tiemo
  * @version 1.0
