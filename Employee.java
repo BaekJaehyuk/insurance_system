@@ -1,10 +1,7 @@
-package ¼³°è.µµ¸ŞÀÎ2;
-
-
 /**
- * @author SWÀÎÀçÀ°¼º»ç¾÷´Ü
+ * @author SWï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
  * @version 1.0
- * @created 29-5-2024 ¿ÀÈÄ 10:34:53
+ * @created 29-5-2024 ï¿½ï¿½ï¿½ï¿½ 10:34:53
  */
 public class Employee {
 
@@ -13,7 +10,7 @@ public class Employee {
 	private int enteringDate;
 	private int name;
 	private int phoneNumber;
-	private Array ±ÙÅÂ ±ÙÅÂ³»¿ª;
+	private Array ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Â³ï¿½ï¿½ï¿½;
 	public Attendance m_Attendance;
 	public Accident m_Accident;
 	public Counseling m_Counseling;
