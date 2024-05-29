@@ -1,3 +1,4 @@
+import java.util.*;
 /**
  * @author SW�������������
  * @version 1.0
@@ -8,9 +9,9 @@ public class Member extends Customer {
 	private int accidentHistory;
 	private Account Account;
 	private int joinDate;
-	private Array loanInsuranceDetails;
+	private ArrayList loanInsuranceDetails;
 	private int memberID;
-	private Array registeredInsuranceDetails;
+	private ArrayList registeredInsuranceDetails;
 	public Account m_Account;
 	public Compensation m_Compensation;
 	public Accident m_Accident;
