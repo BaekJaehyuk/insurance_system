@@ -45,23 +45,7 @@ public class CustomerListImpl implements CustomerList {
 		return null;
 	}
 
-	@Override
-	public Customer get(String id, String password) {
-		for (Customer customer : this.customerList) {
-			if (customer.getID().equals(id) && customer.getPassword().equals(password))
-				return customer;
-		}
-		return null;
-	}
 
-	@Override
-	public Customer get(String id) {
-		for (Customer customer : this.customerList) {
-			if (customer.getID().equals(id))
-				return customer;
-		}
-		return null;
-	}
 
 	@Override
 	public ArrayList<Customer> get() {
@@ -72,13 +56,9 @@ public class CustomerListImpl implements CustomerList {
 	public boolean update(long customerID, Customer customer) {
 		for (Customer prevCustomer : this.customerList) {
 			if (prevCustomer.getCustomerID() == customerID) {
-				prevCustomer.setID(customer.getID());
-				prevCustomer.setPassword(customer.getPassword());
 				prevCustomer.setName(customer.getName());
 				prevCustomer.setPhoneNumber(customer.getPhoneNumber());
 				prevCustomer.setSex(customer.getSex());
-				prevCustomer.setIsMember(customer.isMember());
-
 				return true;
 			}
 		}
