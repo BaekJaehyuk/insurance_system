@@ -1,6 +1,8 @@
 package src.system.user;
 
 import src.system.*;
+import src.system.accident.Accident;
+
 import java.util.*;
 
 /**
