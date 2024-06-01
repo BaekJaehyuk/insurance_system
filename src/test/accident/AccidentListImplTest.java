@@ -3,6 +3,7 @@ package src.test.accident;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import src.system.accident.Accident;
+import src.system.accident.AccidentFactory;
 import src.system.accident.AccidentListImpl;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -10,40 +11,39 @@ import static org.junit.jupiter.api.Assertions.*;
 class AccidentListImplTest {
 
     private AccidentListImpl accidentList;
-    private Accident accident1;
-    private Accident accident2;
+    private Accident personalInjuryAccident;
+    private Accident liabilityAccident;
+    private Accident propertyDamageAccident;
 
     @BeforeEach
     void setUp() {
         accidentList = new AccidentListImpl();
-        accident1 = new Accident(1, 101, 5000, 20240529, "photo1.jpg", 3, 1001, 2001, 1, 1230, 2, 3, "John Doe", "010-1234-5678", 2);
-        accident2 = new Accident(2, 102, 7000, 20240530, "photo2.jpg", 4, 1002, 2002, 2, 1240, 3, 4, "Jane Doe", "010-8765-4321", 3);
+        personalInjuryAccident = AccidentFactory.createAccident("PersonalInjury", 1, "Car accident", "2024-05-29", "Seoul", 101, new String[]{"3", "2"});
+        liabilityAccident = AccidentFactory.createAccident("Liability", 2, "House fire", "2024-06-01", "Busan", 102, new String[]{"record1", "4", "Jane Doe", "010-8765-4321"});
+        propertyDamageAccident = AccidentFactory.createAccident("PropertyDamage", 3, "Tree fall on car", "2024-06-15", "Incheon", 103, new String[]{"Car"});
+
+        accidentList.add(personalInjuryAccident);
+        accidentList.add(liabilityAccident);
+        accidentList.add(propertyDamageAccident);
     }
 
     @Test
-    void testAdd() {
-        accidentList.add(accident1);
-        assertEquals(accident1, accidentList.get(1));
+    void testAddAndGet() {
+        assertEquals(personalInjuryAccident, accidentList.get(1));
+        assertEquals(liabilityAccident, accidentList.get(2));
+        assertEquals(propertyDamageAccident, accidentList.get(3));
     }
 
     @Test
     void testDelete() {
-        accidentList.add(accident1);
-        accidentList.delete(1);
-        assertNull(accidentList.get(1));
-    }
-
-    @Test
-    void testGet() {
-        accidentList.add(accident1);
-        assertEquals(accident1, accidentList.get(1));
+        accidentList.delete(2);
+        assertNull(accidentList.get(2));
     }
 
     @Test
     void testUpdate() {
-        accidentList.add(accident2);
-        Accident updatedAccident = new Accident(2, 102, 8000, 20240530, "photo2_updated.jpg", 5, 1002, 2002, 2, 1245, 3, 4, "Jane Doe", "010-8765-4321", 3);
-        accidentList.update(2, updatedAccident);
-        assertEquals(updatedAccident, accidentList.get(2));
+        Accident updatedAccident = AccidentFactory.createAccident("PersonalInjury", 1, "Updated car accident", "2024-05-29", "Seoul", 101, new String[]{"4", "3"});
+        accidentList.update(1, updatedAccident);
+        assertEquals(updatedAccident, accidentList.get(1));
     }
 }

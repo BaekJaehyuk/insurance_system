@@ -1,47 +1,40 @@
 package src.system.accident;
 
 import java.util.ArrayList;
+import java.util.List;
 
-/**
- * @author SW
- * @version 1.0
- * @created 29-5-2024
- */
 public class AccidentListImpl implements AccidentList {
 
-	private ArrayList<Accident> AccidentList;
-	public Accident m_Accident;
+	private List<Accident> accidentList;
 
 	public AccidentListImpl() {
-		this.AccidentList = new ArrayList<>();
+		this.accidentList = new ArrayList<>();
 	}
 
-	public void finalize() throws Throwable {
-
-	}
-
+	@Override
 	public void add(Accident accident) {
-		AccidentList.add(accident);
+		accidentList.add(accident);
 	}
 
+	@Override
 	public void delete(int accidentId) {
-		AccidentList.removeIf(accident -> accident.getAccidentId() == accidentId);
+		accidentList.removeIf(accident -> accident.accidentId == accidentId);
 	}
 
+	@Override
 	public Accident get(int accidentId) {
-		for (Accident accident : AccidentList) {
-			if (accident.getAccidentId() == accidentId) {
-				return accident;
-			}
-		}
-		return null;
+		return accidentList.stream()
+				.filter(accident -> accident.accidentId == accidentId)
+				.findFirst()
+				.orElse(null);
 	}
 
+	@Override
 	public void update(int accidentId, Accident updatedAccident) {
-		for (int i = 0; i < AccidentList.size(); i++) {
-			if (AccidentList.get(i).getAccidentId() == accidentId) {
-				AccidentList.set(i, updatedAccident);
-				break;
+		for (int i = 0; i < accidentList.size(); i++) {
+			if (accidentList.get(i).accidentId == accidentId) {
+				accidentList.set(i, updatedAccident);
+				return;
 			}
 		}
 	}
