@@ -1,5 +1,7 @@
 package src.system;
 
+import src.system.accident.Accident;
+
 import java.util.*;
 /**
  * @author SW�������������
