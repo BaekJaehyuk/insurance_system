@@ -4,14 +4,6 @@ import src.system.Compensation;
 import src.system.Counseling;
 import src.system.Join;
 
-import java.util.Date;
-
-/**
- * @author SW�������������
- * @version 1.0
- * @created 29-5-2024 ���� 10:34:51
- */
-
 
 public class Customer {
 	private long customerID;
@@ -28,19 +20,8 @@ public class Customer {
 	public Counseling m_Counseling;
 
 	public Customer() {
-		super();
-	}
 
-	public Customer(String id, String password, String name, String sex, String phoneNumber, boolean isMember) {
-		super();
-		this.id = id;
-		this.password = password;
-		this.name = name;
-		this.sex = sex;
-		this.phoneNumber = phoneNumber;
-		this.isMember = isMember;
 	}
-
 
 	public Customer(long customerID, String id, String password, String name, String sex, String phoneNumber, String birthDay, boolean isMember) {
 		this.customerID = customerID;
