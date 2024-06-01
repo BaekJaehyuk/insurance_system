@@ -1,4 +1,10 @@
-package src.system;
+package src.system.user;
+
+import src.system.Accident;
+import src.system.Account;
+import src.system.Compensation;
+import src.system.Loan;
+import src.system.user.Customer;
 
 import java.util.*;
 /**
@@ -9,7 +15,7 @@ import java.util.*;
 public class Member extends Customer {
 
 	private int accidentHistory;
-	private Account Account;
+	private src.system.Account Account;
 	private int joinDate;
 	private ArrayList loanInsuranceDetails;
 	private int memberID;
