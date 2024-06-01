@@ -1,9 +1,8 @@
 package src.system.user;
 
-import src.system.Compensation;
-import src.system.Counseling;
-import src.system.Join;
+import src.system.*;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 /**
@@ -15,42 +14,36 @@ import java.util.Date;
 
 public class Customer {
 	private long customerID;
-	private String id;
-	private String password;
 	private String name;
 	private String sex;
 	private String phoneNumber;
 	private String birthDay;
-	private boolean isMember;
 
 	public Join m_Join;
 	public Compensation m_compensation;
 	public Counseling m_Counseling;
 
+	private int accidentHistory;
+	private Account Account;
+	private int joinDate;
+	private ArrayList loanInsuranceDetails;
+	private ArrayList registeredInsuranceDetails;
+	public Account m_Account;
+	public Compensation m_Compensation;
+	public Accident m_Accident;
+	public Loan m_Loan;
+
 	public Customer() {
 		super();
 	}
 
-	public Customer(String id, String password, String name, String sex, String phoneNumber, boolean isMember) {
-		super();
-		this.id = id;
-		this.password = password;
-		this.name = name;
-		this.sex = sex;
-		this.phoneNumber = phoneNumber;
-		this.isMember = isMember;
-	}
 
-
-	public Customer(long customerID, String id, String password, String name, String sex, String phoneNumber, String birthDay, boolean isMember) {
+	public Customer(long customerID, String name, String sex, String phoneNumber, String birthDay) {
 		this.customerID = customerID;
-		this.id = id;
-		this.password = password;
 		this.name = name;
 		this.sex = sex;
 		this.phoneNumber = phoneNumber;
 		this.birthDay = birthDay;
-		this.isMember = isMember;
 	}
 
 	public String getBirthDay() {
@@ -69,21 +62,6 @@ public class Customer {
 		this.customerID = customerID;
 	}
 
-	public String getID() {
-		return id;
-	}
-
-	public void setID(String id) {
-		this.id = id;
-	}
-
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
 
 	public String getName() {
 		return name;
@@ -109,22 +87,21 @@ public class Customer {
 		this.sex = sex;
 	}
 
-	public boolean isMember() { return isMember; }
 
-	public void setIsMember(boolean member) { isMember = member; }
+	public void pay(){
+
+	}
+
 
 
 	@Override
 	public String toString() {
 		return "Customer{" +
 				"customerID=" + customerID +
-				", ID='" + id + '\'' +
-				", password='" + password + '\'' +
 				", name='" + name + '\'' +
 				", sex='" + sex + '\'' +
 				", phoneNumber='" + phoneNumber + '\'' +
 				", birthDay='" + birthDay + '\'' +
-				", isMember='" + isMember + '\'' +
 				'}';
 	}
 

@@ -15,7 +15,7 @@ import java.util.*;
 public class Member extends Customer {
 
 	private int accidentHistory;
-	private src.system.Account Account;
+	private Account Account;
 	private int joinDate;
 	private ArrayList loanInsuranceDetails;
 	private int memberID;

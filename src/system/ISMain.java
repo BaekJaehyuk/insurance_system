@@ -70,10 +70,8 @@ public class ISMain {
                 String sChoice = objReader.readLine().trim();
                 switch (sChoice) {
                     case "1":
-                        loginCustomer();
                         break;
                     case "2":
-                        registerCustomer();
                         break;
                     case "x":
                         return;
@@ -88,73 +86,7 @@ public class ISMain {
         }
     }
 
-    /**
-     * 고객 로그인
-     * 로그인한 고객이 member인 경우에 printMemberMenu() 호출
-     * member가 아닌 경우에 printCustomerMenu() 호출
-     */
-    private static void loginCustomer() {
-        try {
-            System.out.println("Input ID");
-            String id = objReader.readLine().trim();
-            System.out.println("Input Password");
-            String password = objReader.readLine().trim();
 
-            if (customerList.get(id, password) != null) {
-                customerMenuFlag = false;
-                if (customerList.get(id, password).isMember())
-                    printMemberMenu();
-                else printCustomerMenu();
-            } else {
-                System.out.println("fail login");
-            }
-        } catch (RemoteException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    /**
-     * 고객 등록
-     * 예외 처리 해야 함
-     */
-    private static void registerCustomer() {
-        try {
-            System.out.println("Input ID");
-            String id = objReader.readLine().trim();
-            while (customerList.get(id) != null) {
-                System.out.println("사용 불가능한 ID입니다. 다른 ID를 입력해주세요");
-                id = objReader.readLine().trim();
-            }
-
-            System.out.println("Password를 입력해주세요");
-            String password = objReader.readLine().trim();
-
-            System.out.println("이름을 입력해주세요");
-            String name = objReader.readLine().trim();
-
-            System.out.println("성별을 선택해주세요");
-            System.out.println("(1) 여자");
-            System.out.println("(2) 남자");
-            String sex = objReader.readLine().trim().equals("1") ? "F" : "M";
-
-            System.out.println("전화번호를 입력해주세요");
-            String phoneNumber = objReader.readLine().trim();
-
-            System.out.println("생년월일을 입력해주세요");
-            String birthDay = objReader.readLine().trim();
-
-            customerList.add(new Customer(customerList.lastOfIndex() + 1,
-                    id, password, name, sex, phoneNumber,
-                    birthDay, false));
-
-        } catch (RemoteException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
 
 
     private static void printCustomerMenu() {
