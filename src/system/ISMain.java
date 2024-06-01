@@ -1,7 +1,6 @@
 package src.system;
 
 
-
 import src.system.user.Customer;
 import src.system.user.CustomerListImpl;
 
@@ -13,14 +12,11 @@ public class ISMain {
     static BufferedReader objReader = new BufferedReader(new InputStreamReader(System.in));
 
     private static CustomerListImpl customerList;
-    private static EmployeeListImpl employeeList;
-    private static ProductListImpl productList;
+
 
 
     private static void setData() {
         customerList = new CustomerListImpl();
-        employeeList = new EmployeeListImpl();
-        productList = new ProductListImpl();
     }
 
 
@@ -32,10 +28,7 @@ public class ISMain {
                 String sChoice = objReader.readLine().trim();
                 switch (sChoice) {
                     case "1":
-                        printCustomerInitMenu();
-                        break;
-                    case "2":
-                        printEmployeeInitMenu();
+                        conpansate();
                         break;
                     case "x":
                         return;
@@ -52,122 +45,46 @@ public class ISMain {
 
     private static void printMenu() {
         System.out.println("********************** MENU ***********************");
-        System.out.println("1. customer");
-        System.out.println("2. employee");
+        System.out.println("1. 보상하기");
         System.out.println("x. Exit");
     }
 
-    static boolean customerMenuFlag = true;
-
-    private static void printCustomerInitMenu() {
-        try {
-            while (customerMenuFlag) {
-                System.out.println("********************** Customer MENU ***********************");
-                System.out.println("1. login");
-                System.out.println("2. sign in");
-                System.out.println("x. Exit");
-
-                String sChoice = objReader.readLine().trim();
-                switch (sChoice) {
-                    case "1":
-                        break;
-                    case "2":
-                        break;
-                    case "x":
-                        return;
-                    default:
-                        System.out.println("Invalid Choice !!!");
-                }
-            }
-        } catch (RemoteException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-
-
-
-
-    private static void printCustomerMenu() {
-        System.out.println("********************** Customer MENU ***********************");
-        System.out.println("1. 상담 요청");
-        System.out.println("2. 보험 가입");
-        System.out.println("3. 가입삼사 확인");
-        System.out.println("x. Exit");
-    }
-
-    private static void printMemberMenu() {
-        System.out.println("********************** Member MENU ***********************");
-        System.out.println("1. 사고 접수");
-        System.out.println("2. 상담 요청");
-        System.out.println("3. 내 보험 확인");
-        System.out.println("4. 보험 가입");
-        System.out.println("5. 가입심사 확인");
-        System.out.println("6. 보험료 납부");
-        System.out.println("7. 대출");
-        System.out.println("x. Exit");
-    }
-
-
-    static boolean employeeMenuFlag = true;
-
-    private static void printEmployeeInitMenu() {
-        try {
-            while (employeeMenuFlag) {
-                System.out.println("********************** Employee MENU ***********************");
-                System.out.println("1. 로그인");
-                System.out.println("x. Exit");
-
-                String sChoice = objReader.readLine().trim();
-                switch (sChoice) {
-                    case "1":
-                        loginEmployee();
-                        break;
-                    case "x":
-                        return;
-                    default:
-                        System.out.println("Invalid Choice !!!");
-                }
-            }
-        } catch (RemoteException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
 
     /**
-     * 직원 로그인
+     * 사고 접수 내역 -> 손해사정 -> 보상금 지급 고객 리스트 -> 보상지급
+     *
      */
-    private static void loginEmployee() {
-        try {
-            System.out.println("ID를 입력해주세요");
-            String id = objReader.readLine().trim();
-            System.out.println("Password를 입력해주세요");
-            String password = objReader.readLine().trim();
+    private static void conpansate() {
+        customerList.add(new Customer("hello1", "F", "phone number", "abc"));
+        customerList.add(new Customer("hello2", "F", "phone number", "abc"));
+        customerList.add(new Customer("hello3", "F", "phone number", "abc"));
 
-            if (employeeList.get(id, password) != null) {
-                employeeMenuFlag = false;
-                printEmployeeMenu();
+        try {
+            System.out.println("********************** MENU ***********************");
+            showList(customerList.get());
+
+            System.out.println("위 리스트에서 보상을 지급할 고객의 customerId를 입력해주세요");
+            String sCustomerChoice = objReader.readLine().trim();
+            long customerId = Long.parseLong(sCustomerChoice);
+            if (customerList.get(customerId) != null) {
+                Compensation compensation = new Compensation(1, customerId, customerList);
+                int money = 2000;
+                if (compensation.pay(money)) {
+                    System.out.println(customerList.get(customerId).getName() + "고객님에게 " + money + "원이 지급되었습니디.");
+                    customerList.delete(customerId);
+                } else {
+                    System.out.println(customerList.get(customerId).getName() + "고객님의 계좌 정보가 없습니다.");
+
+                }
             } else {
-                System.out.println("로그인 실패");
+                System.out.println("유효한 customerId를 입력해주세요");
             }
+
         } catch (RemoteException e) {
             e.printStackTrace();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-    }
-
-
-    private static void printEmployeeMenu() {
-        System.out.println("********************** Employee MENU ***********************");
-        System.out.println("1. 사고 접수 관리"); // > 사고접수 확인, 보험금 산정
-        System.out.println("2. 보험 설계"); // > 보험 설계서, 설계서 조회
-        System.out.println("3. 고객 서비스"); // > 보험가입신청 내역, 상담요청 내역
-        System.out.println("x. Exit");
     }
 
 
