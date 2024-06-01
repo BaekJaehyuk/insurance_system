@@ -9,30 +9,63 @@ import java.util.*;
 public class EmployeeListImpl implements EmployeeList {
 
 	private ArrayList<Employee> employeeList;
-	public Employee m_Employee;
 
-	public EmployeeListImpl(){
-
+	public EmployeeListImpl() {
+		this.employeeList = new ArrayList<Employee>();
 	}
 
-	public void finalize() throws Throwable {
-
+	public long lastOfIndex() {
+		if (employeeList.size() > 0) {
+			return employeeList.get(employeeList.size() - 1).getEmployeeID();
+		}
+		return -1;
 	}
 
-	public void add(){
-
+	@Override
+	public boolean add(Employee employee) {
+		return this.employeeList.add(employee);
 	}
 
-	public void delete(){
-
+	@Override
+	public boolean delete(long employeeID) {
+		for (Employee employee : this.employeeList) {
+			if (employee.getEmployeeID() == employeeID) {
+				this.employeeList.remove(employee);
+				return true;
+			}
+		}
+		return false;
 	}
 
-	public void get(){
-
+	@Override
+	public Employee get(long employeeID) {
+		for (Employee employee : this.employeeList) {
+			if (employee.getEmployeeID() == employeeID)
+				return employee;
+		}
+		return null;
 	}
 
-	public void update(){
+	@Override
+	public Employee get(String id, String password) {
+		for (Employee employee : this.employeeList) {
+			if (employee.getID().equals(id) && employee.getPassword().equals(password))
+				return employee;
+		}
+		return null;
+	}
 
+	@Override
+	public boolean update(long employeeID, Employee employee) {
+		for (Employee prevEmployee : this.employeeList) {
+			if (prevEmployee.getEmployeeID() == employeeID) {
+				prevEmployee.setDepartment(employee.getDepartment());
+				prevEmployee.setName(employee.getName());
+				prevEmployee.setPhoneNumber(employee.getPhoneNumber());
+				return true;
+			}
+		}
+		return false;
 	}
 
 }

@@ -7,12 +7,15 @@ package src.system;
  */
 public interface EmployeeList {
 
-	public void add();
 
-	public void delete();
+	public boolean add(Employee employee);
 
-	public void get();
+	public boolean delete(long employeeID);
 
-	public void update();
+	public Employee get(long employeeID);
+
+	public Employee get(String id, String password);
+
+	public boolean update(long employeeID, Employee employee);
 
 }
