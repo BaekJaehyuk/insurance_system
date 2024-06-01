@@ -9,10 +9,6 @@ public interface CustomerList {
 
 	public Customer get(long customerID);
 
-	public Customer get(String id, String password);
-
-	public Customer get(String id);
-
 	public ArrayList<Customer> get();
 
 	public boolean update(long customerID, Customer customer);
