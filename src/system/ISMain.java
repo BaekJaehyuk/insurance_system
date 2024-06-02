@@ -30,6 +30,9 @@ public class ISMain {
                     case "1":
                         conpansate();
                         break;
+                    case "2":
+                        payInsuranceFee();
+                        break;
                     case "x":
                         return;
                     default:
@@ -46,6 +49,7 @@ public class ISMain {
     private static void printMenu() {
         System.out.println("********************** MENU ***********************");
         System.out.println("1. 보상하기");
+        System.out.println("2. 보험료 납부");
         System.out.println("x. Exit");
     }
 
@@ -85,6 +89,17 @@ public class ISMain {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    private static void payInsuranceFee() {
+        System.out.println("********************** MENU ***********************");
+        // 사용자를 만들어 그리고 사용자는 가입한 보험 정보를 가지고 있어 그러면 그 보험정보에는 보험료가 나와있어 그럼 그거 납부해
+        // 여기서 사용자 생성
+        // 여기서 가입 보험 정보 사용자에게 임의로 지정
+        // 보험료 있는 정보들 가져와서 여기서 출력해줌
+        // 보험료 납부할 보험 id 입력
+        // customer Class의 pay(productId) 메서드 호출
+        // // 납부완료 메시지 출력
     }
 
 
