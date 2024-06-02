@@ -80,16 +80,17 @@ public class Customer {
 		this.sex = sex;
 	}
 
-
 	public void addProduct(Long productId) {
 		this.productList.add(productId);
 	}
 
-	public void pay(){
+	public void pay(Long productId){
+		//여기서 가입한 보험을 꺼낸다.
+		//꺼낸 보험의 insuranceFee를 get해온다.
+		//보험료를 지불한다.
+		//납부일을 기록한다.
 
 	}
-
-
 
 	@Override
 	public String toString() {
