@@ -49,8 +49,7 @@ class CounsellingListImplTest {
         assertEquals(CounsellingStatus.COMPLETED, counseling.getStatus());
     }
 
-    @Test
-        //상담을 추가하고, 상담 상태를 CANCELLED로 변경한 후 상태가 올바른지 확인
+    @Test  //상담을 추가하고, 상담 상태를 CANCELLED로 변경한 후 상태가 올바른지 확인
     void testCancelCounseling() {
         Counseling counseling = new Counseling(1, 101, "Test Counseling", "This is a test counseling.");
         counselingList.add(counseling);
