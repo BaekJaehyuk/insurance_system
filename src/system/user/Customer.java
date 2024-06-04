@@ -3,22 +3,16 @@ package src.system.user;
 import src.system.*;
 import src.system.accident.Accident;
 import src.system.counseling.Counseling;
-
 import java.util.*;
-
-/**
- * @author SW?????????????
- * @version 1.0
- * @created 29-5-2024 ???? 10:34:51
- */
 
 
 public class Customer {
-	private long customerID;
+	private static long customerID = 0L;
 	private String name;
 	private String sex;
 	private String phoneNumber;
 	private String birthDay;
+	private ArrayList<Long> productList;
 
 	public Join m_Join;
 	public Compensation m_compensation;
@@ -27,20 +21,20 @@ public class Customer {
 	private int accidentHistory;
 	private Account Account;
 	private int joinDate;
-	private ArrayList loanInsuranceDetails;
-	private ArrayList registeredInsuranceDetails;
+	private ArrayList<String> loanInsuranceDetails;
+	private ArrayList<String> registeredInsuranceDetails;
+
 	public Account m_Account;
 	public Compensation m_Compensation;
 	public Accident m_Accident;
 	public Loan m_Loan;
 
 	public Customer() {
-		super();
+
 	}
 
-
-	public Customer(long customerID, String name, String sex, String phoneNumber, String birthDay) {
-		this.customerID = customerID;
+	public Customer(String name, String sex, String phoneNumber, String birthDay) {
+		customerID++;
 		this.name = name;
 		this.sex = sex;
 		this.phoneNumber = phoneNumber;
@@ -62,7 +56,6 @@ public class Customer {
 	public void setCustomerID(long customerID) {
 		this.customerID = customerID;
 	}
-
 
 	public String getName() {
 		return name;
@@ -88,12 +81,17 @@ public class Customer {
 		this.sex = sex;
 	}
 
-
-	public void pay(){
-
+	public void addProduct(Long productId) {
+		this.productList.add(productId);
 	}
 
+	public void pay(Long productId){
+		//여기서 가입한 보험을 꺼낸다.
+		//꺼낸 보험의 insuranceFee를 get해온다.
+		//보험료를 지불한다.
+		//납부일을 기록한다.
 
+	}
 
 	@Override
 	public String toString() {

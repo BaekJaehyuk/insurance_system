@@ -1,14 +1,9 @@
 package src.system;
 
-/**
- * @author SW�������������
- * @version 1.0
- * @created 29-5-2024 ���� 10:34:54
- */
 public class Insurance {
 
+	private static Long insuranceID = 0L;
 	private InsuranceFee InsuranceFee;
-	private int InsuranceID;
 	private int insurancePayment;
 	private Policy Policy;
 	private Product Product;
@@ -21,19 +16,23 @@ public class Insurance {
 	public Product m_Product;
 
 	public Insurance(){
-
+		insuranceID++;
 	}
 
 	public void finalize() throws Throwable {
 
 	}
 
-	public void design(){
+	public void design() {
 
 	}
 
-	public void makeContract(){
-
+	/**
+	 * 상품을 설계한 뒤, 해당 설계한 상품의 ID 값 반환
+	 * @return Product Id
+	 */
+	public Long makeContract(){
+	 	return 0L;
 	}
 
 	public void prolong(){

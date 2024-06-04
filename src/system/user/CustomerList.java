@@ -9,6 +9,8 @@ public interface CustomerList {
 
 	public Customer get(long customerID);
 
+	public boolean isExistedMember(String name);
+
 	public ArrayList<Customer> get();
 
 	public boolean update(long customerID, Customer customer);

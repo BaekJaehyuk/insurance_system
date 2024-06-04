@@ -1,5 +1,8 @@
 package src.system;
 
+import src.system.user.Customer;
+import src.system.user.CustomerListImpl;
+
 /**
  * @author SW�������������
  * @version 1.0
@@ -7,19 +10,26 @@ package src.system;
  */
 public class Compensation {
 
-	private int insuranceID;
-	private int memberID;
+    private long insuranceId;
+    private long customerId;
+    private Customer customer;
 
-	public Compensation(){
+    public Compensation(long insuranceId, long customerId, CustomerListImpl customerList) {
+        this.customerId = customerId;
+        this.insuranceId = insuranceId;
+        this.customer = customerList.get(customerId);
+    }
 
-	}
+    public void finalize() throws Throwable {
 
-	public void finalize() throws Throwable {
+    }
 
-	}
 
-	public void pay(){
-
-	}
+    public boolean pay(int money) {
+        if(customer == null){
+            return false;
+        }
+        return true;
+    }
 
 }

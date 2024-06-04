@@ -3,7 +3,7 @@ package src.system.user;
 import java.util.ArrayList;
 
 public class CustomerListImpl implements CustomerList {
-	private ArrayList<Customer> customerList;
+	private final ArrayList<Customer> customerList;
 
 	public CustomerListImpl() {
 		this.customerList = new ArrayList<Customer>();
@@ -14,7 +14,7 @@ public class CustomerListImpl implements CustomerList {
 	}
 
 	public long lastOfIndex() {
-		if (customerList.size() > 0) {
+		if (!customerList.isEmpty()) {
 			return customerList.get(customerList.size() - 1).getCustomerID();
 		}
 		return -1;
@@ -45,7 +45,23 @@ public class CustomerListImpl implements CustomerList {
 		return null;
 	}
 
+	public Customer findMemberByName(String name) {
+		for (Customer customer : customerList) {
+			if (customer.getName().equals(name)) {
+				return customer;
+			}
+		}
+		return null;
+	}
 
+	@Override
+	public boolean isExistedMember(String name) {
+		for (Customer customer : this.customerList) {
+			if (customer.getName().equals(name))
+				return true;
+		}
+		return false;
+	}
 
 	@Override
 	public ArrayList<Customer> get() {
