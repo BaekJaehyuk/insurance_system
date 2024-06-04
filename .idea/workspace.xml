@@ -10,6 +10,8 @@
       <change beforePath="$PROJECT_DIR$/out/production/insurance system/src/system/utils/MESSAGE.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insurance system/src/system/utils/MESSAGE.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/system/Join.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/system/Join.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/system/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/system/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/system/OSMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/system/OSMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/system/utils/MESSAGE.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/system/utils/MESSAGE.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,7 +99,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1717510737701</updated>
-      <workItem from="1717510743901" duration="3474000" />
+      <workItem from="1717510743901" duration="2971000" />
     </task>
     <task id="LOCAL-00002" summary="[feat]: Main 구성">
       <option name="closed" value="true" />
@@ -107,6 +109,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717512042745</updated>
     </task>
+    <task id="LOCAL-00003" summary="[feat]: Main 구성">
+      <option name="closed" value="true" />
+      <created>1717512691407</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1717512691407</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <task id="LOCAL-00003" summary="[feat]: Main 구성">
       <option name="closed" value="true" />
       <created>1717512691407</created>
