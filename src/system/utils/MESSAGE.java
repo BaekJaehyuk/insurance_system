@@ -9,6 +9,7 @@ public enum MESSAGE {
   MENU_PAY("3. 보험료 납부"),
   MENU_ACCIDENT("4. 사고 접수"),
   MENU_LOAN("5. 대출"),
+  MENU_COUNSELLING("6. 상담"),
   MENU_EXIT("X. 종류");
 
 
