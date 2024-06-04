@@ -4,224 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e5e9e990-611c-45f9-804b-8cf8394de8d9" name="Changes" comment="[bug]: compile 오류 해결">
+    <list default="true" id="7e084647-5a0e-4ed8-b59e-a8146c583d19" name="Changes" comment="[feat]: main 구성 변경">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/system/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/system/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/system/utils/MESSAGE.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/system/utils/MESSAGE.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Enum" />
-        <option value="Interface" />
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="GitHubPullRequestSearchHistory">{
-  &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;OPEN&quot;,
-    &quot;assignee&quot;: &quot;BaekJaehyuk&quot;
-  }
-}</component>
-  <component name="GitToolBoxStore">
-    <option name="recentBranches">
-      <RecentBranches>
-        <option name="branchesForRepo">
-          <list>
-            <RecentBranchesForRepo>
-              <option name="branches">
-                <list>
-                  <RecentBranch>
-                    <option name="branchName" value="main" />
-                    <option name="lastUsedInstant" value="1716991122" />
-                  </RecentBranch>
-                  <RecentBranch>
-                    <option name="branchName" value="master" />
-                    <option name="lastUsedInstant" value="1716991121" />
-                  </RecentBranch>
-                </list>
-              </option>
-              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$" />
-            </RecentBranchesForRepo>
-          </list>
-        </option>
-      </RecentBranches>
-    </option>
-  </component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/BaekJaehyuk/insurance_system.git&quot;,
-    &quot;accountId&quot;: &quot;5bc4c70f-395b-4da7-9518-acc20aee7c7e&quot;
-  }
-}</component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/src/system/user/Customer.java" root0="SKIP_INSPECTION" />
-  </component>
-  <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 2
-}</component>
-  <component name="ProjectId" id="2h8zGvrfCkQOdNd1YjzjsNFeN5B" />
-  <component name="ProjectViewState">
-    <option name="showLibraryContents" value="true" />
-  </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Application.ISMain.executor": "Run",
-    "Application.Main.executor": "Run",
-    "Application.OSMain.executor": "Run",
-    "Downloaded.Files.Path.Enabled": "false",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/oseo0202/분산1/insurance",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "reference.settings.ide.settings.web.browsers",
-    "vue.rearranger.settings.migration": "true"
+    "node.js.selected.package.tslint": "(autodetect)"
   }
-}</component>
-  <component name="RunManager">
-    <configuration name="ISMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="src.system.ISMain" />
-      <module name="insurance system" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="src.system.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.ISMain" />
-      </list>
-    </recent_temporary>
-  </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+}]]></component>
   <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
-      <changelist id="e5e9e990-611c-45f9-804b-8cf8394de8d9" name="Changes" comment="" />
-      <created>1716990404182</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1716990404182</updated>
-      <workItem from="1716990405702" duration="4326000" />
-      <workItem from="1717244826686" duration="15432000" />
-      <workItem from="1717495692323" duration="5073000" />
-      <workItem from="1717503872230" duration="1683000" />
-      <workItem from="1717507422127" duration="392000" />
-      <workItem from="1717503872230" duration="1772000" />
-      <workItem from="1717507227716" duration="1094000" />
-    </task>
-    <task id="LOCAL-00001" summary="init">
-      <option name="closed" value="true" />
-      <created>1716991156501</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1716991156501</updated>
-    </task>
-    <task id="LOCAL-00002" summary=":recycle: [Refactor]: 클래스 수정">
-      <option name="closed" value="true" />
-      <created>1716991340828</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1716991340828</updated>
-    </task>
-    <task id="LOCAL-00003" summary=":recycle: [Refactor]: 클래스 수정">
-      <option name="closed" value="true" />
-      <created>1717253500327</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1717253500327</updated>
-    </task>
-    <task id="LOCAL-00004" summary=":Feat: [feat]: 보험 가입">
-      <option name="closed" value="true" />
-      <created>1717260945086</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1717260945086</updated>
-    </task>
-    <task id="LOCAL-00005" summary="[refactor]: util 패키지 구성">
-      <option name="closed" value="true" />
-      <created>1717496600069</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1717496600069</updated>
-    </task>
-    <task id="LOCAL-00006" summary="[Feat]: Main 구성">
-      <option name="closed" value="true" />
-      <created>1717499978050</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1717499978050</updated>
-    </task>
-    <task id="LOCAL-00007" summary="[Feat]: MESSAGE 구성">
-      <option name="closed" value="true" />
-      <created>1717499994639</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1717499994639</updated>
-    </task>
-    <task id="LOCAL-00008" summary="[bug]: gitignore 수정">
-      <option name="closed" value="true" />
-      <created>1717506135012</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1717506135012</updated>
-    </task>
-    <task id="LOCAL-00009" summary="[bug]: compile 오류 해결">
-      <option name="closed" value="true" />
-      <created>1717506956877</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1717506956877</updated>
-    </task>
-    <task id="LOCAL-00010" summary="[bug]: compile 오류 해결">
-      <option name="closed" value="true" />
-      <created>1717507100301</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1717507100301</updated>
-    </task>
-    <option name="localTasksCounter" value="11" />
     <servers />
-  </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -235,14 +34,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="init" />
-    <MESSAGE value=":recycle: [Refactor]: 클래스 수정" />
-    <MESSAGE value=":Feat: [feat]: 보험 가입" />
-    <MESSAGE value="[refactor]: util 패키지 구성" />
-    <MESSAGE value="[Feat]: Main 구성" />
-    <MESSAGE value="[Feat]: MESSAGE 구성" />
-    <MESSAGE value="[bug]: gitignore 수정" />
-    <MESSAGE value="[bug]: compile 오류 해결" />
-    <option name="LAST_COMMIT_MESSAGE" value="[bug]: compile 오류 해결" />
+    <MESSAGE value="[feat]: main 구성 변경" />
+    <option name="LAST_COMMIT_MESSAGE" value="[feat]: main 구성 변경" />
   </component>
 </project>
