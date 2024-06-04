@@ -13,6 +13,9 @@ public enum MESSAGE {
   MENU_EXIT("X. 종류");
 
 
+  public String getMsg() {
+    return msg;
+  }
 
   private final String msg;
 

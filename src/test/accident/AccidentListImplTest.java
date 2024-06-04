@@ -1,4 +1,4 @@
-/*package src.test.accident;
+package src.test.accident;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -46,4 +46,4 @@ class AccidentListImplTest {
         accidentList.update(1, updatedAccident);
         assertEquals(updatedAccident, accidentList.get(1));
     }
-}*/
+}

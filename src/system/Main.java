@@ -16,6 +16,9 @@ import java.io.InputStreamReader;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.Date;
+import src.system.accident.Accident;
+import src.system.accident.AccidentFactory;
+import src.system.accident.AccidentListImpl;
 import src.system.user.Customer;
 import src.system.user.CustomerListImpl;
 
@@ -25,36 +28,39 @@ public class Main {
 
     private static CustomerListImpl customerList;
     private static InsuranceListImpl insuranceList;
+    private static AccidentListImpl accidentList;
 
     private static void setData() {
         customerList = new CustomerListImpl();
         insuranceList = new InsuranceListImpl();
+        accidentList = new AccidentListImpl();
+
     }
-    // 보험 가입 JOIN
-    // 상품 설계
-    // 보상 Compensation
-    // 보험료 납부
-    // 사고 접수 AccidentFactory
-    // 대출 Loan
+    // 보험 가입  JOIN
+    // 상품  설계
+    // 보상  Compensation
+    // 보험료  납부
+    // 사고 접수  AccidentFactory
+    // 대출  Loan
     public static void main(String[] args) {
          setData();
          try {
                 while (true) {
                     printMenu();
-                    String sChoice = objReader.readLine().trim();
+                    String sChoice = input();
                     switch (sChoice) {
                         case "1": // 보험 가입
-
+                            registerInsurance();
                             break;
                         case "2": // 상품 설계
-                            System.out.println("1");
+                            System.out.println("미구현");
                             break;
 
                         case "3" : // 보험료 납부
                             payInsuranceFee();
                             System.out.println("2");
                         case "4" : // 사고 접수
-
+                            accidentReport();
                             System.out.println("2");
                         case "5" : // 대출
 
@@ -76,15 +82,37 @@ public class Main {
             }
         }
 
+    private static String input() throws IOException {
+        return objReader.readLine().trim();
+    }
+
+    private static void registerInsurance() throws IOException {
+        Join join = new Join();
+        join.join(input(), input(), input(), input());
+    }
+
+    private static void accidentReport() {
+        Accident personalInjuryAccident = AccidentFactory.createAccident("PersonalInjury", 1, "Car accident",
+                                                                         "2024-05-29", "Seoul", 101, new String[]{"3", "2"});
+        Accident liabilityAccident = AccidentFactory.createAccident("Liability", 2, "House fire", "2024-06-01",
+                                                            "Busan", 102, new String[]{"record1", "4", "Jane Doe", "010-8765-4321"});
+        Accident propertyDamageAccident = AccidentFactory.createAccident("PropertyDamage", 3, "Tree fall on car",
+                                                               "2024-06-15", "Incheon", 103, new String[]{"Car"});
+
+        accidentList.add(personalInjuryAccident);
+        accidentList.add(liabilityAccident);
+        accidentList.add(propertyDamageAccident);
+    }
+
     private static void printMenu() {
-        System.out.println(WELCOME_MESSAGE);
-        System.out.println(MENU_INFO);
-        System.out.println(MENU_JOIN);
-        System.out.println(MENU_DESIGN);
-        System.out.println(MENU_PAY);
-        System.out.println(MENU_ACCIDENT);
-        System.out.println(MENU_LOAN);
-        System.out.println(MENU_EXIT);
+        System.out.println(WELCOME_MESSAGE.getMsg());
+        System.out.println(MENU_INFO.getMsg());
+        System.out.println(MENU_JOIN.getMsg());
+        System.out.println(MENU_DESIGN.getMsg());
+        System.out.println(MENU_PAY.getMsg());
+        System.out.println(MENU_ACCIDENT.getMsg());
+        System.out.println(MENU_LOAN.getMsg());
+        System.out.println(MENU_EXIT.getMsg());
     }
 
     private static void payInsuranceFee() {
@@ -93,12 +121,12 @@ public class Main {
             System.out.println("********************** MENU ***********************");
 
             System.out.println("보험료를 지불할 고객의 customerId를 입력해주세요");
-            String sCustomerChoice = objReader.readLine().trim();
+            String sCustomerChoice = input();
             long customerId = Long.parseLong(sCustomerChoice);
             makeInsurance(sCustomerChoice); // 여기서 가입 보험 정보 사용자에게 임의로 지정하고 보험 정보 출력
 
             System.out.println("지불할 InsuranceId를 입력해주세요");
-            String sInsuranceChoice = objReader.readLine().trim(); // 보험료 납부할 보험 id 입력
+            String sInsuranceChoice = input(); // 보험료 납부할 보험 id 입력
 
             long insuranceId = Long.parseLong(sInsuranceChoice);
 
