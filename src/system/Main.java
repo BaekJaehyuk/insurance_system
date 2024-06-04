@@ -1,6 +1,7 @@
 package src.system;
 
 
+
 import static src.system.utils.MESSAGE.MENU_ACCIDENT;
 import static src.system.utils.MESSAGE.MENU_DESIGN;
 import static src.system.utils.MESSAGE.MENU_EXIT;
@@ -15,7 +16,10 @@ import java.io.InputStreamReader;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.Date;
+import src.system.accident.Accident;
 import src.system.accident.AccidentListImpl;
+import src.system.compensation.Compensation;
+import src.system.compensation.CompensationListImpl;
 import src.system.counseling.Counseling;
 import src.system.counseling.CounsellingListImpl;
 import src.system.user.Customer;
@@ -29,13 +33,14 @@ public class Main {
   private static CustomerListImpl customerList;
   private static InsuranceListImpl insuranceList;
   private static AccidentListImpl accidentList;
+  private static CompensationListImpl compensationList;
 
   private static void setData() {
     customerList = new CustomerListImpl();
     insuranceList = new InsuranceListImpl();
     accidentList = new AccidentListImpl();
     counselingList = new CounsellingListImpl();
-
+    compensationList = new CompensationListImpl();
   }
 
   // 보험 가입  JOIN
@@ -55,19 +60,17 @@ public class Main {
             registerInsurance();
             break;
           case "2": // 상품 설계
-            System.out.println("미구현");
-            break;
 
           case "3": // 보험료 납부
             payInsuranceFee();
-            System.out.println("2");
-          case "4": // 사고 접수
+            break;
+          case "4": // 손해사정
+            toAssessDamages();
+          case "5": // 사고 접수
             accidentReport();
-            System.out.println("2");
-          case "5": // 대출
-
-            System.out.println("2");
-          case "6": // 상담
+            break;
+          case "6": // 대출
+          case "7": // 상담
             counselling();
             System.out.println("2");
           case "x":
@@ -77,6 +80,53 @@ public class Main {
             System.out.println("Invalid Choice !!!");
         }
       }
+    } catch (RemoteException e) {
+      e.printStackTrace();
+    } catch (IOException e) {
+      throw new RuntimeException(e);
+    }
+  }
+
+  private static void toAssessDamages() {
+    accidentList.add(new Accident(1, "교통사고", "2024-06-04", "명지대", 1) {
+      @Override
+      public void receiveAccident() {
+
+      }
+    }); // test data
+
+    try {
+      System.out.println("********************** MENU ***********************");
+      showList(accidentList.get());
+
+      System.out.println("위 사고 접수 리스트에서 손해사정을 진행할 사고의 accidentId를 입력해주세요");
+      String sAcidentChoice = objReader.readLine().trim();
+      long accidentId = Long.parseLong(sAcidentChoice);
+      if (accidentList.get(accidentId) != null) {
+        System.out.println("해당 고객에게 보상을 진행하겠습니까?");
+        System.out.println("(1) 예    (2) 아니오");
+
+        String sChoice = objReader.readLine().trim();
+        switch (sChoice) {
+          case "1":
+            System.out.println("고객에게 지급할 보험금을 산정해주세요.");
+            String iMoney  = objReader.readLine().trim();
+            long money = Long.parseLong(iMoney);
+            customerList.add(customerList.get(accidentList.get(accidentId).getCustomerId()));
+            compensationList.add(new Compensation(money, accidentList.get(accidentId).getCustomerId(), customerList));
+            break;
+          case "2":
+            accidentList.delete(accidentId);
+            break;
+          case "x":
+            return;
+          default:
+            System.out.println("Invalid Choice !!!");
+        }
+      } else {
+        System.out.println("유효한 accidentId를 입력해주세요");
+      }
+
     } catch (RemoteException e) {
       e.printStackTrace();
     } catch (IOException e) {

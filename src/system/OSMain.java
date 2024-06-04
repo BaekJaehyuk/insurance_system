@@ -76,8 +76,8 @@ public class OSMain {
         accidentList.add(new Accident(1, "교통사고", "2024-06-04", "명지대", 1) {
             @Override
             public void receiveAccident() {
-
             }
+
         }); // test data
 
         try {
