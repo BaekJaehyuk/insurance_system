@@ -18,4 +18,10 @@ public class Policy {
 
 	}
 
+	public void setInsuranceId(Long insuranceID) {
+		this.insuranceID = insuranceID.intValue();
+	}
+	public void setMemberId(int memberID) {
+		this.memberID = memberID;
+	}
 }

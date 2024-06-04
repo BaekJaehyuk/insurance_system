@@ -2,22 +2,54 @@ package src.system;
 
 public class Insurance {
 
-	private static Long insuranceID = 0L;
+	private static Long LastId = 0L;
+	private Long insuranceID;
 	private InsuranceFee InsuranceFee;
 	private int insurancePayment;
-	private Policy Policy;
-	private Product Product;
+	private Policy policy;
 	private int rate;
+
+	// get
+	public Long getInsuranceID(){
+		return insuranceID;
+	}
+	public InsuranceFee getInsuranceFee(){
+		return this.InsuranceFee;
+	}
+	public int getInsurancePayment(){
+		return this.insurancePayment;
+	}
+	public Policy getPolicy(){
+		return this.policy;
+	}
+	public int getRate(){
+		return this.rate;
+	}
+
+	//set
+
+	public void setId() {
+		this.insuranceID = LastId++;
+	}
+	public void setInsuranceFee(InsuranceFee insuranceFee){
+		this.InsuranceFee = insuranceFee;
+	}
+	public void setInsurancePayment(int insurancePayment){
+		this.insurancePayment = insurancePayment;
+	}
+	public void setPolicy(Policy policy){
+		this.policy = policy;
+	}
+	public void setRate(int rate){
+		this.rate = rate;
+	}
+
 	public Join m_Join;
 	public Policy m_Policy;
 	public InsuranceFee m_InsuranceFee;
 	public Compensation m_Compensation;
 	public Car m_car;
 	public Product m_Product;
-
-	public Insurance(){
-		insuranceID++;
-	}
 
 	public void finalize() throws Throwable {
 
