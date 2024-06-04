@@ -73,6 +73,7 @@ public class ISMain {
 
             makeInsurance(sCustomerChoice);
             long customerId = Long.parseLong(sCustomerChoice);
+
             if (customerList.get(customerId) != null) {
                 Compensation compensation = new Compensation(1, customerId, customerList);
                 int money = 2000;
@@ -94,21 +95,56 @@ public class ISMain {
         }
     }
 
-    private static void payInsuranceFee() {
-        System.out.println("********************** MENU ***********************");
         // 사용자를 만들어 그리고 사용자는 가입한 보험 정보를 가지고 있어 그러면 그 보험정보에는 보험료가 나와있어 그럼 그거 납부해
-        // 여기서 사용자 생성
-        // 여기서 가입 보험 정보 사용자에게 임의로 지정
-        // 보험료 있는 정보들 가져와서 여기서 출력해줌
+
+
+
         // 보험료 납부할 보험 id 입력
         // customer Class의 pay(productId) 메서드 호출
         // 납부완료 메시지 출력
+    private static void payInsuranceFee() {
+
+        customerList.add(new Customer("hello1", "M", "phone number", "abc")); // 여기서 사용자 생성
+        customerList.add(new Customer("hello2", "M", "phone number", "abc"));
+        customerList.add(new Customer("hello3", "M", "phone number", "abc"));
+
+        try {
+            System.out.println("********************** MENU ***********************");
+            showList(customerList.get());
+
+            System.out.println("보험료를 지불할 고객의 customerId를 입력해주세요");
+            String sCustomerChoice = objReader.readLine().trim();
+            long customerId = Long.parseLong(sCustomerChoice);
+            makeInsurance(sCustomerChoice); // 여기서 가입 보험 정보 사용자에게 임의로 지정하고 보험 정보 출력
+
+            System.out.println("지불할 InsuranceId를 입력해주세요");
+            String sInsuranceChoice = objReader.readLine().trim(); // 보험료 납부할 보험 id 입력
+
+            long insuranceId = Long.parseLong(sInsuranceChoice);
+
+            if (customerList.get(customerId) != null) {
+                    if(insuranceList.get(insuranceId) != null){
+                       Customer customer = customerList.get(customerId);
+                       Insurance insurance = insuranceList.get(insuranceId);
+                       customer.pay(insurance);
+                       System.out.println("보험료가 납부되었습니다. 납부일자 : "+ insurance.getInsuranceFee().getDateOfPayment());
+                    }else{
+                        System.out.println("유효한 insuranceId를 입력해주세요");
+                    }
+            } else {
+                System.out.println("유효한 customerId를 입력해주세요");
+            }
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     private static void makeInsurance(String sCustomerChoice){
         int customerId = Integer.parseInt(sCustomerChoice);
-        insuranceList.add(new OwnCar(customerId, new InsuranceFee(), 100, new Policy(), 100, 1, 1, 1));
-        insuranceList.add(new Driver(customerId, new InsuranceFee(), 100, new Policy(), 100, 1, new Date()));
+        insuranceList.add(new OwnCar(customerId, new InsuranceFee(10000), 100, new Policy(), 100, 1, 1, 1));
+        insuranceList.add(new Driver(customerId, new InsuranceFee(20000), 100, new Policy(), 100, 1, new Date()));
         showList(insuranceList.get());
     }
 

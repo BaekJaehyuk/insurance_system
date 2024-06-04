@@ -1,21 +1,25 @@
 package src.system;
 
-/**
- * @author SW�������������
- * @version 1.0
- * @created 29-5-2024 ���� 10:34:54
- */
+import java.util.Date;
+
 public class InsuranceFee {
 
 	private int amount;
-	private int dateOfPayment;
+	private Date dateOfPayment;
 
-	public InsuranceFee(){
-
+	public InsuranceFee(int amount){
+		this.amount = amount;
 	}
-
-	public void finalize() throws Throwable {
-
+	public int getAmount() {
+		return amount;
 	}
-
+	public void setAmount(int amount) {
+		this.amount = amount;
+	}
+	public Date getDateOfPayment() {
+		return dateOfPayment;
+	}
+	public void setDateOfPayment(Date dateOfPayment) {
+		this.dateOfPayment = dateOfPayment;
+	}
 }
