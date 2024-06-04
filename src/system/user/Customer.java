@@ -6,7 +6,10 @@ import java.util.*;
 
 
 public class Customer {
-	private static long customerID = 0L;
+
+	private static long lastID = 0L;
+
+	private long customerID;
 	private String name;
 	private String sex;
 	private String phoneNumber;
@@ -33,7 +36,8 @@ public class Customer {
 	}
 
 	public Customer(String name, String sex, String phoneNumber, String birthDay) {
-		customerID++;
+		lastID++;
+		this.customerID = lastID;
 		this.name = name;
 		this.sex = sex;
 		this.phoneNumber = phoneNumber;

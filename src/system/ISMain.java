@@ -2,6 +2,7 @@ package src.system;
 
 
 import src.system.user.Customer;
+import src.system.user.CustomerList;
 import src.system.user.CustomerListImpl;
 
 import java.rmi.RemoteException;
@@ -12,16 +13,16 @@ public class ISMain {
     static BufferedReader objReader = new BufferedReader(new InputStreamReader(System.in));
 
     private static CustomerListImpl customerList;
-
-
+    private static InsuranceListImpl insuranceList;
 
     private static void setData() {
         customerList = new CustomerListImpl();
+        insuranceList = new InsuranceListImpl();
     }
-
 
     public static void main(String[] args) {
         setData();
+        makeInsurance();
         try {
             while (true) {
                 printMenu();
@@ -59,6 +60,7 @@ public class ISMain {
      *
      */
     private static void conpansate() {
+
         customerList.add(new Customer("hello1", "F", "phone number", "abc"));
         customerList.add(new Customer("hello2", "F", "phone number", "abc"));
         customerList.add(new Customer("hello3", "F", "phone number", "abc"));
@@ -102,6 +104,12 @@ public class ISMain {
         // // 납부완료 메시지 출력
     }
 
+    private static void makeInsurance(){
+        //초기 보험 기본 설정
+        insuranceList.add(new OwnCar(new InsuranceFee(), 100, new Policy(), 100, 1, 1, 1));
+        insuranceList.add(new Driver(new InsuranceFee(), 100, new Policy(), 100, 1, new Date()));
+        showList(insuranceList.get());
+    }
 
     private static void showList(ArrayList<?> dataList) {
         String list = "";

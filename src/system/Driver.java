@@ -2,39 +2,17 @@ package src.system;
 
 import java.util.Date;
 
-/**
- * @author SW�������������
- * @version 1.0
- * @created 29-5-2024 ���� 10:34:52
- */
 public class Driver extends Car {
 
-	/**
-	 * @author SW�������������
-	 * @version 1.0
-	 * @created 29-5-2024 ���� 10:34:52
-	 */
-	public class Class1 {
-
-		public Class1(){
-
-		}
-
-		public void finalize() throws Throwable {
-
-		}
-
-	}
-
 	private Date drivingExperience;
-	public Car m_car;
 
-	public Driver(){
-
+	public Driver(InsuranceFee insuranceFee, int insurancePayment, Policy policy, int rate, int mileage, Date date) {
+		this.setId();
+		this.setInsuranceFee(insuranceFee);
+		this.setInsurancePayment(insurancePayment);
+		this.setPolicy(policy);
+		this.setRate(rate);
+		this.setMileage(mileage);
+		this.drivingExperience = date;
 	}
-
-	public void finalize() throws Throwable {
-		super.finalize();
-	}
-
 }
