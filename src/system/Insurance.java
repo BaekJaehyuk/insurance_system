@@ -1,5 +1,7 @@
 package src.system;
 
+import src.system.compensation.Compensation;
+
 public class Insurance {
 
 	private static Long LastId = 0L;

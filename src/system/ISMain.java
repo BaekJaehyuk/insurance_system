@@ -1,6 +1,7 @@
 package src.system;
 
 
+import src.system.compensation.Compensation;
 import src.system.user.Customer;
 import src.system.user.CustomerList;
 import src.system.user.CustomerListImpl;
@@ -28,9 +29,6 @@ public class ISMain {
                 String sChoice = objReader.readLine().trim();
                 switch (sChoice) {
                     case "1":
-                        conpansate();
-                        break;
-                    case "2":
                         payInsuranceFee();
                         break;
                     case "x":
@@ -48,52 +46,12 @@ public class ISMain {
 
     private static void printMenu() {
         System.out.println("********************** MENU ***********************");
-        System.out.println("1. 보상하기");
-        System.out.println("2. 보험료 납부");
+        System.out.println("1. 보험료 납부");
         System.out.println("x. Exit");
     }
 
 
-    /**
-     * 사고 접수 내역 -> 손해사정 -> 보상금 지급 고객 리스트 -> 보상지급
-     *
-     */
-    private static void conpansate() {
 
-        customerList.add(new Customer("hello1", "F", "phone number", "abc"));
-        customerList.add(new Customer("hello2", "F", "phone number", "abc"));
-        customerList.add(new Customer("hello3", "F", "phone number", "abc"));
-
-        try {
-            System.out.println("********************** MENU ***********************");
-            showList(customerList.get());
-
-            System.out.println("위 리스트에서 보상을 지급할 고객의 customerId를 입력해주세요");
-            String sCustomerChoice = objReader.readLine().trim();
-
-            makeInsurance(sCustomerChoice);
-            long customerId = Long.parseLong(sCustomerChoice);
-
-            if (customerList.get(customerId) != null) {
-                Compensation compensation = new Compensation(1, customerId, customerList);
-                int money = 2000;
-                if (compensation.pay(money)) {
-                    System.out.println(customerList.get(customerId).getName() + "고객님에게 " + money + "원이 지급되었습니디.");
-                    customerList.delete(customerId);
-                } else {
-                    System.out.println(customerList.get(customerId).getName() + "고객님의 계좌 정보가 없습니다.");
-
-                }
-            } else {
-                System.out.println("유효한 customerId를 입력해주세요");
-            }
-
-        } catch (RemoteException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
 
         // 사용자를 만들어 그리고 사용자는 가입한 보험 정보를 가지고 있어 그러면 그 보험정보에는 보험료가 나와있어 그럼 그거 납부해
 
