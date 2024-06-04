@@ -1,4 +1,5 @@
 package src.system.accident;
+import java.util.*;
 
 /**
  * @author tiemo
@@ -9,9 +10,11 @@ public interface AccidentList {
 
 	public void add(Accident accident);
 
-	public void delete(int accidentId);
+	public void delete(long accidentId);
 
-	public Accident get(int accidentId);
+	public Accident get(long accidentId);
 
-	public void update(int accidentId, Accident updatedAccident);
+	public ArrayList<Accident> get();
+
+	public void update(long accidentId, Accident updatedAccident);
 }

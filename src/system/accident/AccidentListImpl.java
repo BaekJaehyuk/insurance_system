@@ -5,7 +5,7 @@ import java.util.List;
 
 public class AccidentListImpl implements AccidentList {
 
-	private List<Accident> accidentList;
+	private ArrayList<Accident> accidentList;
 
 	public AccidentListImpl() {
 		this.accidentList = new ArrayList<>();
@@ -17,12 +17,12 @@ public class AccidentListImpl implements AccidentList {
 	}
 
 	@Override
-	public void delete(int accidentId) {
+	public void delete(long accidentId) {
 		accidentList.removeIf(accident -> accident.accidentId == accidentId);
 	}
 
 	@Override
-	public Accident get(int accidentId) {
+	public Accident get(long accidentId) {
 		return accidentList.stream()
 				.filter(accident -> accident.accidentId == accidentId)
 				.findFirst()
@@ -30,7 +30,12 @@ public class AccidentListImpl implements AccidentList {
 	}
 
 	@Override
-	public void update(int accidentId, Accident updatedAccident) {
+	public ArrayList<Accident> get() {
+		return accidentList;
+	}
+
+	@Override
+	public void update(long accidentId, Accident updatedAccident) {
 		for (int i = 0; i < accidentList.size(); i++) {
 			if (accidentList.get(i).accidentId == accidentId) {
 				accidentList.set(i, updatedAccident);
