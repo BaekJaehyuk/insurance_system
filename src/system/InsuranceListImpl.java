@@ -1,5 +1,7 @@
 package src.system;
 
+import src.system.user.Customer;
+
 import java.util.ArrayList;
 
 public class InsuranceListImpl implements InsuranceList{
@@ -23,6 +25,14 @@ public class InsuranceListImpl implements InsuranceList{
     @Override
     public ArrayList<Insurance> get() {
         return insuranceList;
+    }
+    @Override
+    public Insurance get(long customerID) {
+        for (Insurance insurance : this.insuranceList) {
+            if (insurance.getInsuranceID() == customerID)
+                return insurance;
+        }
+        return null;
     }
 
     @Override

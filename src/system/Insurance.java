@@ -4,7 +4,7 @@ public class Insurance {
 
 	private static Long LastId = 0L;
 	private Long insuranceID;
-	private InsuranceFee InsuranceFee;
+	private InsuranceFee insuranceFee;
 	private int insurancePayment;
 	private Policy policy;
 	private int rate;
@@ -14,7 +14,7 @@ public class Insurance {
 		return insuranceID;
 	}
 	public InsuranceFee getInsuranceFee(){
-		return this.InsuranceFee;
+		return this.insuranceFee;
 	}
 	public int getInsurancePayment(){
 		return this.insurancePayment;
@@ -32,7 +32,7 @@ public class Insurance {
 		this.insuranceID = LastId++;
 	}
 	public void setInsuranceFee(InsuranceFee insuranceFee){
-		this.InsuranceFee = insuranceFee;
+		this.insuranceFee = insuranceFee;
 	}
 	public void setInsurancePayment(int insurancePayment){
 		this.insurancePayment = insurancePayment;
@@ -69,6 +69,16 @@ public class Insurance {
 
 	public void prolong(){
 
+	}
+
+	@Override
+	public String toString() {
+		return "Insurance{" +
+				"InsuranceID=" + insuranceID +
+				", InsuranceFeeAmount='" + insuranceFee.getAmount() + '\'' +
+				", InsuranceFeeDatePayment='" + insuranceFee.getDateOfPayment() + '\'' +
+				", InsurancePayment='" + insurancePayment + '\'' +
+				'}';
 	}
 
 }
