@@ -2,6 +2,7 @@ package src.system;
 
 
 import src.system.user.Customer;
+import src.system.user.CustomerList;
 import src.system.user.CustomerListImpl;
 
 import java.rmi.RemoteException;
@@ -12,13 +13,12 @@ public class ISMain {
     static BufferedReader objReader = new BufferedReader(new InputStreamReader(System.in));
 
     private static CustomerListImpl customerList;
-
-
+    private static InsuranceListImpl insuranceList;
 
     private static void setData() {
         customerList = new CustomerListImpl();
+        insuranceList = new InsuranceListImpl();
     }
-
 
     public static void main(String[] args) {
         setData();
@@ -59,6 +59,7 @@ public class ISMain {
      *
      */
     private static void conpansate() {
+
         customerList.add(new Customer("hello1", "F", "phone number", "abc"));
         customerList.add(new Customer("hello2", "F", "phone number", "abc"));
         customerList.add(new Customer("hello3", "F", "phone number", "abc"));
@@ -69,6 +70,8 @@ public class ISMain {
 
             System.out.println("위 리스트에서 보상을 지급할 고객의 customerId를 입력해주세요");
             String sCustomerChoice = objReader.readLine().trim();
+
+            makeInsurance(sCustomerChoice);
             long customerId = Long.parseLong(sCustomerChoice);
             if (customerList.get(customerId) != null) {
                 Compensation compensation = new Compensation(1, customerId, customerList);
@@ -99,9 +102,15 @@ public class ISMain {
         // 보험료 있는 정보들 가져와서 여기서 출력해줌
         // 보험료 납부할 보험 id 입력
         // customer Class의 pay(productId) 메서드 호출
-        // // 납부완료 메시지 출력
+        // 납부완료 메시지 출력
     }
 
+    private static void makeInsurance(String sCustomerChoice){
+        int customerId = Integer.parseInt(sCustomerChoice);
+        insuranceList.add(new OwnCar(customerId, new InsuranceFee(), 100, new Policy(), 100, 1, 1, 1));
+        insuranceList.add(new Driver(customerId, new InsuranceFee(), 100, new Policy(), 100, 1, new Date()));
+        showList(insuranceList.get());
+    }
 
     private static void showList(ArrayList<?> dataList) {
         String list = "";
