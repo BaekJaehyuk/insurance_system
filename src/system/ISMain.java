@@ -22,7 +22,6 @@ public class ISMain {
 
     public static void main(String[] args) {
         setData();
-        makeInsurance();
         try {
             while (true) {
                 printMenu();
@@ -71,6 +70,8 @@ public class ISMain {
 
             System.out.println("위 리스트에서 보상을 지급할 고객의 customerId를 입력해주세요");
             String sCustomerChoice = objReader.readLine().trim();
+
+            makeInsurance(sCustomerChoice);
             long customerId = Long.parseLong(sCustomerChoice);
             if (customerList.get(customerId) != null) {
                 Compensation compensation = new Compensation(1, customerId, customerList);
@@ -101,13 +102,13 @@ public class ISMain {
         // 보험료 있는 정보들 가져와서 여기서 출력해줌
         // 보험료 납부할 보험 id 입력
         // customer Class의 pay(productId) 메서드 호출
-        // // 납부완료 메시지 출력
+        // 납부완료 메시지 출력
     }
 
-    private static void makeInsurance(){
-        //초기 보험 기본 설정
-        insuranceList.add(new OwnCar(new InsuranceFee(), 100, new Policy(), 100, 1, 1, 1));
-        insuranceList.add(new Driver(new InsuranceFee(), 100, new Policy(), 100, 1, new Date()));
+    private static void makeInsurance(String sCustomerChoice){
+        int customerId = Integer.parseInt(sCustomerChoice);
+        insuranceList.add(new OwnCar(customerId, new InsuranceFee(), 100, new Policy(), 100, 1, 1, 1));
+        insuranceList.add(new Driver(customerId, new InsuranceFee(), 100, new Policy(), 100, 1, new Date()));
         showList(insuranceList.get());
     }
 

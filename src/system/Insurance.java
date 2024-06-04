@@ -9,9 +9,10 @@ public class Insurance {
 	private Policy policy;
 	private int rate;
 
-
-
 	// get
+	public Long getInsuranceID(){
+		return insuranceID;
+	}
 	public InsuranceFee getInsuranceFee(){
 		return this.InsuranceFee;
 	}
