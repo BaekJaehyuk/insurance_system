@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e5e9e990-611c-45f9-804b-8cf8394de8d9" name="Changes" comment="[bug]: gitignore 수정">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/insurance system/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insurance system/.idea/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/insurance system/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insurance system/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="e5e9e990-611c-45f9-804b-8cf8394de8d9" name="Changes" comment="[bug]: compile 오류 해결">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,6 +74,10 @@
   "keyToString": {
     "Application.ISMain.executor": "Run",
     "Application.Main.executor": "Run",
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
@@ -133,7 +135,7 @@
       <workItem from="1716990405702" duration="4326000" />
       <workItem from="1717244826686" duration="15432000" />
       <workItem from="1717495692323" duration="5073000" />
-      <workItem from="1717503872230" duration="1137000" />
+      <workItem from="1717503872230" duration="1683000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -199,7 +201,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717506135012</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="[bug]: compile 오류 해결">
+      <option name="closed" value="true" />
+      <created>1717506956877</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1717506956877</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -224,6 +234,7 @@
     <MESSAGE value="[Feat]: Main 구성" />
     <MESSAGE value="[Feat]: MESSAGE 구성" />
     <MESSAGE value="[bug]: gitignore 수정" />
-    <option name="LAST_COMMIT_MESSAGE" value="[bug]: gitignore 수정" />
+    <MESSAGE value="[bug]: compile 오류 해결" />
+    <option name="LAST_COMMIT_MESSAGE" value="[bug]: compile 오류 해결" />
   </component>
 </project>

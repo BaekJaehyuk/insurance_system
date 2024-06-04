@@ -5,7 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e5e9e990-611c-45f9-804b-8cf8394de8d9" name="Changes" comment="[bug]: compile 오류 해결">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/system/OSMain.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/system/compensation/Compensation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/system/compensation/CompensationList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/system/compensation/CompensationListImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/insurance system/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insurance system/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/insurance system/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insurance system/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/insurance system/src/test/counseling/CounsellingListImplTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insurance system/src/test/counseling/CounsellingListImplTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/system/Compensation.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/system/ISMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/system/ISMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/system/Insurance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/system/Insurance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/system/accident/Accident.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/system/accident/Accident.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/system/accident/AccidentList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/system/accident/AccidentList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/system/accident/AccidentListImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/system/accident/AccidentListImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/system/user/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/system/user/Customer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,8 +29,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -74,16 +89,18 @@
   "keyToString": {
     "Application.ISMain.executor": "Run",
     "Application.Main.executor": "Run",
+    "Application.OSMain.executor": "Run",
     "Downloaded.Files.Path.Enabled": "false",
     "Repository.Attach.Annotations": "false",
     "Repository.Attach.JavaDocs": "false",
     "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/bjh59/Desktop/insurance_system",
+    "last_opened_file_path": "/Users/oseo0202/분산1/insurance",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -116,14 +133,6 @@
       </list>
     </recent_temporary>
   </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.15989.150" />
-        <option value="bundled-js-predefined-1d06a55b98c1-91d5c284f522-JavaScript-IU-241.15989.150" />
-      </set>
-    </attachedChunks>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -136,6 +145,7 @@
       <workItem from="1717244826686" duration="15432000" />
       <workItem from="1717495692323" duration="5073000" />
       <workItem from="1717503872230" duration="1683000" />
+      <workItem from="1717507422127" duration="392000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
