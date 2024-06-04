@@ -1,9 +1,6 @@
 package src.system;
 
 
-import static src.system.ISMain.insuranceList;
-import static src.system.ISMain.makeInsurance;
-import static src.system.Join.customerList;
 import static src.system.utils.MESSAGE.MENU_ACCIDENT;
 import static src.system.utils.MESSAGE.MENU_DESIGN;
 import static src.system.utils.MESSAGE.MENU_EXIT;
