@@ -149,13 +149,33 @@ public class Main {
     return objReader.readLine().trim();
   }
 
+
   private static void registerInsurance() throws IOException {
     Join join = new Join();
     System.out.println("이름, 성별, 전화번호, 생일 입력");
     Customer registerCustomer = join.register(input(), input(), input(), input());
     customerList.add(registerCustomer);
-    System.out.println(registerCustomer.getName() + "님 보험가입이 완료되었습니다. 아이디는 "+registerCustomer.getCustomerID());
+
+    System.out.println("가입할 보험 종류를 선택하세요:");
+    System.out.println("1. 운전자 보험");
+    System.out.println("2. 자차 보험");
+    String insuranceChoice = input();
+
+    switch (insuranceChoice) {
+      case "1":
+        insuranceList.add(new Driver((int) registerCustomer.getCustomerID(), new InsuranceFee(20000), 100, new Policy(), 100, 1, new Date()));
+        System.out.println(registerCustomer.getName() + "님, 운전자 보험 가입이 완료되었습니다.");
+        break;
+      case "2":
+        insuranceList.add(new OwnCar((int) registerCustomer.getCustomerID(), new InsuranceFee(10000), 100, new Policy(), 100, 1, 1, 1));
+        System.out.println(registerCustomer.getName() + "님, 자차 보험 가입이 완료되었습니다.");
+        break;
+      default:
+        System.out.println("유효하지 않은 선택입니다. 보험 가입이 취소되었습니다.");
+    }
+    System.out.println(registerCustomer.getCustomerID());
   }
+
 
   private static void accidentReport() {
     try {
@@ -179,6 +199,19 @@ public class Main {
 
       System.out.println(MSG_ASK_ACCIDENT_TYPE.getMsg());
       String accidentType = input();
+
+      boolean hasDriverInsurance = customer.getInsuranceList().stream().anyMatch(insurance -> insurance instanceof Driver);
+      boolean hasAutoInsurance = customer.getInsuranceList().stream().anyMatch(insurance -> insurance instanceof OwnCar);
+
+      if ("PersonalInjury".equals(accidentType) && !hasDriverInsurance) {
+        System.out.println("운전자 보험에 가입된 고객만 본인 상해 사고를 접수할 수 있습니다.");
+        return;
+      }
+
+      if (("Liability".equals(accidentType) || "PropertyDamage".equals(accidentType)) && !hasAutoInsurance) {
+        System.out.println("자차 보험에 가입된 고객만 대인배상 및 대물배상 사고를 접수할 수 있습니다.");
+        return;
+      }
 
       String[] additionalParams;
       if ("PersonalInjury".equals(accidentType)) {
@@ -213,7 +246,6 @@ public class Main {
       e.printStackTrace();
     }
   }
-
   private static void payInsuranceFee() {
     customerList.add(new Customer("hello1", "M", "phone number", "abc")); // 여기서 사용자 생성
     showList(customerList.get());
