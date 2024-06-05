@@ -6,7 +6,6 @@ import src.system.compensation.Compensation;
 import src.system.counseling.Counseling;
 import java.util.*;
 
-
 public class Customer {
 
 	private static long lastID = 0L;
@@ -39,13 +38,14 @@ public class Customer {
 	}
 
 	public Customer(String name, String sex, String phoneNumber, String birthDay) {
-		this();  // 기본 생성자를 호출하여 리스트 초기화
 		lastID++;
 		this.customerID = lastID;
 		this.name = name;
 		this.sex = sex;
 		this.phoneNumber = phoneNumber;
 		this.birthDay = birthDay;
+		this.productList = new ArrayList<>();
+		this.insuranceList = new ArrayList<>();
 	}
 
 	public String getBirthDay() {

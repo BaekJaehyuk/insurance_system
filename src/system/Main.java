@@ -151,8 +151,10 @@ public class Main {
 
   private static void registerInsurance() throws IOException {
     Join join = new Join();
+    System.out.println("이름, 성별, 전화번호, 생일 입력");
     Customer registerCustomer = join.register(input(), input(), input(), input());
-    System.out.println(registerCustomer.getName() + "님 보험가입이 완료되었습니다.");
+    customerList.add(registerCustomer);
+    System.out.println(registerCustomer.getName() + "님 보험가입이 완료되었습니다. 아이디는 "+registerCustomer.getCustomerID());
   }
 
   private static void accidentReport() {
@@ -178,7 +180,33 @@ public class Main {
       System.out.println(MSG_ASK_ACCIDENT_TYPE.getMsg());
       String accidentType = input();
 
-      Accident accident = AccidentFactory.createAccident(accidentType, accidentList.get().size() + 1, accidentDetails, date, location, customer, new String[]{});
+      String[] additionalParams;
+      if ("PersonalInjury".equals(accidentType)) {
+        System.out.println("부상자의 수를 입력하세요:");
+        String numInjuries = input();
+        System.out.println("부상의 정도를 입력하세요(1~10):");
+        String severity = input();
+        additionalParams = new String[]{numInjuries, severity};
+      } else if ("Liability".equals(accidentType)) {
+        System.out.println("기록을 입력하세요:");
+        String record = input();
+        System.out.println("손해 비용을 입력하세요:");
+        String damageCost = input();
+        System.out.println("제3자 이름을 입력하세요:");
+        String thirdPartyName = input();
+        System.out.println("제3자 연락처를 입력하세요:");
+        String thirdPartyContact = input();
+        additionalParams = new String[]{record, damageCost, thirdPartyName, thirdPartyContact};
+      } else if ("PropertyDamage".equals(accidentType)) {
+        System.out.println("재산 피해를 설명하세요:");
+        String propertyDamage = input();
+        additionalParams = new String[]{propertyDamage};
+      } else {
+        System.out.println("유효하지 않은 사고 유형입니다.");
+        return;
+      }
+
+      Accident accident = AccidentFactory.createAccident(accidentType, accidentList.get().size() + 1, accidentDetails, date, location, customer, additionalParams);
       accidentList.add(accident);
       System.out.println(MSG_ACCIDENT_REPORTED.getMsg());
     } catch (IOException e) {
@@ -200,7 +228,7 @@ public class Main {
 
       Customer customer = customerList.get(customerId);
       Insurance insurance = insuranceList.get(insuranceId);
-      System.out.println(""+customer+insurance);
+      System.out.println("" + customer + insurance);
       if (customer != null && insurance != null) {
         customer.pay(insurance);
         System.out.println(MSG_COMPLETE_INSURANCE_FEE.getMsg() + insurance.getInsuranceFee().getDateOfPayment());

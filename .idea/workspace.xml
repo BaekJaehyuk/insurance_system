@@ -4,33 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7e084647-5a0e-4ed8-b59e-a8146c583d19" name="Changes" comment="[refactor]: 코드 리팩토링">
+    <list default="true" id="7e084647-5a0e-4ed8-b59e-a8146c583d19" name="Changes" comment="feat: main에 사고접수 추가">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/insurance system/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insurance system/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/insurance system/src/system/Employee.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insurance system/src/system/Employee.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/insurance system/src/system/Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insurance system/src/system/Main$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/insurance system/src/system/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insurance system/src/system/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/insurance system/src/system/OSMain$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insurance system/src/system/OSMain$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/insurance system/src/system/accident/Accident.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insurance system/src/system/accident/Accident.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/insurance system/src/system/accident/AccidentFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insurance system/src/system/accident/AccidentFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/insurance system/src/system/accident/LiabilityAccident.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insurance system/src/system/accident/LiabilityAccident.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/insurance system/src/system/accident/PersonalInjuryAccident.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insurance system/src/system/accident/PersonalInjuryAccident.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/insurance system/src/system/accident/PropertyDamageAccident.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insurance system/src/system/accident/PropertyDamageAccident.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/insurance system/src/system/user/Customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insurance system/src/system/user/Customer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/insurance system/src/system/utils/MESSAGE.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insurance system/src/system/utils/MESSAGE.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/insurance system/src/test/accident/AccidentListImplTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/insurance system/src/test/counseling/CounsellingListImplTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/system/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/system/Employee.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/system/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/system/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/system/OSMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/system/OSMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/system/accident/Accident.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/system/accident/Accident.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/system/accident/AccidentFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/system/accident/AccidentFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/system/accident/LiabilityAccident.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/system/accident/LiabilityAccident.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/system/accident/PersonalInjuryAccident.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/system/accident/PersonalInjuryAccident.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/system/accident/PropertyDamageAccident.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/system/accident/PropertyDamageAccident.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/system/user/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/system/user/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/system/utils/MESSAGE.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/system/utils/MESSAGE.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/accident/AccidentListImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/accident/AccidentListImplTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,25 +67,25 @@
     <option name="showLibraryContents" value="true" />
     <option name="showVisibilityIcons" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;JUnit.AccidentFactoryTest.executor&quot;: &quot;Run&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "Downloaded.Files.Path.Enabled": "false",
+    "JUnit.AccidentFactoryTest.executor": "Run",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="src.system.Main" />
@@ -209,7 +190,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717519811649</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="feat: main에 사고접수 추가">
+      <option name="closed" value="true" />
+      <created>1717562101176</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1717562101176</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -232,6 +221,33 @@
     <MESSAGE value="[feat]: Main 구성" />
     <MESSAGE value="[feat]: 보험가입 구현" />
     <MESSAGE value="[Feat]: MESSAGE 구성" />
-    <option name="LAST_COMMIT_MESSAGE" value="[Feat]: MESSAGE 구성" />
+    <MESSAGE value="feat: main에 사고접수 추가" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: main에 사고접수 추가" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/system/user/CustomerListImpl.java</url>
+          <line>41</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/system/user/CustomerListImpl.java</url>
+          <line>40</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/system/user/CustomerListImpl.java</url>
+          <line>24</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="src.system.user.CustomerListImpl" memberName="customerList" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
 </project>
