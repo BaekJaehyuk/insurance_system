@@ -1,11 +1,9 @@
 package src.system;
 
 import static src.system.utils.MESSAGE.*;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -78,7 +76,7 @@ public class Main {
         System.exit(0);
         break;
       default:
-        System.out.println("Invalid Choice !!!");
+        System.out.println(MENU_INVALID_CHOICE.getMsg());
     }
   }
 
@@ -101,7 +99,7 @@ public class Main {
       if (accident != null) {
         handleCompensation(accidentId);
       } else {
-        System.out.println(MSG_VALIDATE_ID.getMsg());
+        System.out.println(MSG_VALIDATE_ACCIDENT_ID.getMsg());
       }
     } catch (IOException e) {
       e.printStackTrace();
@@ -126,7 +124,7 @@ public class Main {
       case "x":
         return;
       default:
-        System.out.println("Invalid Choice !!!");
+        System.out.println(MENU_INVALID_CHOICE.getMsg());
     }
   }
 
@@ -166,12 +164,12 @@ public class Main {
     customerList.add(new Customer("hello1", "M", "phone number", "abc")); // 여기서 사용자 생성
     showList(customerList.get());
     try {
-      System.out.println("********************** MENU ***********************");
-      System.out.println("보험료를 지불할 고객의 customerId를 입력해주세요");
+      System.out.println(MENU_INFO.getMsg());
+      System.out.println(MSG_ASK_CUSTOMER_ID.getMsg());
       long customerId = Long.parseLong(input());
       makeInsurance(customerId);
 
-      System.out.println("지불할 InsuranceId를 입력해주세요");
+      System.out.println(MSG_ASK_INSURANCE_ID.getMsg());
       long insuranceId = Long.parseLong(input());
 
       Customer customer = customerList.get(customerId);
@@ -179,9 +177,9 @@ public class Main {
       System.out.println(""+customer+insurance);
       if (customer != null && insurance != null) {
         customer.pay(insurance);
-        System.out.println("보험료가 납부되었습니다. 납부일자 : " + insurance.getInsuranceFee().getDateOfPayment());
+        System.out.println(MSG_COMPLETE_INSURANCE_FEE.getMsg() + insurance.getInsuranceFee().getDateOfPayment());
       } else {
-        System.out.println("유효한 customerId 또는 insuranceId를 입력해주세요");
+        System.out.println(MSG_VALIDATE_ID);
       }
     } catch (IOException e) {
       e.printStackTrace();
@@ -208,5 +206,6 @@ public class Main {
     System.out.println(MENU_ACCIDENT.getMsg());
     System.out.println(MENU_LOAN.getMsg());
     System.out.println(MENU_EXIT.getMsg());
+    System.out.println(MENU_COUNSELLING.getMsg());
   }
 }

@@ -12,6 +12,7 @@ public enum MESSAGE {
   MENU_LOAN("6. 대출"),
   MENU_COUNSELLING("7. 상담"),
   MENU_EXIT("X. 종류"),
+  MENU_INVALID_CHOICE("Invalid Choice !!!"),
 
   MSG_ASSESS_DAMAGE("위 사고 접수 리스트에서 손해사정을 진행할 사고의 accidentId를 입력해주세요"),
   MSG_COMPENSATION_ASK("해당 고객에게 보상을 진행하겠습니까?"),
@@ -20,7 +21,14 @@ public enum MESSAGE {
   MSG_COUNSELLING_REQUESTED("상담 요청 중입니다."),
   MSG_COUNSELLING_CONFIRMED("상담이 확인되었습니다."),
   MSG_COUNSELLING_SCHEDULED("6월 5일 18시에 상담이 확정되었습니다."),
-  MSG_VALIDATE_ID("유효한 accidentId를 입력해주세요");
+  MSG_ASK_CUSTOMER_ID("보험료를 지불할 고객의 customerId를 입력해주세요"),
+  MSG_ASK_INSURANCE_ID("지불할 InsuranceId를 입력해주세요"),
+  MSG_COMPLETE_INSURANCE_FEE("보험료가 납부되었습니다. 납부일자 : "),
+  MSG_VALIDATE_ID("유효한 customerId 또는 insuranceId를 입력해주세요"),
+  MSG_VALIDATE_ACCIDENT_ID("유효한 accidentId를 입력해주세요");
+
+
+
   public String getMsg() {
     return msg;
   }
