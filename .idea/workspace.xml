@@ -4,10 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7e084647-5a0e-4ed8-b59e-a8146c583d19" name="Changes" comment="[feat]: 보험가입 구현">
+    <list default="true" id="7e084647-5a0e-4ed8-b59e-a8146c583d19" name="Changes" comment="[refactor]: 코드 리팩토링">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/insurance system/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insurance system/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/insurance system/src/system/Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insurance system/src/system/Main$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/insurance system/src/system/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insurance system/src/system/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/insurance system/src/system/utils/MESSAGE.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insurance system/src/system/utils/MESSAGE.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/system/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/system/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/system/utils/MESSAGE.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/system/utils/MESSAGE.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +27,31 @@
     &quot;assignee&quot;: &quot;BaekJaehyuk&quot;
   }
 }</component>
+  <component name="GitToolBoxStore">
+    <option name="recentBranches">
+      <RecentBranches>
+        <option name="branchesForRepo">
+          <list>
+            <RecentBranchesForRepo>
+              <option name="branches">
+                <list>
+                  <RecentBranch>
+                    <option name="branchName" value="main" />
+                    <option name="lastUsedInstant" value="1717558307" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="refactor/1" />
+                    <option name="lastUsedInstant" value="1717558294" />
+                  </RecentBranch>
+                </list>
+              </option>
+              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$" />
+            </RecentBranchesForRepo>
+          </list>
+        </option>
+      </RecentBranches>
+    </option>
+  </component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/BaekJaehyuk/insurance_system.git&quot;,
@@ -96,7 +125,8 @@
       <option name="presentableId" value="Default" />
       <updated>1717510737701</updated>
       <workItem from="1717510743901" duration="2971000" />
-      <workItem from="1717519629622" duration="140000" />
+      <workItem from="1717519629622" duration="193000" />
+      <workItem from="1717552388594" duration="3550000" />
     </task>
     <task id="LOCAL-00002" summary="[feat]: Main 구성">
       <option name="closed" value="true" />
@@ -130,7 +160,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717517406287</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="[refactor]: 코드 리팩토링">
+      <option name="closed" value="true" />
+      <created>1717519811649</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1717519811649</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -152,6 +190,7 @@
     <MESSAGE value="[refactor]: gitignore 설정" />
     <MESSAGE value="[feat]: Main 구성" />
     <MESSAGE value="[feat]: 보험가입 구현" />
-    <option name="LAST_COMMIT_MESSAGE" value="[feat]: 보험가입 구현" />
+    <MESSAGE value="[refactor]: 코드 리팩토링" />
+    <option name="LAST_COMMIT_MESSAGE" value="[refactor]: 코드 리팩토링" />
   </component>
 </project>

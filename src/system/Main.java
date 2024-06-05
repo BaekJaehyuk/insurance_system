@@ -46,10 +46,12 @@ public class Main {
       }
     } catch (IOException e) {
       e.printStackTrace();
+    } catch (InterruptedException e) {
+      throw new RuntimeException(e);
     }
   }
 
-  private static void handleUserChoice(String choice) throws IOException {
+  private static void handleUserChoice(String choice) throws IOException, InterruptedException {
     switch (choice) {
       case "1":
         registerInsurance();
@@ -89,17 +91,17 @@ public class Main {
     }); // test data
 
     try {
-      System.out.println("********************** MENU ***********************");
+      System.out.println(MENU_INFO.getMsg());
       showList(accidentList.get());
 
-      System.out.println("위 사고 접수 리스트에서 손해사정을 진행할 사고의 accidentId를 입력해주세요");
+      System.out.println(MSG_ASSESS_DAMAGE.getMsg());
       long accidentId = Long.parseLong(input());
       Accident accident = accidentList.get(accidentId);
 
       if (accident != null) {
         handleCompensation(accidentId);
       } else {
-        System.out.println("유효한 accidentId를 입력해주세요");
+        System.out.println(MSG_VALIDATE_ID.getMsg());
       }
     } catch (IOException e) {
       e.printStackTrace();
@@ -107,13 +109,13 @@ public class Main {
   }
 
   private static void handleCompensation(long accidentId) throws IOException {
-    System.out.println("해당 고객에게 보상을 진행하겠습니까?");
-    System.out.println("(1) 예    (2) 아니오");
+    System.out.println(MSG_COMPENSATION_ASK.getMsg());
+    System.out.println(MSG_YES_OR_NO.getMsg());
 
     String choice = input();
     switch (choice) {
       case "1":
-        System.out.println("고객에게 지급할 보험금을 산정해주세요.");
+        System.out.println(MSG_CALCULATE_PAYOUT.getMsg());
         long money = Long.parseLong(input());
         Compensation compensation = new Compensation(money, accidentList.get(accidentId).getCustomerId(), customerList);
         compensationList.add(compensation);
@@ -128,16 +130,20 @@ public class Main {
     }
   }
 
-  private static void counselling() {
-    System.out.println("상담 요청 중입니다.");
+  private static void counselling() throws InterruptedException {
+    System.out.println(MSG_COUNSELLING_REQUESTED.getMsg());
     Counseling counseling = new Counseling(1, 101, "Test Counseling", "This is a test counseling.");
     counselingList.add(counseling);
 
-    System.out.println("상담이 확인되었습니다.");
+    Thread.sleep(2000);
+
+    System.out.println(MSG_COUNSELLING_CONFIRMED.getMsg());
     counseling.confirm();
     counselingList.update(counseling);
 
-    System.out.println("6월 5일 18시에 상담이 확정되었습니다.");
+    Thread.sleep(2000);
+
+    System.out.println(MSG_COUNSELLING_SCHEDULED.getMsg());
     counseling.complete();
     counselingList.update(counseling);
   }
