@@ -5,15 +5,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7e084647-5a0e-4ed8-b59e-a8146c583d19" name="Changes" comment="[Feat]: MESSAGE 구성">
-      <change beforePath="$PROJECT_DIR$/.idea/insurance system.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/insurance system.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/insurance system/.idea/insurance system.iml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insurance system/.idea/insurance system.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/insurance system/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insurance system/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/insurance system/src/system/Employee.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insurance system/src/system/Employee.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/insurance system/src/system/Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insurance system/src/system/Main$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/insurance system/src/system/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insurance system/src/system/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/insurance system/src/system/OSMain$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insurance system/src/system/OSMain$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/insurance system/src/system/accident/Accident.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insurance system/src/system/accident/Accident.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/insurance system/src/system/accident/AccidentFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insurance system/src/system/accident/AccidentFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/insurance system/src/system/accident/LiabilityAccident.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insurance system/src/system/accident/LiabilityAccident.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/insurance system/src/system/accident/PersonalInjuryAccident.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insurance system/src/system/accident/PersonalInjuryAccident.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/insurance system/src/system/accident/PropertyDamageAccident.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insurance system/src/system/accident/PropertyDamageAccident.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/insurance system/src/system/user/Customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insurance system/src/system/user/Customer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/insurance system/src/test/accident/AccidentListImplTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/insurance system/src/test/counseling/CounsellingListImplTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/system/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/system/Employee.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/system/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/system/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/counseling/CounsellingListImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/counseling/CounsellingListImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/system/OSMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/system/OSMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/system/accident/Accident.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/system/accident/Accident.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/system/accident/AccidentFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/system/accident/AccidentFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/system/accident/LiabilityAccident.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/system/accident/LiabilityAccident.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/system/accident/PersonalInjuryAccident.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/system/accident/PersonalInjuryAccident.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/system/accident/PropertyDamageAccident.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/system/accident/PropertyDamageAccident.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/system/user/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/system/user/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/accident/AccidentListImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/accident/AccidentListImplTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,6 +63,7 @@
   "keyToString": {
     "Application.Main.executor": "Run",
     "Downloaded.Files.Path.Enabled": "false",
+    "JUnit.AccidentFactoryTest.executor": "Run",
     "Repository.Attach.Annotations": "false",
     "Repository.Attach.JavaDocs": "false",
     "Repository.Attach.Sources": "false",
@@ -62,7 +78,7 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.AccidentFactoryTest">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="src.system.Main" />
       <module name="insurance system" />
@@ -76,8 +92,24 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="AccidentFactoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="insurance system" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="src.test.accident.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="src.test.accident" />
+      <option name="MAIN_CLASS_NAME" value="src.test.accident.AccidentFactoryTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.AccidentFactoryTest" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>

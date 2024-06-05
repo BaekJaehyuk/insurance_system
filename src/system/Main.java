@@ -81,7 +81,7 @@ public class Main {
   }
 
   private static void toAssessDamages() {
-    accidentList.add(new Accident(1, "교통사고", "2024-06-04", "명지대", 1) {
+    accidentList.add(new Accident(1, "교통사고", "2024-06-04", "명지대", 1, "Pending") {
       @Override
       public void receiveAccident() {
         // 사고 접수 로직
