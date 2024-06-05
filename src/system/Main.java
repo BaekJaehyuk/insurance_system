@@ -228,7 +228,7 @@ public class Main {
 
       Customer customer = customerList.get(customerId);
       Insurance insurance = insuranceList.get(insuranceId);
-      System.out.println("" + customer + insurance);
+      System.out.println(insurance);
       if (customer != null && insurance != null) {
         customer.pay(insurance);
         System.out.println(MSG_COMPLETE_INSURANCE_FEE.getMsg() + insurance.getInsuranceFee().getDateOfPayment());
