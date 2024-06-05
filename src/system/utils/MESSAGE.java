@@ -11,10 +11,14 @@ public enum MESSAGE {
   MENU_ACCIDENT("5. 사고 접수"),
   MENU_LOAN("6. 대출"),
   MENU_COUNSELLING("7. 상담"),
+  MENU_CONPENSATE("8. 보험금 지급"),
+
   MENU_EXIT("X. 종료"),
   MENU_INVALID_CHOICE("Invalid Choice !!!"),
 
   MSG_ASSESS_DAMAGE("위 사고 접수 리스트에서 손해사정을 진행할 사고의 accidentId를 입력해주세요"),
+  MSG_ASSESS_COMPENSATE("보상 확정 리스트에서 보상금을 지급할 compensationId를 입력해주세요"),
+
   MSG_COMPENSATION_ASK("해당 고객에게 보상을 진행하겠습니까?"),
   MSG_CALCULATE_PAYOUT("고객에게 지급할 보험금을 산정해주세요."),
   MSG_YES_OR_NO("1. 예    2. 아니오"),
@@ -26,7 +30,7 @@ public enum MESSAGE {
   MSG_COMPLETE_INSURANCE_FEE("보험료가 납부되었습니다. 납부일자 : "),
   MSG_VALIDATE_ID("유효한 customerId 또는 insuranceId를 입력해주세요"),
   MSG_VALIDATE_ACCIDENT_ID("유효한 accidentId를 입력해주세요"),
-
+  MSG_VALIDATE_COMPENSATE_ID("유효한 compensationId를 입력해주세요"),
   MSG_ASK_ACCIDENT_DETAILS("사고 내용을 입력해주세요"),
   MSG_ASK_ACCIDENT_DATE("사고 날짜를 입력해주세요 (예: 2024-05-29)"),
   MSG_ASK_ACCIDENT_LOCATION("사고 장소를 입력해주세요"),
