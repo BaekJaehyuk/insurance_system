@@ -17,21 +17,21 @@ public class Join {
 	/**
 	 * @return
 	 */
-	public boolean join(String name, String sex, String phoneNumber, String birthDay) {
+	public Customer register(String name, String sex, String phoneNumber, String birthDay) {
 		Insurance insurance = new Insurance();
 		long productId = insurance.makeContract();
 
 		if (customerList.isExistedMember(name)) {
 			Customer existingCustomer = customerList.findMemberByName(name);
-			existingCustomer.addProduct(productId);
+			//existingCustomer.addProduct(productId);
 			customerList.update(existingCustomer.getCustomerID(), existingCustomer);
-			return true;
+			return existingCustomer;
 		}
 
 		Customer customer = new Customer(name, sex, phoneNumber, birthDay);
-		customer.addProduct(productId);
+		//customer.addProduct(productId);
 		customerList.add(customer);
-		return true;
+		return customer;
 
 		}
 

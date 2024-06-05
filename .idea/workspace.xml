@@ -4,21 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e5e9e990-611c-45f9-804b-8cf8394de8d9" name="Changes" comment="[bug]: compile 오류 해결">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+    <list default="true" id="7e084647-5a0e-4ed8-b59e-a8146c583d19" name="Changes" comment="[Feat]: MESSAGE 구성">
+      <change beforePath="$PROJECT_DIR$/.idea/insurance system.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/insurance system.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/insurance system/.idea/insurance system.iml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insurance system/.idea/insurance system.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/insurance system/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insurance system/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/insurance system/src/system/Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insurance system/src/system/Main$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/insurance system/src/system/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insurance system/src/system/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/insurance system/src/system/OSMain$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insurance system/src/system/OSMain$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/system/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/system/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/counseling/CounsellingListImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/counseling/CounsellingListImplTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-        <option value="Enum" />
-      </list>
-    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -29,76 +29,42 @@
     &quot;assignee&quot;: &quot;BaekJaehyuk&quot;
   }
 }</component>
-  <component name="GitToolBoxStore">
-    <option name="recentBranches">
-      <RecentBranches>
-        <option name="branchesForRepo">
-          <list>
-            <RecentBranchesForRepo>
-              <option name="branches">
-                <list>
-                  <RecentBranch>
-                    <option name="branchName" value="main" />
-                    <option name="lastUsedInstant" value="1716991122" />
-                  </RecentBranch>
-                  <RecentBranch>
-                    <option name="branchName" value="master" />
-                    <option name="lastUsedInstant" value="1716991121" />
-                  </RecentBranch>
-                </list>
-              </option>
-              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$" />
-            </RecentBranchesForRepo>
-          </list>
-        </option>
-      </RecentBranches>
-    </option>
-  </component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/BaekJaehyuk/insurance_system.git&quot;,
     &quot;accountId&quot;: &quot;5bc4c70f-395b-4da7-9518-acc20aee7c7e&quot;
   }
 }</component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/src/system/user/Customer.java" root0="SKIP_INSPECTION" />
-  </component>
   <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 2
+  &quot;associatedIndex&quot;: 3
 }</component>
-  <component name="ProjectId" id="2h8zGvrfCkQOdNd1YjzjsNFeN5B" />
+  <component name="ProjectId" id="2hPzvx5EYQkeijjVf4v4TNmu7Ru" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
+    <option name="showVisibilityIcons" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Application.ISMain.executor": "Run",
     "Application.Main.executor": "Run",
     "Downloaded.Files.Path.Enabled": "false",
     "Repository.Attach.Annotations": "false",
     "Repository.Attach.JavaDocs": "false",
     "Repository.Attach.Sources": "false",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/bjh59/Desktop/insurance_system",
     "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "reference.settings.ide.settings.web.browsers",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RunManager">
-    <configuration name="ISMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="src.system.ISMain" />
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="src.system.Main" />
       <module name="insurance system" />
       <extension name="coverage">
         <pattern>
@@ -112,7 +78,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ISMain" />
+        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -126,90 +92,56 @@
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
-      <changelist id="e5e9e990-611c-45f9-804b-8cf8394de8d9" name="Changes" comment="" />
-      <created>1716990404182</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1716990404182</updated>
-      <workItem from="1716990405702" duration="4326000" />
-      <workItem from="1717244826686" duration="15432000" />
-      <workItem from="1717495692323" duration="5073000" />
-      <workItem from="1717503872230" duration="1683000" />
-    </task>
-    <task id="LOCAL-00001" summary="init">
+    <task id="LOCAL-00001" summary="[refactor]: gitignore 설정">
       <option name="closed" value="true" />
-      <created>1716991156501</created>
+      <created>1717508874669</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1716991156501</updated>
+      <updated>1717508874669</updated>
     </task>
-    <task id="LOCAL-00002" summary=":recycle: [Refactor]: 클래스 수정">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7e084647-5a0e-4ed8-b59e-a8146c583d19" name="Changes" comment="[refactor]: gitignore 설정" />
+      <created>1717510737701</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1717510737701</updated>
+      <workItem from="1717510743901" duration="2971000" />
+      <workItem from="1717519629622" duration="140000" />
+    </task>
+    <task id="LOCAL-00002" summary="[feat]: Main 구성">
       <option name="closed" value="true" />
-      <created>1716991340828</created>
+      <created>1717512042745</created>
       <option name="number" value="00002" />
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
-      <updated>1716991340828</updated>
+      <updated>1717512042745</updated>
     </task>
-    <task id="LOCAL-00003" summary=":recycle: [Refactor]: 클래스 수정">
+    <task id="LOCAL-00003" summary="[feat]: Main 구성">
       <option name="closed" value="true" />
-      <created>1717253500327</created>
+      <created>1717512691407</created>
       <option name="number" value="00003" />
       <option name="presentableId" value="LOCAL-00003" />
       <option name="project" value="LOCAL" />
-      <updated>1717253500327</updated>
+      <updated>1717512691407</updated>
     </task>
-    <task id="LOCAL-00004" summary=":Feat: [feat]: 보험 가입">
+    <task id="LOCAL-00004" summary="[feat]: Main 구성">
       <option name="closed" value="true" />
-      <created>1717260945086</created>
+      <created>1717516826675</created>
       <option name="number" value="00004" />
       <option name="presentableId" value="LOCAL-00004" />
       <option name="project" value="LOCAL" />
-      <updated>1717260945086</updated>
+      <updated>1717516826675</updated>
     </task>
-    <task id="LOCAL-00005" summary="[refactor]: util 패키지 구성">
+    <task id="LOCAL-00005" summary="[feat]: 보험가입 구현">
       <option name="closed" value="true" />
-      <created>1717496600069</created>
+      <created>1717517406287</created>
       <option name="number" value="00005" />
       <option name="presentableId" value="LOCAL-00005" />
       <option name="project" value="LOCAL" />
-      <updated>1717496600069</updated>
+      <updated>1717517406287</updated>
     </task>
-    <task id="LOCAL-00006" summary="[Feat]: Main 구성">
-      <option name="closed" value="true" />
-      <created>1717499978050</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1717499978050</updated>
-    </task>
-    <task id="LOCAL-00007" summary="[Feat]: MESSAGE 구성">
-      <option name="closed" value="true" />
-      <created>1717499994639</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1717499994639</updated>
-    </task>
-    <task id="LOCAL-00008" summary="[bug]: gitignore 수정">
-      <option name="closed" value="true" />
-      <created>1717506135012</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1717506135012</updated>
-    </task>
-    <task id="LOCAL-00009" summary="[bug]: compile 오류 해결">
-      <option name="closed" value="true" />
-      <created>1717506956877</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1717506956877</updated>
-    </task>
-    <option name="localTasksCounter" value="10" />
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -227,14 +159,11 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="init" />
-    <MESSAGE value=":recycle: [Refactor]: 클래스 수정" />
-    <MESSAGE value=":Feat: [feat]: 보험 가입" />
-    <MESSAGE value="[refactor]: util 패키지 구성" />
-    <MESSAGE value="[Feat]: Main 구성" />
+    <MESSAGE value="[feat]: main 구성 변경" />
+    <MESSAGE value="[refactor]: gitignore 설정" />
+    <MESSAGE value="[feat]: Main 구성" />
+    <MESSAGE value="[feat]: 보험가입 구현" />
     <MESSAGE value="[Feat]: MESSAGE 구성" />
-    <MESSAGE value="[bug]: gitignore 수정" />
-    <MESSAGE value="[bug]: compile 오류 해결" />
-    <option name="LAST_COMMIT_MESSAGE" value="[bug]: compile 오류 해결" />
+    <option name="LAST_COMMIT_MESSAGE" value="[Feat]: MESSAGE 구성" />
   </component>
 </project>
