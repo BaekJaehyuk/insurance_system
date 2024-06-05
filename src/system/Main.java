@@ -7,8 +7,7 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Date;
 
-import src.system.accident.Accident;
-import src.system.accident.AccidentListImpl;
+import src.system.accident.*;
 import src.system.compensation.Compensation;
 import src.system.compensation.CompensationListImpl;
 import src.system.counseling.Counseling;
@@ -157,7 +156,34 @@ public class Main {
   }
 
   private static void accidentReport() {
-    // 사고 접수 로직 추가
+    try {
+      System.out.println(MSG_ASK_CUSTOMER_ID.getMsg());
+      long customerId = Long.parseLong(input());
+
+      Customer customer = customerList.get(customerId);
+      if (customer == null) {
+        System.out.println(MSG_VALIDATE_ID.getMsg());
+        return;
+      }
+
+      System.out.println(MSG_ASK_ACCIDENT_DETAILS.getMsg());
+      String accidentDetails = input();
+
+      System.out.println(MSG_ASK_ACCIDENT_DATE.getMsg());
+      String date = input();
+
+      System.out.println(MSG_ASK_ACCIDENT_LOCATION.getMsg());
+      String location = input();
+
+      System.out.println(MSG_ASK_ACCIDENT_TYPE.getMsg());
+      String accidentType = input();
+
+      Accident accident = AccidentFactory.createAccident(accidentType, accidentList.get().size() + 1, accidentDetails, date, location, customer, new String[]{});
+      accidentList.add(accident);
+      System.out.println(MSG_ACCIDENT_REPORTED.getMsg());
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
   }
 
   private static void payInsuranceFee() {
@@ -179,7 +205,7 @@ public class Main {
         customer.pay(insurance);
         System.out.println(MSG_COMPLETE_INSURANCE_FEE.getMsg() + insurance.getInsuranceFee().getDateOfPayment());
       } else {
-        System.out.println(MSG_VALIDATE_ID);
+        System.out.println(MSG_VALIDATE_ID.getMsg());
       }
     } catch (IOException e) {
       e.printStackTrace();
@@ -188,7 +214,8 @@ public class Main {
 
   private static void makeInsurance(long customerId) {
     insuranceList.add(new OwnCar((int) customerId, new InsuranceFee(10000), 100, new Policy(), 100, 1, 1, 1));
-    insuranceList.add(new Driver((int) customerId, new InsuranceFee(20000), 100, new Policy(), 100, 1, new Date()));showList(insuranceList.get());
+    insuranceList.add(new Driver((int) customerId, new InsuranceFee(20000), 100, new Policy(), 100, 1, new Date()));
+    showList(insuranceList.get());
   }
 
   private static void showList(ArrayList<?> dataList) {
@@ -203,6 +230,7 @@ public class Main {
     System.out.println(MENU_JOIN.getMsg());
     System.out.println(MENU_DESIGN.getMsg());
     System.out.println(MENU_PAY.getMsg());
+    System.out.println(MENU_DAMAGE_ASSESSMENT.getMsg());
     System.out.println(MENU_ACCIDENT.getMsg());
     System.out.println(MENU_LOAN.getMsg());
     System.out.println(MENU_EXIT.getMsg());
