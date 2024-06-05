@@ -11,7 +11,7 @@ public enum MESSAGE {
   MENU_ACCIDENT("5. 사고 접수"),
   MENU_LOAN("6. 대출"),
   MENU_COUNSELLING("7. 상담"),
-  MENU_EXIT("X. 종류"),
+  MENU_EXIT("X. 종료"),
   MENU_INVALID_CHOICE("Invalid Choice !!!"),
 
   MSG_ASSESS_DAMAGE("위 사고 접수 리스트에서 손해사정을 진행할 사고의 accidentId를 입력해주세요"),
@@ -25,17 +25,21 @@ public enum MESSAGE {
   MSG_ASK_INSURANCE_ID("지불할 InsuranceId를 입력해주세요"),
   MSG_COMPLETE_INSURANCE_FEE("보험료가 납부되었습니다. 납부일자 : "),
   MSG_VALIDATE_ID("유효한 customerId 또는 insuranceId를 입력해주세요"),
-  MSG_VALIDATE_ACCIDENT_ID("유효한 accidentId를 입력해주세요");
+  MSG_VALIDATE_ACCIDENT_ID("유효한 accidentId를 입력해주세요"),
 
-
-
-  public String getMsg() {
-    return msg;
-  }
+  MSG_ASK_ACCIDENT_DETAILS("사고 내용을 입력해주세요"),
+  MSG_ASK_ACCIDENT_DATE("사고 날짜를 입력해주세요 (예: 2024-05-29)"),
+  MSG_ASK_ACCIDENT_LOCATION("사고 장소를 입력해주세요"),
+  MSG_ASK_ACCIDENT_TYPE("사고 유형을 입력해주세요 (예: PersonalInjury, Liability, PropertyDamage)"),
+  MSG_ACCIDENT_REPORTED("사고가 접수되었습니다.");
 
   private final String msg;
 
   MESSAGE(String msg) {
     this.msg = msg;
+  }
+
+  public String getMsg() {
+    return msg;
   }
 }
