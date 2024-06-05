@@ -5,11 +5,6 @@ import src.system.counseling.Counseling;
 
 import java.util.ArrayList;
 
-/**
- * @author SW�������������
- * @version 1.0
- * @created 29-5-2024 ���� 10:34:53
- */
 public class Employee {
 
 	private long employeeID;
@@ -28,9 +23,9 @@ public class Employee {
 	public Insurance m_Insurance;
 	public Loan m_Loan;
 	public Employment m_Employment;
-	public Interview  m_Interview ;
+	public Interview m_Interview;
 	public Education m_Education;
-	public Campaign  m_Campaign ;
+	public Campaign m_Campaign;
 
 	public Employee(int employeeID, String id, String password, String name, String sex, String phoneNumber, String department, String enteringDate) {
 		this.employeeID = employeeID;
@@ -107,20 +102,30 @@ public class Employee {
 		this.enteringDate = enteringDate;
 	}
 
-	public Employee(){
-
+	public Employee() {
+		this.m_attendance = new ArrayList<>();
 	}
 
 	public void finalize() throws Throwable {
-
+		super.finalize();
 	}
 
-	public void toAssessDamages(){
-
+	public void toAssessDamages() {
+		// 평가 손해 배상
 	}
 
-	public void toSettleAccounts(){
-
+	public void toSettleAccounts() {
+		// 정산 계좌
 	}
 
+	// 사고를 심사하는 메서드 추가
+	public void assessAccident(Accident accident, String assessmentResult) {
+		if ("Y".equalsIgnoreCase(assessmentResult)) {
+			accident.setAssessmentStatus("Approved");
+		} else if ("N".equalsIgnoreCase(assessmentResult)) {
+			accident.setAssessmentStatus("Rejected");
+		} else {
+			accident.setAssessmentStatus("Pending");
+		}
+	}
 }

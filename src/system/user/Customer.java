@@ -26,7 +26,7 @@ public class Customer {
 	private Account Account;
 	private int joinDate;
 	private ArrayList<String> loanInsuranceDetails;
-	private ArrayList<String> registeredInsuranceDetails;
+	private ArrayList<Insurance> insuranceList;
 
 	public Account m_Account;
 	public Compensation m_Compensation;
@@ -34,10 +34,12 @@ public class Customer {
 	public Loan m_Loan;
 
 	public Customer() {
-
+		this.productList = new ArrayList<>();
+		this.insuranceList = new ArrayList<>();
 	}
 
 	public Customer(String name, String sex, String phoneNumber, String birthDay) {
+		this();  // 기본 생성자를 호출하여 리스트 초기화
 		lastID++;
 		this.customerID = lastID;
 		this.name = name;
@@ -90,6 +92,14 @@ public class Customer {
 		this.productList.add(productId);
 	}
 
+	public ArrayList<Insurance> getInsuranceList() {
+		return insuranceList;
+	}
+
+	public void addInsurance(Insurance insurance) {
+		this.insuranceList.add(insurance);
+	}
+
 	public void pay(Insurance insurance){
 		int amount = insurance.getInsuranceFee().getAmount(); //꺼낸 보험의 insuranceFee를 get해온다.
 
@@ -110,10 +120,7 @@ public class Customer {
 				'}';
 	}
 
-
 	public void finalize() throws Throwable {
 
 	}
-
 }
-

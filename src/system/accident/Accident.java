@@ -6,6 +6,7 @@ public abstract class Accident {
 	protected String date;
 	protected String location;
 	protected long customerId;
+	protected String assessmentStatus;
 
 	public long getAccidentId() {
 		return accidentId;
@@ -47,12 +48,21 @@ public abstract class Accident {
 		this.customerId = customerId;
 	}
 
-	public Accident(long accidentId, String accidentDetails, String date, String location, long customerId) {
+	public String getAssessmentStatus() {
+		return assessmentStatus;
+	}
+
+	public void setAssessmentStatus(String assessmentStatus) {
+		this.assessmentStatus = assessmentStatus;
+	}
+
+	public Accident(long accidentId, String accidentDetails, String date, String location, long customerId, String assessmentStatus) {
 		this.accidentId = accidentId;
 		this.accidentDetails = accidentDetails;
 		this.date = date;
 		this.location = location;
 		this.customerId = customerId;
+		this.assessmentStatus = assessmentStatus;
 	}
 
 	// 공통 메서드
@@ -65,8 +75,8 @@ public abstract class Accident {
 				", accidentDetails='" + accidentDetails + '\'' +
 				", date='" + date + '\'' +
 				", location='" + location + '\'' +
-				", customerId='" + customerId + '\'' +
+				", customerId=" + customerId +
+				", assessmentStatus='" + assessmentStatus + '\'' +
 				'}';
 	}
-
 }
