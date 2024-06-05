@@ -5,8 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7e084647-5a0e-4ed8-b59e-a8146c583d19" name="Changes" comment="[refactor]: 코드 리팩토링">
+    <list default="true" id="7e084647-5a0e-4ed8-b59e-a8146c583d19" name="Changes" comment="[Feat]: MESSAGE 구성">
+      <change beforePath="$PROJECT_DIR$/.idea/insurance system.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/insurance system.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/insurance system/.idea/insurance system.iml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insurance system/.idea/insurance system.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/insurance system/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insurance system/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/insurance system/src/system/Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insurance system/src/system/Main$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/insurance system/src/system/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insurance system/src/system/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/insurance system/src/system/OSMain$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insurance system/src/system/OSMain$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/system/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/system/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/counseling/CounsellingListImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/counseling/CounsellingListImplTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,9 +40,48 @@
   &quot;associatedIndex&quot;: 3
 }</component>
   <component name="ProjectId" id="2hPzvx5EYQkeijjVf4v4TNmu7Ru" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
     <option name="showVisibilityIcons" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="src.system.Main" />
+      <module name="insurance system" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="src.system.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
@@ -121,7 +168,42 @@
       <option name="presentableId" value="LOCAL-00004" />
       <option name="project" value="LOCAL" />
       <updated>1717516826675</updated>
+      <workItem from="1717510743901" duration="2971000" />
+      <workItem from="1717519629622" duration="140000" />
     </task>
+    <task id="LOCAL-00002" summary="[feat]: Main 구성">
+      <option name="closed" value="true" />
+      <created>1717512042745</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1717512042745</updated>
+    </task>
+    <task id="LOCAL-00003" summary="[feat]: Main 구성">
+      <option name="closed" value="true" />
+      <created>1717512691407</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1717512691407</updated>
+    </task>
+    <task id="LOCAL-00004" summary="[feat]: Main 구성">
+      <option name="closed" value="true" />
+      <created>1717516826675</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1717516826675</updated>
+    </task>
+    <task id="LOCAL-00005" summary="[feat]: 보험가입 구현">
+      <option name="closed" value="true" />
+      <created>1717517406287</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1717517406287</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <task id="LOCAL-00005" summary="[feat]: 보험가입 구현">
       <option name="closed" value="true" />
       <created>1717517406287</created>
@@ -158,6 +240,10 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="[feat]: main 구성 변경" />
     <MESSAGE value="[refactor]: gitignore 설정" />
+    <MESSAGE value="[feat]: Main 구성" />
+    <MESSAGE value="[feat]: 보험가입 구현" />
+    <MESSAGE value="[Feat]: MESSAGE 구성" />
+    <option name="LAST_COMMIT_MESSAGE" value="[Feat]: MESSAGE 구성" />
     <MESSAGE value="[feat]: Main 구성" />
     <MESSAGE value="[feat]: 보험가입 구현" />
     <MESSAGE value="[refactor]: 코드 리팩토링" />

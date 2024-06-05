@@ -83,7 +83,7 @@ public class Main {
   }
 
   private static void toAssessDamages() {
-    accidentList.add(new Accident(1, "교통사고", "2024-06-04", "명지대", 1) {
+    accidentList.add(new Accident(1, "교통사고", "2024-06-04", "명지대", 1, "Pending") {
       @Override
       public void receiveAccident() {
         // 사고 접수 로직
@@ -163,6 +163,8 @@ public class Main {
   }
 
   private static void payInsuranceFee() {
+    customerList.add(new Customer("hello1", "M", "phone number", "abc")); // 여기서 사용자 생성
+    showList(customerList.get());
     try {
       System.out.println("********************** MENU ***********************");
       System.out.println("보험료를 지불할 고객의 customerId를 입력해주세요");
@@ -174,7 +176,7 @@ public class Main {
 
       Customer customer = customerList.get(customerId);
       Insurance insurance = insuranceList.get(insuranceId);
-
+      System.out.println(""+customer+insurance);
       if (customer != null && insurance != null) {
         customer.pay(insurance);
         System.out.println("보험료가 납부되었습니다. 납부일자 : " + insurance.getInsuranceFee().getDateOfPayment());
@@ -188,8 +190,7 @@ public class Main {
 
   private static void makeInsurance(long customerId) {
     insuranceList.add(new OwnCar((int) customerId, new InsuranceFee(10000), 100, new Policy(), 100, 1, 1, 1));
-    insuranceList.add(new Driver((int) customerId, new InsuranceFee(20000), 100, new Policy(), 100, 1, new Date()));
-    showList(insuranceList.get());
+    insuranceList.add(new Driver((int) customerId, new InsuranceFee(20000), 100, new Policy(), 100, 1, new Date()));showList(insuranceList.get());
   }
 
   private static void showList(ArrayList<?> dataList) {

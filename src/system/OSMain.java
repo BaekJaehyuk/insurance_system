@@ -73,7 +73,7 @@ public class OSMain {
      * 보험금을 산정하다
      */
     private static void toAssessDamages() {
-        accidentList.add(new Accident(1, "교통사고", "2024-06-04", "명지대", 1) {
+        accidentList.add(new Accident(1, "교통사고", "2024-06-04", "명지대", 1, "Pending") {
             @Override
             public void receiveAccident() {
             }
