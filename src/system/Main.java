@@ -4,6 +4,7 @@ import static src.system.utils.MESSAGE.*;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -21,12 +22,14 @@ public class Main {
 
   private static CounsellingListImpl counselingList;
   private static CustomerListImpl customerList;
+  private static CustomerListImpl c_customerList;
   private static InsuranceListImpl insuranceList;
   private static AccidentListImpl accidentList;
   private static CompensationListImpl compensationList;
 
   private static void setData() {
     customerList = new CustomerListImpl();
+    c_customerList = new CustomerListImpl();
     insuranceList = new InsuranceListImpl();
     accidentList = new AccidentListImpl();
     counselingList = new CounsellingListImpl();
@@ -71,6 +74,9 @@ public class Main {
       case "7":
         counselling();
         break;
+      case "8":
+        compensate();
+        break;
       case "x":
         System.exit(0);
         break;
@@ -114,6 +120,7 @@ public class Main {
       case "1":
         System.out.println(MSG_CALCULATE_PAYOUT.getMsg());
         long money = Long.parseLong(input());
+        c_customerList.add(customerList.get(accidentList.get(accidentId).getCustomerId()));
         Compensation compensation = new Compensation(money, accidentList.get(accidentId).getCustomerId(), customerList);
         compensationList.add(compensation);
         break;
@@ -124,6 +131,34 @@ public class Main {
         return;
       default:
         System.out.println(MENU_INVALID_CHOICE.getMsg());
+    }
+  }
+
+  private static void compensate() {
+    try {
+      System.out.println(MENU_INFO.getMsg());
+      showList(compensationList.get());
+      System.out.println(MSG_ASSESS_COMPENSATE.getMsg());
+
+      String sCompensationChoice = objReader.readLine().trim();
+      long compensationId = Long.parseLong(sCompensationChoice);
+      if (compensationList.get(compensationId) != null) {
+        long customerId = compensationList.get(compensationId).getCustomerId();
+        if (compensationList.get(compensationId).pay()) {
+          System.out.println(c_customerList.get(customerId).getName() + "고객님에게 " + compensationList.get(compensationId).getMoney() + "원이 지급되었습니디.");
+          customerList.delete(customerId);
+        } else {
+          System.out.println(c_customerList.get(customerId).getName() + "고객님의 계좌 정보가 없습니다.");
+        }
+
+      } else {
+        System.out.println(MSG_VALIDATE_COMPENSATE_ID.getMsg());
+      }
+
+    } catch (RemoteException e) {
+      e.printStackTrace();
+    } catch (IOException e) {
+      throw new RuntimeException(e);
     }
   }
 
@@ -293,7 +328,8 @@ public class Main {
     System.out.println(MENU_DAMAGE_ASSESSMENT.getMsg());
     System.out.println(MENU_ACCIDENT.getMsg());
     System.out.println(MENU_LOAN.getMsg());
-    System.out.println(MENU_EXIT.getMsg());
+    System.out.println(MENU_CONPENSATE.getMsg());
     System.out.println(MENU_COUNSELLING.getMsg());
+    System.out.println(MENU_EXIT.getMsg());
   }
 }
