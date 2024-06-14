@@ -193,27 +193,35 @@ public class Main {
         Join join = new Join();
         System.out.println("이름, 성별, 전화번호, 생일 입력");
         Customer registerCustomer = join.register(input(), input(), input(), input());
-        customerList.add(registerCustomer);
+        customerList.add(registerCustomer); // 고객 리스트에 추가
 
-        System.out.println("가입할 보험 종류를 선택하세요:");
-        System.out.println("1. 운전자 보험");
-        System.out.println("2. 자차 보험");
+        System.out.println("가입할 보험 종류를 선택하세요: 1. 운전자 보험 2. 자차 보험");
         String insuranceChoice = input();
+
+        Insurance insurance = null;
 
         switch (insuranceChoice) {
             case "1":
-                insuranceList.add(new Driver((int) registerCustomer.getCustomerID(), new InsuranceFee(20000), 100, new Policy(), 100, 1, new Date()));
+                insurance = new Driver((int) registerCustomer.getCustomerID(), new InsuranceFee(20000), 100, new Policy(), 100, 1, new Date());
                 System.out.println(registerCustomer.getName() + "님, 운전자 보험 가입이 완료되었습니다.");
                 break;
             case "2":
-                insuranceList.add(new OwnCar((int) registerCustomer.getCustomerID(), new InsuranceFee(10000), 100, new Policy(), 100, 1, 1, 1));
+                insurance = new OwnCar((int) registerCustomer.getCustomerID(), new InsuranceFee(10000), 100, new Policy(), 100, 1, 1, 1);
                 System.out.println(registerCustomer.getName() + "님, 자차 보험 가입이 완료되었습니다.");
                 break;
             default:
-                System.out.println("유효하지 않은 선택입니다. 보험 가입이 취소되었습니다.");
+                System.out.println("유효하지 않은 선택입니다.");
+                return;
         }
+
+        if (insurance != null) {
+            registerCustomer.addInsurance(insurance); // 고객의 보험 리스트에 추가
+            insuranceList.add(insurance); // InsuranceListImpl에 추가
+        }
+
         System.out.println(registerCustomer.getCustomerID());
     }
+
 
 
     private static void accidentReport() {
@@ -241,7 +249,6 @@ public class Main {
 
             boolean hasDriverInsurance = customer.getInsuranceList().stream().anyMatch(insurance -> insurance instanceof Driver);
             boolean hasAutoInsurance = customer.getInsuranceList().stream().anyMatch(insurance -> insurance instanceof OwnCar);
-
             if ("PersonalInjury".equals(accidentType) && !hasDriverInsurance) {
                 System.out.println("운전자 보험에 가입된 고객만 본인 상해 사고를 접수할 수 있습니다.");
                 return;
@@ -353,7 +360,7 @@ public class Main {
                     // 입출금 내역 확인
                     break;
                 case "4":
-                   showList(customerList.get());
+                    showList(customerList.get());
                     break;
                 case "x":
                     System.exit(0);

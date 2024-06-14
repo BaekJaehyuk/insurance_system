@@ -18,8 +18,8 @@ public class Join {
 	 * @return
 	 */
 	public Customer register(String name, String sex, String phoneNumber, String birthDay) {
-		Insurance insurance = new Insurance();
-		long productId = insurance.makeContract();
+//		Insurance insurance = new Insurance();
+//		long productId = insurance.makeContract();
 
 		if (customerList.isExistedMember(name)) {
 			Customer existingCustomer = customerList.findMemberByName(name);

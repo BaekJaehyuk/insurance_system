@@ -6,43 +6,59 @@ public class Insurance {
 
 	private static Long LastId = 0L;
 	private Long insuranceID;
+	private Long customerID; // Add this line
 	private InsuranceFee insuranceFee;
 	private int insurancePayment;
 	private Policy policy;
 	private int rate;
 
-	// get
-	public Long getInsuranceID(){
+	// Getters
+	public Long getInsuranceID() {
 		return insuranceID;
 	}
-	public InsuranceFee getInsuranceFee(){
+
+	public Long getCustomerID() { // Add this getter
+		return customerID;
+	}
+
+	public InsuranceFee getInsuranceFee() {
 		return this.insuranceFee;
 	}
-	public int getInsurancePayment(){
+
+	public int getInsurancePayment() {
 		return this.insurancePayment;
 	}
-	public Policy getPolicy(){
+
+	public Policy getPolicy() {
 		return this.policy;
 	}
-	public int getRate(){
+
+	public int getRate() {
 		return this.rate;
 	}
 
-	//set
-
+	// Setters
 	public void setId() {
-		this.insuranceID = LastId++;
+		this.insuranceID = ++LastId;
 	}
-	public void setInsuranceFee(InsuranceFee insuranceFee){
+
+	public void setCustomerID(Long customerID) { // Add this setter
+		this.customerID = customerID;
+	}
+
+	public void setInsuranceFee(InsuranceFee insuranceFee) {
 		this.insuranceFee = insuranceFee;
 	}
-	public void setInsurancePayment(int insurancePayment){
+
+	public void setInsurancePayment(int insurancePayment) {
 		this.insurancePayment = insurancePayment;
 	}
-	public void setPolicy(Policy policy){
+
+	public void setPolicy(Policy policy) {
 		this.policy = policy;
 	}
-	public void setRate(int rate){
+
+	public void setRate(int rate) {
 		this.rate = rate;
 	}
 
@@ -65,11 +81,11 @@ public class Insurance {
 	 * 상품을 설계한 뒤, 해당 설계한 상품의 ID 값 반환
 	 * @return Product Id
 	 */
-	public Long makeContract(){
-	 	return 0L;
+	public Long makeContract() {
+		return 0L;
 	}
 
-	public void prolong(){
+	public void prolong() {
 
 	}
 
