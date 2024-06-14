@@ -13,6 +13,8 @@ public enum MESSAGE {
   MENU_COUNSELLING("7. 상담"),
   MENU_CONPENSATE("8. 보험금 지급"),
 
+  MENU_ACCOUNT("9. 입출금 계좌 관리"),
+
   MENU_EXIT("X. 종료"),
   MENU_INVALID_CHOICE("Invalid Choice !!!"),
 
