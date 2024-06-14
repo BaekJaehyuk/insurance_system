@@ -22,12 +22,11 @@ public class Customer {
 	public Counseling m_Counseling;
 
 	private int accidentHistory;
-	private Account Account;
+	private Account account;
 	private int joinDate;
 	private ArrayList<String> loanInsuranceDetails;
 	private ArrayList<Insurance> insuranceList;
 
-	public Account m_Account;
 	public Compensation m_Compensation;
 	public Accident m_Accident;
 	public Loan m_Loan;
@@ -46,6 +45,13 @@ public class Customer {
 		this.birthDay = birthDay;
 		this.productList = new ArrayList<>();
 		this.insuranceList = new ArrayList<>();
+	}
+
+	public Account getAccount(){
+		return account;
+	}
+	public void setAccount(Account account) {
+		this.account = account;
 	}
 
 	public String getBirthDay() {
@@ -117,6 +123,7 @@ public class Customer {
 				", sex='" + sex + '\'' +
 				", phoneNumber='" + phoneNumber + '\'' +
 				", birthDay='" + birthDay + '\'' +
+				", Account='" + account + '\'' +
 				'}';
 	}
 
