@@ -206,6 +206,7 @@ public class Main {
                 // 운전자 보험 심사
                 if (underwritingDriver(registerCustomer)) {
                     insurance = new Driver((int) registerCustomer.getCustomerID(), new InsuranceFee(20000), 100, new Policy(), 100, 1, new Date());
+                    registerCustomer.addInsurance(insurance); // 고객의 보험 리스트에 추가
                     insuranceList.add(insurance);
                     System.out.println(registerCustomer.getName() + "님, 운전자 보험 가입이 완료되었습니다.");
                 } else {
@@ -216,6 +217,7 @@ public class Main {
                 // 자차 보험 심사
                 if (underwritingOwnCar(registerCustomer)) {
                     insurance = new OwnCar((int) registerCustomer.getCustomerID(), new InsuranceFee(10000), 100, new Policy(), 100, 1, 1, 1);
+                    registerCustomer.addInsurance(insurance); // 고객의 보험 리스트에 추가
                     insuranceList.add(insurance);
                     System.out.println(registerCustomer.getName() + "님, 자차 보험 가입이 완료되었습니다.");
                 } else {
@@ -226,6 +228,9 @@ public class Main {
                 System.out.println("유효하지 않은 선택입니다.");
                 return;
         }
+
+        registerCustomer.addInsurance(insurance); // 고객의 보험 리스트에 추가
+        insuranceList.add(insurance); // InsuranceListImpl에 추가
     }
 
     // 운전자 보험 심사 로직

@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7e084647-5a0e-4ed8-b59e-a8146c583d19" name="Changes" comment="feat: class 파일 수정">
+    <list default="true" id="7e084647-5a0e-4ed8-b59e-a8146c583d19" name="Changes" comment="feat: 가입 보험 추가">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/insurance system/src/system/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insurance system/src/system/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/system/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/system/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -212,7 +213,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718425626474</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="feat: 가입 보험 추가">
+      <option name="closed" value="true" />
+      <created>1718429481887</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1718429481888</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -239,7 +248,8 @@
     <MESSAGE value="fix: 특정 유형의 보험에 가입한 경우에만 사고를 접수할 수 있도록 하는 조건 수정" />
     <MESSAGE value="feat: 고객 심사 로직 추가" />
     <MESSAGE value="feat: class 파일 수정" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: class 파일 수정" />
+    <MESSAGE value="feat: 가입 보험 추가" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: 가입 보험 추가" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
