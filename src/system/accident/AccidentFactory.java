@@ -18,7 +18,7 @@ public class AccidentFactory {
             }
         }
 
-        if ("PersonalInjury".equals(type)) {
+        if ("본인상해".equals(type)) {
             if (additionalParams.length < 2) {
                 throw new IllegalArgumentException("Invalid parameters for Personal Injury Accident");
             }
@@ -26,7 +26,7 @@ public class AccidentFactory {
                 return new PersonalInjuryAccident(accidentId, accidentDetails, date, location, customer.getCustomerID(), Integer.parseInt(additionalParams[0]), Integer.parseInt(additionalParams[1]), "Rejected");
             }
             return new PersonalInjuryAccident(accidentId, accidentDetails, date, location, customer.getCustomerID(), Integer.parseInt(additionalParams[0]), Integer.parseInt(additionalParams[1]), "Pending");
-        } else if ("Liability".equals(type)) {
+        } else if ("대인배상".equals(type)) {
             if (additionalParams.length < 4) {
                 throw new IllegalArgumentException("Invalid parameters for Liability Accident");
             }
@@ -34,7 +34,7 @@ public class AccidentFactory {
                 return new LiabilityAccident(accidentId, accidentDetails, date, location, customer.getCustomerID(), additionalParams[0], Integer.parseInt(additionalParams[1]), additionalParams[2], additionalParams[3], "Rejected");
             }
             return new LiabilityAccident(accidentId, accidentDetails, date, location, customer.getCustomerID(), additionalParams[0], Integer.parseInt(additionalParams[1]), additionalParams[2], additionalParams[3], "Pending");
-        } else if ("PropertyDamage".equals(type)) {
+        } else if ("대물배상".equals(type)) {
             if (additionalParams.length < 1) {
                 throw new IllegalArgumentException("Invalid parameters for Property Damage Accident");
             }

@@ -4,14 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7e084647-5a0e-4ed8-b59e-a8146c583d19" name="Changes" comment="feat: main에 사고접수 추가">
+    <list default="true" id="7e084647-5a0e-4ed8-b59e-a8146c583d19" name="Changes" comment="fix: 특정 유형의 보험에 가입한 경우에만 사고를 접수할 수 있도록 하는 조건 수정">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/insurance system/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insurance system/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/insurance system/src/system/Insurance.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insurance system/src/system/Insurance.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/insurance system/src/system/InsuranceListImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insurance system/src/system/InsuranceListImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/insurance system/src/system/Join.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insurance system/src/system/Join.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/insurance system/src/system/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insurance system/src/system/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/system/Insurance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/system/Insurance.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/system/InsuranceListImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/system/InsuranceListImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/system/Join.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/system/Join.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/insurance system/src/system/OwnCar.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insurance system/src/system/OwnCar.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/insurance system/src/system/utils/MESSAGE.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insurance system/src/system/utils/MESSAGE.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/system/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/system/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/system/OwnCar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/system/OwnCar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/system/accident/AccidentFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/system/accident/AccidentFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/system/utils/MESSAGE.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/system/utils/MESSAGE.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -193,7 +197,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717562101176</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="fix: 특정 유형의 보험에 가입한 경우에만 사고를 접수할 수 있도록 하는 조건 수정">
+      <option name="closed" value="true" />
+      <created>1718366435628</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1718366435628</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -217,7 +229,8 @@
     <MESSAGE value="[feat]: 보험가입 구현" />
     <MESSAGE value="[Feat]: MESSAGE 구성" />
     <MESSAGE value="feat: main에 사고접수 추가" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: main에 사고접수 추가" />
+    <MESSAGE value="fix: 특정 유형의 보험에 가입한 경우에만 사고를 접수할 수 있도록 하는 조건 수정" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: 특정 유형의 보험에 가입한 경우에만 사고를 접수할 수 있도록 하는 조건 수정" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

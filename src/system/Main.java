@@ -249,24 +249,24 @@ public class Main {
 
             boolean hasDriverInsurance = customer.getInsuranceList().stream().anyMatch(insurance -> insurance instanceof Driver);
             boolean hasAutoInsurance = customer.getInsuranceList().stream().anyMatch(insurance -> insurance instanceof OwnCar);
-            if ("PersonalInjury".equals(accidentType) && !hasDriverInsurance) {
+            if ("본인상해".equals(accidentType) && !hasDriverInsurance) {
                 System.out.println("운전자 보험에 가입된 고객만 본인 상해 사고를 접수할 수 있습니다.");
                 return;
             }
 
-            if (("Liability".equals(accidentType) || "PropertyDamage".equals(accidentType)) && !hasAutoInsurance) {
+            if (("대인배상".equals(accidentType) || "대물배상".equals(accidentType)) && !hasAutoInsurance) {
                 System.out.println("자차 보험에 가입된 고객만 대인배상 및 대물배상 사고를 접수할 수 있습니다.");
                 return;
             }
 
             String[] additionalParams;
-            if ("PersonalInjury".equals(accidentType)) {
+            if ("본인상해".equals(accidentType)) {
                 System.out.println("부상자의 수를 입력하세요:");
                 String numInjuries = input();
                 System.out.println("부상의 정도를 입력하세요(1~10):");
                 String severity = input();
                 additionalParams = new String[]{numInjuries, severity};
-            } else if ("Liability".equals(accidentType)) {
+            } else if ("대인배상".equals(accidentType)) {
                 System.out.println("기록을 입력하세요:");
                 String record = input();
                 System.out.println("손해 비용을 입력하세요:");
@@ -276,7 +276,7 @@ public class Main {
                 System.out.println("제3자 연락처를 입력하세요:");
                 String thirdPartyContact = input();
                 additionalParams = new String[]{record, damageCost, thirdPartyName, thirdPartyContact};
-            } else if ("PropertyDamage".equals(accidentType)) {
+            } else if ("대물배상".equals(accidentType)) {
                 System.out.println("재산 피해를 설명하세요:");
                 String propertyDamage = input();
                 additionalParams = new String[]{propertyDamage};
