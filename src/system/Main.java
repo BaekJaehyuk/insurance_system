@@ -211,9 +211,9 @@ public class Main {
         switch (insuranceChoice) {
             case "1":
                 if (underwritingDriver(registerCustomer)) {
-                    System.out.println("고객님께서 이용 중이신 자동차의 주행 거리를 입력해 주세요.");
+                    System.out.println("고객님께서 이용 중이신 자동차의 주행 거리, 차량 번호를 입력해 주세요.");
                     insurance = new Driver((int) registerCustomer.getCustomerID(), new InsuranceFee(20000), "X", new Policy(),
-                            100, Integer.parseInt(input()), new Date());
+                            100, Integer.parseInt(input()), new Date(), Integer.parseInt(input()));
                     registerCustomer.addInsurance(insurance); // 고객의 보험 리스트에 추가
                     System.out.println(registerCustomer.getName() + "님, 운전자 보험 가입이 완료되었습니다.");
                 } else {
@@ -244,8 +244,8 @@ public class Main {
 
     // 운전자 보험 심사 로직
     public static boolean underwritingDriver(Customer customer) {
-        if (customer.getDrivingExperience() < 3) {
-            System.out.println("운전 경력이 3년 미만인 경우 운전자 보험에 가입할 수 없습니다.");
+        if (customer.getDrivingExperience() < 24) {
+            System.out.println("운전 경력이 24개월 미만인 경우 운전자 보험에 가입할 수 없습니다.");
             return false;
         }
         // 추가적인 심사 조건들을 여기에 추가할 수 있습니다.
@@ -254,8 +254,8 @@ public class Main {
 
     // 자차 보험 심사 로직
     public static boolean underwritingOwnCar(Customer customer) {
-        if (customer.getDrivingExperience() < 3) {
-            System.out.println("운전 경력이 3년 미만인 경우 운전자 보험에 가입할 수 없습니다.");
+        if (customer.getDrivingExperience() < 24) {
+            System.out.println("운전 경력이 24개월 미만인 경우 운전자 보험에 가입할 수 없습니다.");
             return false;
         }
 
@@ -442,10 +442,10 @@ public class Main {
                     if (false) { // test
                         System.out.println("대출 실행 대상은 보험사 고객만 해당됩니다.");
                     } else {
-                        System.out.print("\n신분증 사본: ");
+                        System.out.print("\n 신분증 사본: ");
                         String copyOfIdenrificationCard = input();
 
-                        System.out.print("\n소득증빙 서류: ");
+                        System.out.print("\n 소득증빙 서류: ");
                         String incomeProofDocument = input();
 
                         Loan loan = new Loan(copyOfIdenrificationCard, incomeProofDocument, customer);

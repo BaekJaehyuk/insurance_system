@@ -5,8 +5,8 @@ import java.util.Date;
 public class Driver extends Car {
 
 	private Date drivingExperience;
-
-	public Driver(int customerId, InsuranceFee insuranceFee, String paymentStatus, Policy policy, int rate, int mileage, Date date) {
+ 	private int vehicleNumber;
+	public Driver(int customerId, InsuranceFee insuranceFee, String paymentStatus, Policy policy, int rate, int mileage, Date date, int vehicleNumber) {
 		this.setId();
 		this.setInsuranceFee(insuranceFee);
 		this.setPaymentStatus(paymentStatus);
@@ -16,5 +16,6 @@ public class Driver extends Car {
 		this.setRate(rate);
 		this.setMileage(mileage);
 		this.drivingExperience = date;
+		this.vehicleNumber = vehicleNumber;
 	}
 }
