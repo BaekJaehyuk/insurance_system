@@ -36,7 +36,7 @@ public enum MESSAGE {
   MSG_ASK_ACCIDENT_DETAILS("사고 내용을 입력해주세요"),
   MSG_ASK_ACCIDENT_DATE("사고 날짜를 입력해주세요 (예: 2024-05-29)"),
   MSG_ASK_ACCIDENT_LOCATION("사고 장소를 입력해주세요"),
-  MSG_ASK_ACCIDENT_TYPE("사고 유형을 입력해주세요 (예: PersonalInjury, Liability, PropertyDamage)"),
+  MSG_ASK_ACCIDENT_TYPE("사고 유형을 입력해주세요 (예: 대인배상, 대물배상, 본인상해)"),
   MSG_ACCIDENT_REPORTED("사고가 접수되었습니다.");
 
   private final String msg;
