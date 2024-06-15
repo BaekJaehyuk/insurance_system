@@ -28,9 +28,9 @@ public class InsuranceListImpl implements InsuranceList {
     }
 
     @Override
-    public Insurance get(long customerID) {
+    public Insurance get(long insuranceID) {
         for (Insurance insurance : this.insuranceList) {
-            if (insurance.getCustomerID() == customerID) // customerID로 검색
+            if (insurance.getInsuranceID() == insuranceID) // customerID로 검색
                 return insurance;
         }
         return null;

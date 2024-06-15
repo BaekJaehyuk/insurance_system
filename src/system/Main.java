@@ -212,7 +212,7 @@ public class Main {
             case "1":
                 // 운전자 보험 심사
                 if (underwritingDriver(registerCustomer)) {
-                    insurance = new Driver((int) registerCustomer.getCustomerID(), new InsuranceFee(20000), 100, new Policy(), 100, 1, new Date());
+                    insurance = new Driver((int) registerCustomer.getCustomerID(), new InsuranceFee(20000), "X", new Policy(), 100, 1, new Date());
                     registerCustomer.addInsurance(insurance); // 고객의 보험 리스트에 추가
                     System.out.println(registerCustomer.getName() + "님, 운전자 보험 가입이 완료되었습니다.");
                 } else {
@@ -222,7 +222,7 @@ public class Main {
             case "2":
                 // 자차 보험 심사
                 if (underwritingOwnCar(registerCustomer)) {
-                    insurance = new OwnCar((int) registerCustomer.getCustomerID(), new InsuranceFee(10000), 100, new Policy(), 100, 1, 1, 1);
+                    insurance = new OwnCar((int) registerCustomer.getCustomerID(), new InsuranceFee(10000), "X", new Policy(), 100, 1, 1, 1);
                     registerCustomer.addInsurance(insurance); // 고객의 보험 리스트에 추가
                     insuranceList.add(insurance);
                     System.out.println(registerCustomer.getName() + "님, 자차 보험 가입이 완료되었습니다.");
@@ -328,32 +328,42 @@ public class Main {
             e.printStackTrace();
         }
     }
-
     private static void payInsuranceFee() {
         showList(customerList.get());
+
         try {
-            System.out.println(gitMENU_INFO.getMsg());
             System.out.println(MSG_ASK_CUSTOMER_ID.getMsg());
             long customerId = Long.parseLong(input());
-
             showList(insuranceList.get());
             System.out.println(MSG_ASK_INSURANCE_ID.getMsg());
             long insuranceId = Long.parseLong(input());
-
             Customer customer = customerList.get(customerId);
             Insurance insurance = insuranceList.get(insuranceId);
-            System.out.println(insurance);
             if (customer != null && insurance != null) {
-                customer.pay(insurance);
-                System.out.println(MSG_COMPLETE_INSURANCE_FEE.getMsg() + insurance.getInsuranceFee().getDateOfPayment());
+                if (insurance.getPaymentStatus().equals(MSG_FALSE.getMsg())) {
+                    System.out.println(MSG_CHECK_PAY.getMsg());
+                    String checkPay = input();
+                    if (checkPay.equals(MSG_TRUE.getMsg())) {
+                        System.out.println(MSG_PAY_INFO.getMsg());
+                        customer.pay(insurance);
+                        System.out.println(MSG_COMPLETE_INSURANCE_FEE.getMsg());
+                        System.out.println(MSG_PAYMENT_FEE.getMsg() + insurance.getInsuranceFee().getAmount() + MSG_PAYMENT_DATE.getMsg() + insurance.getInsuranceFee().getDateOfPayment());
+                        System.out.println();
+                    } else {
+                        System.out.println(MSG_CANCEL_PAY.getMsg());
+                    }
+                } else {
+                    System.out.println(MSG_ALREADY_PAY.getMsg());
+                    System.out.println();
+                }
             } else {
                 System.out.println(MSG_VALIDATE_ID.getMsg());
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
 
+    }
 
     private static void makeAccount() { // 예외처리 안함
         try {

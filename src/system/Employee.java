@@ -2,6 +2,7 @@ package src.system;
 
 import src.system.accident.Accident;
 import src.system.counseling.Counseling;
+import src.system.loan.Loan;
 
 import java.util.ArrayList;
 

@@ -5,11 +5,11 @@ public class OwnCar extends Car {
 	private int model;
 	private int vehicleNumber;
 
-	public OwnCar(int customerId, InsuranceFee insuranceFee, int insurancePayment, Policy policy, int rate, int mileage, int model, int vehicleNumber) {
+	public OwnCar(int customerId, InsuranceFee insuranceFee, String paymentStatus, Policy policy, int rate, int mileage, int model, int vehicleNumber) {
 		this.setId();
 		this.setCustomerID((long) customerId); // Set customer ID
 		this.setInsuranceFee(insuranceFee);
-		this.setInsurancePayment(insurancePayment);
+		this.setPaymentStatus(paymentStatus);
 		policy.setInsuranceId(getInsuranceID());
 		policy.setMemberId(customerId);
 		this.setPolicy(policy);
@@ -43,7 +43,7 @@ public class OwnCar extends Car {
 				", vehicleNumber=" + vehicleNumber +
 				", insuranceID=" + getInsuranceID() +
 				", insuranceFee=" + getInsuranceFee().getAmount() +
-				", insurancePayment=" + getInsurancePayment() +
+				", insurancePayment=" + getPaymentStatus() +
 				", policy=" + getPolicy() +
 				", rate=" + getRate() +
 				", mileage=" + getMileage() +

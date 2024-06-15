@@ -126,12 +126,8 @@ public class Customer {
 	}
 
 	public void pay(Insurance insurance){
-		int amount = insurance.getInsuranceFee().getAmount(); //꺼낸 보험의 insuranceFee를 get해온다.
-
-		//보험료를 지불한다.
-		insurance.getInsuranceFee().setAmount(0);
-		insurance.getInsuranceFee().setDateOfPayment(new Date());		//납부일을 기록한다.
-
+		insurance.setPaymentStatus("O");
+		insurance.getInsuranceFee().setDateOfPayment(new Date());
 	}
 
 	@Override
