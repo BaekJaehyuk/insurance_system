@@ -46,7 +46,8 @@ public enum MESSAGE {
   MSG_ASK_ACCIDENT_TYPE("사고 유형을 입력해주세요 (예: 대인배상, 대물배상, 본인상해)"),
   MSG_ACCIDENT_REPORTED("사고가 접수되었습니다."),
   MSG_TRUE("O"),
-  MSG_FALSE("X");
+  MSG_FALSE("X"),
+  MSG_ASK_CAR_NUMBER("차량 번호를 입력해주세요");
 
   private final String msg;
 

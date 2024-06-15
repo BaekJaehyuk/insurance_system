@@ -4,8 +4,8 @@ public class PersonalInjuryAccident extends Accident {
     private int injuryDegree;
     private int vehicleDamageDegree;
 
-    public PersonalInjuryAccident(long accidentId, String accidentDetails, String date, String location, long customerId, int injuryDegree, int vehicleDamageDegree, String assessmentStatus) {
-        super(accidentId, accidentDetails, date, location, customerId, assessmentStatus);
+    public PersonalInjuryAccident(long accidentId, String accidentDetails, String date, String location, long customerId, String carNumber, int injuryDegree, int vehicleDamageDegree, String assessmentStatus) {
+        super(accidentId, accidentDetails, date, location, customerId, carNumber, assessmentStatus); // Pass carNumber to the superclass constructor
         this.injuryDegree = injuryDegree;
         this.vehicleDamageDegree = vehicleDamageDegree;
     }
@@ -28,6 +28,6 @@ public class PersonalInjuryAccident extends Accident {
 
     @Override
     public void receiveAccident() {
-        System.out.println("Processing personal injury accident: " + accidentDetails);
+        //System.out.println("Processing personal injury accident: " + getAccidentDetails());
     }
 }

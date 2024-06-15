@@ -97,12 +97,12 @@ public class Main {
     }
 
     private static void toAssessDamages() {
-        accidentList.add(new Accident(1, "교통사고", "2024-06-04", "명지대", 1, "Pending") {
-            @Override
-            public void receiveAccident() {
-                // 사고 접수 로직
-            }
-        }); // test data
+       // accidentList.add(new Accident(1, "교통사고", "2024-06-04", "명지대", 1, "Pending", assessmentStatus) {
+//            @Override
+//            public void receiveAccident() {
+//                // 사고 접수 로직
+//            }
+//        }); // test data
 
         try {
             System.out.println(gitMENU_INFO.getMsg());
@@ -210,9 +210,10 @@ public class Main {
 
         switch (insuranceChoice) {
             case "1":
-                // 운전자 보험 심사
                 if (underwritingDriver(registerCustomer)) {
-                    insurance = new Driver((int) registerCustomer.getCustomerID(), new InsuranceFee(20000), "X", new Policy(), 100, 1, new Date());
+                    System.out.println("고객님께서 이용 중이신 자동차의 주행 거리를 입력해 주세요.");
+                    insurance = new Driver((int) registerCustomer.getCustomerID(), new InsuranceFee(20000), "X", new Policy(),
+                            100, Integer.parseInt(input()), new Date());
                     registerCustomer.addInsurance(insurance); // 고객의 보험 리스트에 추가
                     System.out.println(registerCustomer.getName() + "님, 운전자 보험 가입이 완료되었습니다.");
                 } else {
@@ -220,9 +221,10 @@ public class Main {
                 }
                 break;
             case "2":
-                // 자차 보험 심사
                 if (underwritingOwnCar(registerCustomer)) {
-                    insurance = new OwnCar((int) registerCustomer.getCustomerID(), new InsuranceFee(10000), "X", new Policy(), 100, 1, 1, 1);
+                    System.out.println("고객님께서 이용 중인 자동차의 주행거리, 차량 모델, 차량 번호를 입력해 주세요");
+                    insurance = new OwnCar((int) registerCustomer.getCustomerID(), new InsuranceFee(10000), "X", new Policy(), 100,
+                            Integer.parseInt(input()), Integer.parseInt(input()), Integer.parseInt(input()));
                     registerCustomer.addInsurance(insurance); // 고객의 보험 리스트에 추가
                     insuranceList.add(insurance);
                     System.out.println(registerCustomer.getName() + "님, 자차 보험 가입이 완료되었습니다.");
@@ -238,6 +240,7 @@ public class Main {
         registerCustomer.addInsurance(insurance); // 고객의 보험 리스트에 추가
         insuranceList.add(insurance); // InsuranceListImpl에 추가
     }
+
 
     // 운전자 보험 심사 로직
     public static boolean underwritingDriver(Customer customer) {
@@ -280,6 +283,9 @@ public class Main {
             System.out.println(MSG_ASK_ACCIDENT_LOCATION.getMsg());
             String location = input();
 
+            System.out.println(MSG_ASK_CAR_NUMBER.getMsg());
+            String carNumber = input();
+
             System.out.println(MSG_ASK_ACCIDENT_TYPE.getMsg());
             String accidentType = input();
 
@@ -321,7 +327,7 @@ public class Main {
                 return;
             }
 
-            Accident accident = AccidentFactory.createAccident(accidentType, accidentList.get().size() + 1, accidentDetails, date, location, customer, additionalParams);
+            Accident accident = AccidentFactory.createAccident(accidentType, accidentList.get().size() + 1, accidentDetails, date, location, customer,carNumber, additionalParams);
             accidentList.add(accident);
             System.out.println(MSG_ACCIDENT_REPORTED.getMsg());
         } catch (IOException e) {
