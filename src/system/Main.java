@@ -206,6 +206,7 @@ public class Main {
                 // 운전자 보험 심사
                 if (underwritingDriver(registerCustomer)) {
                     insurance = new Driver((int) registerCustomer.getCustomerID(), new InsuranceFee(20000), 100, new Policy(), 100, 1, new Date());
+                    insuranceList.add(insurance);
                     System.out.println(registerCustomer.getName() + "님, 운전자 보험 가입이 완료되었습니다.");
                 } else {
                     System.out.println(registerCustomer.getName() + "님, 운전자 보험 가입 심사에 실패하였습니다.");
@@ -215,6 +216,7 @@ public class Main {
                 // 자차 보험 심사
                 if (underwritingOwnCar(registerCustomer)) {
                     insurance = new OwnCar((int) registerCustomer.getCustomerID(), new InsuranceFee(10000), 100, new Policy(), 100, 1, 1, 1);
+                    insuranceList.add(insurance);
                     System.out.println(registerCustomer.getName() + "님, 자차 보험 가입이 완료되었습니다.");
                 } else {
                     System.out.println(registerCustomer.getName() + "님, 자차 보험 가입 심사에 실패하였습니다.");
