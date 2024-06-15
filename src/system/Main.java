@@ -207,13 +207,20 @@ public class Main {
         String insuranceChoice = input();
 
         Insurance insurance = null;
-
         switch (insuranceChoice) {
             case "1":
                 if (underwritingDriver(registerCustomer)) {
                     System.out.println("고객님께서 이용 중이신 자동차의 주행 거리, 차량 번호를 입력해 주세요.");
+                    String mileageInput = input();
+                    String vehicleNumberInput = input();
+
+                    if (mileageInput.isEmpty() || vehicleNumberInput.isEmpty()) {
+                        System.out.println("모든 정보를 기재해주세요.");
+                        return;
+                    }
+
                     insurance = new Driver((int) registerCustomer.getCustomerID(), new InsuranceFee(20000), "X", new Policy(),
-                            100, Integer.parseInt(input()), new Date(), Integer.parseInt(input()));
+                        100, Integer.parseInt(mileageInput), new Date(), Integer.parseInt(vehicleNumberInput));
                     registerCustomer.addInsurance(insurance); // 고객의 보험 리스트에 추가
                     System.out.println(registerCustomer.getName() + "님, 운전자 보험 가입이 완료되었습니다.");
                 } else {
@@ -223,8 +230,17 @@ public class Main {
             case "2":
                 if (underwritingOwnCar(registerCustomer)) {
                     System.out.println("고객님께서 이용 중인 자동차의 주행거리, 차량 모델, 차량 번호를 입력해 주세요");
+                    String mileageInput = input();
+                    String vehicleModelInput = input();
+                    String vehicleNumberInput = input();
+
+                    if (mileageInput.isEmpty() || vehicleModelInput.isEmpty() || vehicleNumberInput.isEmpty()) {
+                        System.out.println("모든 정보를 기재해주세요.");
+                        return;
+                    }
+
                     insurance = new OwnCar((int) registerCustomer.getCustomerID(), new InsuranceFee(10000), "X", new Policy(), 100,
-                            Integer.parseInt(input()), Integer.parseInt(input()), Integer.parseInt(input()));
+                        Integer.parseInt(mileageInput), Integer.parseInt(vehicleModelInput), Integer.parseInt(vehicleNumberInput));
                     registerCustomer.addInsurance(insurance); // 고객의 보험 리스트에 추가
                     insuranceList.add(insurance);
                     System.out.println(registerCustomer.getName() + "님, 자차 보험 가입이 완료되었습니다.");
