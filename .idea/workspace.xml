@@ -4,25 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7e084647-5a0e-4ed8-b59e-a8146c583d19" name="Changes" comment="feat: 가입 보험 추가">
-      <change afterPath="$PROJECT_DIR$/src/system/loan/Loan.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/system/loan/LoanList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/system/loan/LoanListImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/insurance system/src/system/Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insurance system/src/system/Main$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/insurance system/src/system/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insurance system/src/system/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/insurance system/src/system/user/Customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insurance system/src/system/user/Customer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/insurance system/src/system/utils/MESSAGE.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insurance system/src/system/utils/MESSAGE.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/system/Loan.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/system/LoanList.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/system/LoanListImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/system/LoanStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/system/loan/LoanStatus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/system/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/system/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/system/loanInsuranceDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/system/loan/loanInsuranceDetails.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/system/loanInsuranceDetailsImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/system/loan/loanInsuranceDetailsImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/system/user/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/system/user/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/system/utils/MESSAGE.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/system/utils/MESSAGE.java" afterDir="false" />
-    </list>
+    <list default="true" id="7e084647-5a0e-4ed8-b59e-a8146c583d19" name="Changes" comment="feat: 가입 보험 추가" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -87,7 +69,6 @@
     "Repository.Attach.Sources": "false",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Users/oseo0202/분산1/insurance_system/src/system/loan",
@@ -95,6 +76,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "vcs.Git",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -139,6 +121,14 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9f38398b9061-18abd8497189-intellij.indexing.shared.core-IU-241.14494.240" />
+        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-IU-241.14494.240" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task id="LOCAL-00001" summary="[refactor]: gitignore 설정">
@@ -159,6 +149,7 @@
       <workItem from="1717519629622" duration="193000" />
       <workItem from="1717552388594" duration="3550000" />
       <workItem from="1717572805732" duration="5518000" />
+      <workItem from="1718451242890" duration="2651000" />
     </task>
     <task id="LOCAL-00002" summary="[feat]: Main 구성">
       <option name="closed" value="true" />

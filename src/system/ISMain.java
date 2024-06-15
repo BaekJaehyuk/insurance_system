@@ -62,10 +62,6 @@ public class ISMain {
         // 납부완료 메시지 출력
     private static void payInsuranceFee() {
 
-        customerList.add(new Customer("hello1", "M", "phone number", "abc", 18)); // 여기서 사용자 생성
-        customerList.add(new Customer("hello2", "M", "phone number", "abc",3));
-        customerList.add(new Customer("hello3", "M", "phone number", "abc",5));
-
         try {
             System.out.println("********************** MENU ***********************");
             showList(customerList.get());
@@ -73,7 +69,6 @@ public class ISMain {
             System.out.println("보험료를 지불할 고객의 customerId를 입력해주세요");
             String sCustomerChoice = objReader.readLine().trim();
             long customerId = Long.parseLong(sCustomerChoice);
-            makeInsurance(sCustomerChoice); // 여기서 가입 보험 정보 사용자에게 임의로 지정하고 보험 정보 출력
 
             System.out.println("지불할 InsuranceId를 입력해주세요");
             String sInsuranceChoice = objReader.readLine().trim(); // 보험료 납부할 보험 id 입력
@@ -97,13 +92,6 @@ public class ISMain {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-    }
-
-    private static void makeInsurance(String sCustomerChoice){
-        int customerId = Integer.parseInt(sCustomerChoice);
-        insuranceList.add(new OwnCar(customerId, new InsuranceFee(10000), 100, new Policy(), 100, 1, 1, 1));
-        insuranceList.add(new Driver(customerId, new InsuranceFee(20000), 100, new Policy(), 100, 1, new Date()));
-        showList(insuranceList.get());
     }
 
     private static void showList(ArrayList<?> dataList) {

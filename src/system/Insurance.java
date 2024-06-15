@@ -8,7 +8,7 @@ public class Insurance {
 	private Long insuranceID;
 	private Long customerID; // Add this line
 	private InsuranceFee insuranceFee;
-	private int insurancePayment;
+	private String paymentStatus;
 	private Policy policy;
 	private int rate;
 
@@ -25,8 +25,8 @@ public class Insurance {
 		return this.insuranceFee;
 	}
 
-	public int getInsurancePayment() {
-		return this.insurancePayment;
+	public String getPaymentStatus() {
+		return this.paymentStatus;
 	}
 
 	public Policy getPolicy() {
@@ -50,8 +50,8 @@ public class Insurance {
 		this.insuranceFee = insuranceFee;
 	}
 
-	public void setInsurancePayment(int insurancePayment) {
-		this.insurancePayment = insurancePayment;
+	public void setPaymentStatus(String paymentStatus) {
+		this.paymentStatus = paymentStatus;
 	}
 
 	public void setPolicy(Policy policy) {
@@ -92,10 +92,9 @@ public class Insurance {
 	@Override
 	public String toString() {
 		return "Insurance{" +
-				"InsuranceID=" + insuranceID +
-				", InsuranceFeeAmount='" + insuranceFee.getAmount() + '\'' +
-				", InsuranceFeeDatePayment='" + insuranceFee.getDateOfPayment() + '\'' +
-				", InsurancePayment='" + insurancePayment + '\'' +
+				"보험ID =" + insuranceID +
+				", 보험료 ='" + insuranceFee.getAmount() + '\'' +
+				", 보험료 납부여부 ='" + paymentStatus + '\'' +
 				'}';
 	}
 

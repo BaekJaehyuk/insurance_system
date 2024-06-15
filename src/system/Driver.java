@@ -6,10 +6,10 @@ public class Driver extends Car {
 
 	private Date drivingExperience;
 
-	public Driver(int customerId, InsuranceFee insuranceFee, int insurancePayment, Policy policy, int rate, int mileage, Date date) {
+	public Driver(int customerId, InsuranceFee insuranceFee, String paymentStatus, Policy policy, int rate, int mileage, Date date) {
 		this.setId();
 		this.setInsuranceFee(insuranceFee);
-		this.setInsurancePayment(insurancePayment);
+		this.setPaymentStatus(paymentStatus);
 		policy.setInsuranceId(getInsuranceID());
 		policy.setMemberId(customerId);
 		this.setPolicy(policy);
