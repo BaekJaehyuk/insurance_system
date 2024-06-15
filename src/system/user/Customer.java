@@ -4,6 +4,8 @@ import src.system.*;
 import src.system.accident.Accident;
 import src.system.compensation.Compensation;
 import src.system.counseling.Counseling;
+import src.system.loan.Loan;
+
 import java.util.*;
 
 public class Customer {
@@ -29,7 +31,7 @@ public class Customer {
 
 	public Compensation m_Compensation;
 	public Accident m_Accident;
-	public Loan m_Loan;
+	private Loan loan;
 
 	public Customer() {
 		this.productList = new ArrayList<>();
@@ -46,6 +48,14 @@ public class Customer {
 		this.productList = new ArrayList<>();
 		this.insuranceList = new ArrayList<>();
 		this.drivingExperience = drivingExperience;
+	}
+
+	public Loan getLoan() {
+		return loan;
+	}
+
+	public void setLoan(Loan loan) {
+		this.loan = loan;
 	}
 
 	public int getDrivingExperience() {

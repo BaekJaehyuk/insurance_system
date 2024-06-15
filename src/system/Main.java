@@ -14,6 +14,8 @@ import src.system.compensation.Compensation;
 import src.system.compensation.CompensationListImpl;
 import src.system.counseling.Counseling;
 import src.system.counseling.CounsellingListImpl;
+import src.system.loan.Loan;
+import src.system.loan.LoanListImpl;
 import src.system.user.Customer;
 import src.system.user.CustomerListImpl;
 
@@ -27,6 +29,7 @@ public class Main {
     private static InsuranceListImpl insuranceList;
     private static AccidentListImpl accidentList;
     private static CompensationListImpl compensationList;
+    private static LoanListImpl loanList;
 
     private static void setData() {
         customerList = new CustomerListImpl();
@@ -35,6 +38,7 @@ public class Main {
         accidentList = new AccidentListImpl();
         counselingList = new CounsellingListImpl();
         compensationList = new CompensationListImpl();
+        loanList = new LoanListImpl();
     }
 
     public static void main(String[] args) {
@@ -70,7 +74,7 @@ public class Main {
                 accidentReport();
                 break;
             case "6":
-                // 대출 로직 추가
+                loan();
                 break;
             case "7":
                 counselling();
@@ -80,6 +84,9 @@ public class Main {
                 break;
             case "9":
                 makeAccount();
+                break;
+            case "10":
+                judgeLoan();
                 break;
             case "x":
                 System.exit(0);
@@ -98,7 +105,7 @@ public class Main {
         }); // test data
 
         try {
-            System.out.println(MENU_INFO.getMsg());
+            System.out.println(gitMENU_INFO.getMsg());
             showList(accidentList.get());
 
             System.out.println(MSG_ASSESS_DAMAGE.getMsg());
@@ -140,7 +147,7 @@ public class Main {
 
     private static void compensate() {
         try {
-            System.out.println(MENU_INFO.getMsg());
+            System.out.println(gitMENU_INFO.getMsg());
             showList(compensationList.get());
             System.out.println(MSG_ASSESS_COMPENSATE.getMsg());
 
@@ -193,7 +200,7 @@ public class Main {
         Join join = new Join();
         System.out.println("이름, 성별, 전화번호, 생일, 운전경력(개월) 입력");
         Customer registerCustomer = join.register(input(), input(), input(), input(),
-            Integer.parseInt(input()));
+                Integer.parseInt(input()));
         customerList.add(registerCustomer); // 고객 리스트에 추가
 
         System.out.println("가입할 보험 종류를 선택하세요: 1. 운전자 보험 2. 자차 보험");
@@ -325,7 +332,7 @@ public class Main {
     private static void payInsuranceFee() {
         showList(customerList.get());
         try {
-            System.out.println(MENU_INFO.getMsg());
+            System.out.println(gitMENU_INFO.getMsg());
             System.out.println(MSG_ASK_CUSTOMER_ID.getMsg());
             long customerId = Long.parseLong(input());
 
@@ -396,6 +403,115 @@ public class Main {
 
     }
 
+    private static void loan() {
+        if(customerList.get().isEmpty()){
+            System.out.println("\n\n대출 실행 대상은 보험사 고객만 해당됩니다.\n\n");
+            return;
+        }
+        try {
+            Customer customer = customerList.get(1); // test code
+
+            System.out.println("1. 대출 정보 확인");
+            System.out.println("2. 대출 신청");
+            System.out.println("3. 대출 실행");
+            System.out.println("4. 대출금 상환");
+
+            String choice = input();
+            switch (choice) {
+                case "1": // 대출 정보 확인
+
+                    break;
+                case "2": //  대출 신청
+//                    if (customer.getInsuranceList().isEmpty()) { // 찐
+                    if (false) { // test
+                        System.out.println("대출 실행 대상은 보험사 고객만 해당됩니다.");
+                    } else {
+                        System.out.print("\n신분증 사본: ");
+                        String copyOfIdenrificationCard = input();
+
+                        System.out.print("\n소득증빙 서류: ");
+                        String incomeProofDocument = input();
+
+                        Loan loan = new Loan(copyOfIdenrificationCard, incomeProofDocument, customer);
+                        customer.setLoan(loan);
+                        loanList.add(loan);
+                        System.out.println("대출이 신청되었습니다. 심사기간은 약 1-2주 소요되며 심사결과는 메시지로 확인 가능합니다.");
+                    }
+                    break;
+                case "3": //  대출 실행
+                    if (customer.getLoan().isLoanStatus()) { // 대출 심사에 의해 대출이 승인된 경우
+                        long capacity = 100000;
+                        System.out.println("대출 가능 금액: " + capacity + "원");
+
+                        System.out.print("대출 신청 금액: ");
+                        long money = Long.parseLong(input());
+
+                        while (money > capacity) {
+                            System.out.println("대출 가능 금약을 초과하지 않는 금액을 입력해주세요");
+                            System.out.print("대출 신청 금액: ");
+                            money = Long.parseLong(input());
+                        }
+                        System.out.println("대출 실행이 완료되었습니다.");
+                    } else {
+                        long loanId = customer.getLoan().getLoanID();
+                        System.out.println(loanList.get(loanId).getRejectionReason());
+                    }
+                    break;
+                case "4": //  대출금 상환
+
+                    break;
+                case "x":
+                    System.exit(0);
+                    break;
+                default:
+                    System.out.println(MENU_INVALID_CHOICE.getMsg());
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static void judgeLoan() {
+        if (loanList.get() == null) {
+            System.out.println("현재 대출 심사 건이 없습니다.");
+            return;
+        }
+
+        try {
+            showList(loanList.get());
+
+            System.out.println("대출심사를 잔행할 내역을 입력하세요.");
+            long loanId = Long.parseLong(input());
+
+            if (loanList.get(loanId) != null) {
+                System.out.println("1. [승인] ");
+                System.out.println("2. [거절] ");
+
+                int choice = Integer.parseInt(input());
+
+                switch (choice) {
+                    case 1: // 승인
+                        loanList.get(loanId).setLoanStatus(true);
+                        System.out.println("대출 승인이 완료되었습니다.");
+                        break;
+                    case 2: // 거절
+                        loanList.delete(loanId);
+                        System.out.print("거절 사유: ");
+                        String rejectionReason = input();
+                        loanList.get(loanId).setRejectionReason("대출 신청이 다음 사유에 의해 거절되었습니다.\n" + rejectionReason);
+                        break;
+                    default:
+                        System.out.println(MENU_INVALID_CHOICE.getMsg());
+                }
+            } else {
+                System.out.println(MSG_VALIDATE_LOAN_ID.getMsg());
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+
     private static void showList(ArrayList<?> dataList) {
         for (Object o : dataList) {
             System.out.println(o);
@@ -404,7 +520,7 @@ public class Main {
 
     private static void printMenu() {
         System.out.println(WELCOME_MESSAGE.getMsg());
-        System.out.println(MENU_INFO.getMsg());
+        System.out.println(gitMENU_INFO.getMsg());
         System.out.println(MENU_JOIN.getMsg());
         System.out.println(MENU_DESIGN.getMsg());
         System.out.println(MENU_PAY.getMsg());
@@ -414,6 +530,7 @@ public class Main {
         System.out.println(MENU_COUNSELLING.getMsg());
         System.out.println(MENU_CONPENSATE.getMsg());
         System.out.println(MENU_ACCOUNT.getMsg());
+        System.out.println(MENU_LOAN_EMPLOYEE.getMsg());
         System.out.println(MENU_EXIT.getMsg());
     }
 }
