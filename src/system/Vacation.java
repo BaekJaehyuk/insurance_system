@@ -1,10 +1,5 @@
 package src.system;
 
-/**
- * @author bjh59
- * @version 1.0
- * @created 29-5-2024 ���� 10:34:58
- */
 public class Vacation {
 
 	private int daysUsed;

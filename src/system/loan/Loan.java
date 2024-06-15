@@ -2,11 +2,7 @@ package src.system.loan;
 
 import src.system.user.Customer;
 
-/**
- * @author SW�������������
- * @version 1.0
- * @created 29-5-2024 ���� 10:34:55
- */
+
 public class Loan {
     private static long lastID = 0L;
 

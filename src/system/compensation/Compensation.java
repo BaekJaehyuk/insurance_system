@@ -3,11 +3,7 @@ package src.system.compensation;
 import src.system.user.Customer;
 import src.system.user.CustomerListImpl;
 
-/**
- * @author SW�������������
- * @version 1.0
- * @created 29-5-2024 ���� 10:34:50
- */
+
 public class Compensation {
 
     private  long compensationId;

@@ -1,11 +1,7 @@
 package src.system;
 
 import java.util.*;
-/**
- * @author tiemo
- * @version 1.0
- * @created 29-5-2024 ���� 10:34:57
- */
+
 public class ProductListImpl implements ProductList {
 
 	private ArrayList<Product> productList;

@@ -1,11 +1,7 @@
 package src.system;
 
-
-import src.system.compensation.Compensation;
 import src.system.user.Customer;
-import src.system.user.CustomerList;
 import src.system.user.CustomerListImpl;
-
 import java.rmi.RemoteException;
 import java.io.*;
 import java.util.*;
