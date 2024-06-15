@@ -56,7 +56,7 @@ public abstract class Accident {
 		this.assessmentStatus = assessmentStatus;
 	}
 
-	public Accident(long accidentId, String accidentDetails, String date, String location, long customerId, String assessmentStatus) {
+	public Accident(long accidentId, String accidentDetails, String date, String location, long customerId, String assessmentStatus, String status) {
 		this.accidentId = accidentId;
 		this.accidentDetails = accidentDetails;
 		this.date = date;
