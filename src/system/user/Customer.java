@@ -16,7 +16,7 @@ public class Customer {
 	private String phoneNumber;
 	private String birthDay;
 	private ArrayList<Long> productList;
-
+	private int drivingExperience;
 	public Join m_Join;
 	public Compensation m_compensation;
 	public Counseling m_Counseling;
@@ -36,7 +36,7 @@ public class Customer {
 		this.insuranceList = new ArrayList<>();
 	}
 
-	public Customer(String name, String sex, String phoneNumber, String birthDay) {
+	public Customer(String name, String sex, String phoneNumber, String birthDay, int drivingExperience) {
 		lastID++;
 		this.customerID = lastID;
 		this.name = name;
@@ -45,6 +45,15 @@ public class Customer {
 		this.birthDay = birthDay;
 		this.productList = new ArrayList<>();
 		this.insuranceList = new ArrayList<>();
+		this.drivingExperience = drivingExperience;
+	}
+
+	public int getDrivingExperience() {
+		return drivingExperience;
+	}
+
+	public void setDrivingExperience(int drivingExperience) {
+		this.drivingExperience = drivingExperience;
 	}
 
 	public Account getAccount(){

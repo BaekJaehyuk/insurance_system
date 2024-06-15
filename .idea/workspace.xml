@@ -6,16 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="7e084647-5a0e-4ed8-b59e-a8146c583d19" name="Changes" comment="fix: 특정 유형의 보험에 가입한 경우에만 사고를 접수할 수 있도록 하는 조건 수정">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/insurance system/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insurance system/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/insurance system/src/system/Insurance.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insurance system/src/system/Insurance.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/insurance system/src/system/InsuranceListImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insurance system/src/system/InsuranceListImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/insurance system/src/system/Join.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insurance system/src/system/Join.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/insurance system/src/system/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insurance system/src/system/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/insurance system/src/system/OwnCar.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insurance system/src/system/OwnCar.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/insurance system/src/system/utils/MESSAGE.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insurance system/src/system/utils/MESSAGE.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/system/Join.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/system/Join.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/system/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/system/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/system/accident/AccidentFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/system/accident/AccidentFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/system/utils/MESSAGE.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/system/utils/MESSAGE.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/system/user/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/system/user/Customer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

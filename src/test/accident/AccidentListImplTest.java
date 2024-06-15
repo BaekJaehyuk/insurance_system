@@ -19,7 +19,7 @@ class AccidentFactoryTest {
 
     @BeforeEach
     void setUp() {
-        customer1 = new Customer("John Doe", "M", "010-1234-5678", "1980-01-01");
+        customer1 = new Customer("John Doe", "M", "010-1234-5678", "1980-01-01",5);
         customer1.addInsurance(new OwnCar((int) customer1.getCustomerID(), new InsuranceFee(10000), 100, new Policy(), 100, 1, 1, 1)); // 자차 보험 가입
         customer1.addInsurance(new Driver((int) customer1.getCustomerID(), new InsuranceFee(20000), 100, new Policy(), 100, 1, new Date())); // 운전자 보험 가입
 
@@ -59,7 +59,7 @@ class AccidentFactoryTest {
     @Test
     //운전자 보험이 가입되지 않은 고객의 개인 상해 사고를 접수하는 테스트입니다. 조건을 만족하지 않으므로 초기 상태가 Rejected
     void testPersonalInjuryAccidentWithoutDriverInsurance() {
-        Customer customerWithoutDriverInsurance = new Customer("Jane Doe", "F", "010-8765-4321", "1990-01-01");
+        Customer customerWithoutDriverInsurance = new Customer("Jane Doe", "F", "010-8765-4321", "1990-01-01",5);
         customerWithoutDriverInsurance.addInsurance(new OwnCar((int) customerWithoutDriverInsurance.getCustomerID(), new InsuranceFee(10000), 100, new Policy(), 100, 1, 1, 1)); // Only Auto insurance
 
         Accident accident = AccidentFactory.createAccident("PersonalInjury", 4, "Car accident", "2024-07-01", "Seoul", customerWithoutDriverInsurance, new String[]{"3", "2"});
@@ -69,7 +69,7 @@ class AccidentFactoryTest {
     @Test
     //자차 보험이 가입되지 않은 고객의 대인배상 사고를 접수하는 테스트입니다. 조건을 만족하지 않으므로 초기 상태가 Rejected
     void testLiabilityAccidentWithoutAutoInsurance() {
-        Customer customerWithoutAutoInsurance = new Customer("Jane Doe", "F", "010-8765-4321", "1990-01-01");
+        Customer customerWithoutAutoInsurance = new Customer("Jane Doe", "F", "010-8765-4321", "1990-01-01",7);
         customerWithoutAutoInsurance.addInsurance(new Driver((int) customerWithoutAutoInsurance.getCustomerID(), new InsuranceFee(20000), 100, new Policy(), 100, 1, new Date())); // Only Driver insurance
 
         Accident accident = AccidentFactory.createAccident("Liability", 5, "House fire", "2024-07-01", "Busan", customerWithoutAutoInsurance, new String[]{"record1", "4", "Jane Doe", "010-8765-4321"});

@@ -17,7 +17,7 @@ public class Join {
 	/**
 	 * @return
 	 */
-	public Customer register(String name, String sex, String phoneNumber, String birthDay) {
+	public Customer register(String name, String sex, String phoneNumber, String birthDay, int drivingExperience) {
 //		Insurance insurance = new Insurance();
 //		long productId = insurance.makeContract();
 
@@ -28,7 +28,7 @@ public class Join {
 			return existingCustomer;
 		}
 
-		Customer customer = new Customer(name, sex, phoneNumber, birthDay);
+		Customer customer = new Customer(name, sex, phoneNumber, birthDay, drivingExperience);
 		//customer.addProduct(productId);
 		customerList.add(customer);
 		return customer;

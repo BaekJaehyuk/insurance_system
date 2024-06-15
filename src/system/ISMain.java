@@ -62,9 +62,9 @@ public class ISMain {
         // 납부완료 메시지 출력
     private static void payInsuranceFee() {
 
-        customerList.add(new Customer("hello1", "M", "phone number", "abc")); // 여기서 사용자 생성
-        customerList.add(new Customer("hello2", "M", "phone number", "abc"));
-        customerList.add(new Customer("hello3", "M", "phone number", "abc"));
+        customerList.add(new Customer("hello1", "M", "phone number", "abc", 18)); // 여기서 사용자 생성
+        customerList.add(new Customer("hello2", "M", "phone number", "abc",3));
+        customerList.add(new Customer("hello3", "M", "phone number", "abc",5));
 
         try {
             System.out.println("********************** MENU ***********************");
