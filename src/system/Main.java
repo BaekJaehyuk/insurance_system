@@ -97,7 +97,7 @@ public class Main {
     }
 
     private static void toAssessDamages() {
-       // accidentList.add(new Accident(1, "교통사고", "2024-06-04", "명지대", 1, "Pending", assessmentStatus) {
+        // accidentList.add(new Accident(1, "교통사고", "2024-06-04", "명지대", 1, "Pending", assessmentStatus) {
 //            @Override
 //            public void receiveAccident() {
 //                // 사고 접수 로직
@@ -198,80 +198,54 @@ public class Main {
 
     private static void registerInsurance() throws IOException {
         Join join = new Join();
-        try {
-            System.out.println("이름, 성별, 전화번호, 생일, 운전경력(개월) 입력");
-            Customer registerCustomer = join.register(input(), input(), input(), input(),
+        System.out.println("이름, 성별, 전화번호, 생일, 운전경력(개월) 입력");
+        Customer registerCustomer = join.register(input(), input(), input(), input(),
                 Integer.parseInt(input()));
-            customerList.add(registerCustomer); // 고객 리스트에 추가
+        customerList.add(registerCustomer); // 고객 리스트에 추가
 
-            System.out.println("가입할 보험 종류를 선택하세요: 1. 운전자 보험 2. 자차 보험");
-            String insuranceChoice = input();
+        System.out.println("가입할 보험 종류를 선택하세요: 1. 운전자 보험 2. 자차 보험");
+        String insuranceChoice = input();
 
-            Insurance insurance = null;
+        Insurance insurance = null;
 
-            switch (insuranceChoice) {
-                case "1":
-                    if (underwritingDriver(registerCustomer)) {
-                        System.out.println("고객님께서 이용 중이신 자동차의 주행 거리, 차량 번호를 입력해 주세요.");
-                        String mileageInput = input();
-                        String vehicleNumberInput = input();
-
-                        if (mileageInput.isEmpty() || vehicleNumberInput.isEmpty()) {
-                            System.out.println("모든 정보를 기재해주세요.");
-                            return;
-                        }
-
-                        insurance = new Driver((int) registerCustomer.getCustomerID(), new InsuranceFee(20000), "X", new Policy(),
-                            100, Integer.parseInt(mileageInput), new Date(), Integer.parseInt(vehicleNumberInput));
-                        registerCustomer.addInsurance(insurance); // 고객의 보험 리스트에 추가
-                        System.out.println(registerCustomer.getName() + "님, 운전자 보험 가입이 완료되었습니다.");
-                    } else {
-                        System.out.println(registerCustomer.getName() + "님, 운전자 보험 가입 심사에 실패하였습니다.");
-                    }
-                    break;
-                case "2":
-                    if (underwritingOwnCar(registerCustomer)) {
-                        System.out.println("고객님께서 이용 중인 자동차의 주행거리, 차량 모델, 차량 번호를 입력해 주세요");
-                        String mileageInput = input();
-                        String vehicleModelInput = input();
-                        String vehicleNumberInput = input();
-
-                        if (mileageInput.isEmpty() || vehicleModelInput.isEmpty() || vehicleNumberInput.isEmpty()) {
-                            System.out.println("모든 정보를 기재해주세요.");
-                            return;
-                        }
-
-                        insurance = new OwnCar((int) registerCustomer.getCustomerID(), new InsuranceFee(10000), "X", new Policy(), 100,
-                            Integer.parseInt(mileageInput), Integer.parseInt(vehicleModelInput), Integer.parseInt(vehicleNumberInput));
-                        registerCustomer.addInsurance(insurance); // 고객의 보험 리스트에 추가
-                        insuranceList.add(insurance);
-                        System.out.println(registerCustomer.getName() + "님, 자차 보험 가입이 완료되었습니다.");
-                    } else {
-                        System.out.println(registerCustomer.getName() + "님, 자차 보험 가입 심사에 실패하였습니다.");
-                    }
-                    break;
-                default:
-                    System.out.println("유효하지 않은 선택입니다.");
-                    return;
-            }
-
-            registerCustomer.addInsurance(insurance); // 고객의 보험 리스트에 추가
-            insuranceList.add(insurance); // InsuranceListImpl에 추가
-        } catch (NumberFormatException e) {
-            System.out.println("입력 값이 올바르지 않습니다. 숫자를 입력해 주세요.");
-        } catch (IOException e) {
-            System.out.println("입력 과정에서 오류가 발생했습니다. 다시 시도해 주세요.");
-        } catch (Exception e) {
-            System.out.println("예기치 않은 오류가 발생했습니다. 고객센터에 문의해 주세요.");
+        switch (insuranceChoice) {
+            case "1":
+                if (underwritingDriver(registerCustomer)) {
+                    System.out.println("고객님께서 이용 중이신 자동차의 주행 거리를 입력해 주세요.");
+                    insurance = new Driver((int) registerCustomer.getCustomerID(), new InsuranceFee(20000), "X", new Policy(),
+                            100, Integer.parseInt(input()), new Date());
+                    registerCustomer.addInsurance(insurance); // 고객의 보험 리스트에 추가
+                    System.out.println(registerCustomer.getName() + "님, 운전자 보험 가입이 완료되었습니다.");
+                } else {
+                    System.out.println(registerCustomer.getName() + "님, 운전자 보험 가입 심사에 실패하였습니다.");
+                }
+                break;
+            case "2":
+                if (underwritingOwnCar(registerCustomer)) {
+                    System.out.println("고객님께서 이용 중인 자동차의 주행거리, 차량 모델, 차량 번호를 입력해 주세요");
+                    insurance = new OwnCar((int) registerCustomer.getCustomerID(), new InsuranceFee(10000), "X", new Policy(), 100,
+                            Integer.parseInt(input()), Integer.parseInt(input()), Integer.parseInt(input()));
+                    registerCustomer.addInsurance(insurance); // 고객의 보험 리스트에 추가
+                    insuranceList.add(insurance);
+                    System.out.println(registerCustomer.getName() + "님, 자차 보험 가입이 완료되었습니다.");
+                } else {
+                    System.out.println(registerCustomer.getName() + "님, 자차 보험 가입 심사에 실패하였습니다.");
+                }
+                break;
+            default:
+                System.out.println("유효하지 않은 선택입니다.");
+                return;
         }
-    }
 
+        registerCustomer.addInsurance(insurance); // 고객의 보험 리스트에 추가
+        insuranceList.add(insurance); // InsuranceListImpl에 추가
+    }
 
 
     // 운전자 보험 심사 로직
     public static boolean underwritingDriver(Customer customer) {
-        if (customer.getDrivingExperience() < 24) {
-            System.out.println("운전 경력이 24개월 미만인 경우 운전자 보험에 가입할 수 없습니다.");
+        if (customer.getDrivingExperience() < 3) {
+            System.out.println("운전 경력이 3년 미만인 경우 운전자 보험에 가입할 수 없습니다.");
             return false;
         }
         // 추가적인 심사 조건들을 여기에 추가할 수 있습니다.
@@ -280,8 +254,8 @@ public class Main {
 
     // 자차 보험 심사 로직
     public static boolean underwritingOwnCar(Customer customer) {
-        if (customer.getDrivingExperience() < 24) {
-            System.out.println("운전 경력이 24개월 미만인 경우 운전자 보험에 가입할 수 없습니다.");
+        if (customer.getDrivingExperience() < 3) {
+            System.out.println("운전 경력이 3년 미만인 경우 운전자 보험에 가입할 수 없습니다.");
             return false;
         }
 
@@ -329,25 +303,36 @@ public class Main {
 
             String[] additionalParams;
             if ("본인상해".equals(accidentType)) {
-                System.out.println("부상자의 수를 입력하세요:");
-                String numInjuries = input();
                 System.out.println("부상의 정도를 입력하세요(1~10):");
                 String severity = input();
-                additionalParams = new String[]{numInjuries, severity};
+                System.out.println("차량피해정도 입력하세요(1~10):");
+                String carDamage = input();
+                System.out.println("의료기록 영수증을 입력하세요:");
+                String medicalReceipt = input();
+                System.out.println("차량수리비 영수증을 입력하세요:");
+                String repairReceipt = input();
+                additionalParams = new String[]{ severity, carDamage, medicalReceipt, repairReceipt};
             } else if ("대인배상".equals(accidentType)) {
-                System.out.println("기록을 입력하세요:");
-                String record = input();
-                System.out.println("손해 비용을 입력하세요:");
-                String damageCost = input();
-                System.out.println("제3자 이름을 입력하세요:");
-                String thirdPartyName = input();
-                System.out.println("제3자 연락처를 입력하세요:");
-                String thirdPartyContact = input();
-                additionalParams = new String[]{record, damageCost, thirdPartyName, thirdPartyContact};
+                System.out.println("피해자 이름을 입력하세요:");
+                String victimName = input();
+                System.out.println("피해자 연락처를 입력하세요:");
+                String victimContact = input();
+                System.out.println("피해자 부상 정도를 입력하세요:");
+                String injurySeverity = input();
+                System.out.println("피해자 의료기록 및 영수증을 입력하세요:");
+                String medicalRecordsAndReceipts = input();
+
+                additionalParams = new String[]{victimName, victimContact, injurySeverity, medicalRecordsAndReceipts};
+
             } else if ("대물배상".equals(accidentType)) {
-                System.out.println("재산 피해를 설명하세요:");
-                String propertyDamage = input();
-                additionalParams = new String[]{propertyDamage};
+                System.out.println("피해재산종류를 입력하세요:");
+                String propertyType = input();
+                System.out.println("사고현장사진을 첨부하세요:");
+                String accidentPhotoUrl = input();
+                System.out.println("청구비 영수증을 첨부하세요:");
+                String receiptUrl = input();
+
+                additionalParams = new String[]{propertyType, accidentPhotoUrl, receiptUrl};
             } else {
                 System.out.println("유효하지 않은 사고 유형입니다.");
                 return;
@@ -468,10 +453,10 @@ public class Main {
                     if (false) { // test
                         System.out.println("대출 실행 대상은 보험사 고객만 해당됩니다.");
                     } else {
-                        System.out.print("\n 신분증 사본: ");
+                        System.out.print("\n신분증 사본: ");
                         String copyOfIdenrificationCard = input();
 
-                        System.out.print("\n 소득증빙 서류: ");
+                        System.out.print("\n소득증빙 서류: ");
                         String incomeProofDocument = input();
 
                         Loan loan = new Loan(copyOfIdenrificationCard, incomeProofDocument, customer);
