@@ -207,7 +207,6 @@ public class Main {
                 if (underwritingDriver(registerCustomer)) {
                     insurance = new Driver((int) registerCustomer.getCustomerID(), new InsuranceFee(20000), 100, new Policy(), 100, 1, new Date());
                     registerCustomer.addInsurance(insurance); // 고객의 보험 리스트에 추가
-                    insuranceList.add(insurance);
                     System.out.println(registerCustomer.getName() + "님, 운전자 보험 가입이 완료되었습니다.");
                 } else {
                     System.out.println(registerCustomer.getName() + "님, 운전자 보험 가입 심사에 실패하였습니다.");
@@ -324,14 +323,13 @@ public class Main {
     }
 
     private static void payInsuranceFee() {
-        customerList.add(new Customer("hello1", "M", "phone number", "abc", 18)); // 여기서 사용자 생성
         showList(customerList.get());
         try {
             System.out.println(MENU_INFO.getMsg());
             System.out.println(MSG_ASK_CUSTOMER_ID.getMsg());
             long customerId = Long.parseLong(input());
-            makeInsurance(customerId);
 
+            showList(insuranceList.get());
             System.out.println(MSG_ASK_INSURANCE_ID.getMsg());
             long insuranceId = Long.parseLong(input());
 
@@ -347,12 +345,6 @@ public class Main {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
-
-    private static void makeInsurance(long customerId) {
-        insuranceList.add(new OwnCar((int) customerId, new InsuranceFee(10000), 100, new Policy(), 100, 1, 1, 1));
-        insuranceList.add(new Driver((int) customerId, new InsuranceFee(20000), 100, new Policy(), 100, 1, new Date()));
-        showList(insuranceList.get());
     }
 
 
