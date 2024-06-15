@@ -3,7 +3,7 @@ package src.system.utils;
 public enum MESSAGE {
 
   WELCOME_MESSAGE("보험사 시스템에 접속하신 것을 환영합니다."),
-  MENU_INFO("********************** MENU ***********************"),
+  gitMENU_INFO("********************** MENU ***********************"),
   MENU_JOIN("1. 보험 가입"),
   MENU_DESIGN("2. 상품 설계"),
   MENU_PAY("3. 보험료 납부"),
@@ -14,7 +14,7 @@ public enum MESSAGE {
   MENU_CONPENSATE("8. 보험금 지급"),
 
   MENU_ACCOUNT("9. 입출금 계좌 관리"),
-
+  MENU_LOAN_EMPLOYEE("10. 대출 심사"),
   MENU_EXIT("X. 종료"),
   MENU_INVALID_CHOICE("Invalid Choice !!!"),
 
@@ -33,6 +33,7 @@ public enum MESSAGE {
   MSG_VALIDATE_ID("유효한 customerId 또는 insuranceId를 입력해주세요"),
   MSG_VALIDATE_ACCIDENT_ID("유효한 accidentId를 입력해주세요"),
   MSG_VALIDATE_COMPENSATE_ID("유효한 compensationId를 입력해주세요"),
+  MSG_VALIDATE_LOAN_ID("유효한 loanId를 입력해주세요"),
   MSG_ASK_ACCIDENT_DETAILS("사고 내용을 입력해주세요"),
   MSG_ASK_ACCIDENT_DATE("사고 날짜를 입력해주세요 (예: 2024-05-29)"),
   MSG_ASK_ACCIDENT_LOCATION("사고 장소를 입력해주세요"),
