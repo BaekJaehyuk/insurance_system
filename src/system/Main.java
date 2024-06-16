@@ -311,7 +311,7 @@ public class Main {
                 String medicalReceipt = input();
                 System.out.println("차량수리비 영수증을 입력하세요:");
                 String repairReceipt = input();
-                additionalParams = new String[]{ severity, carDamage, medicalReceipt, repairReceipt};
+                additionalParams = new String[]{severity, carDamage, medicalReceipt, repairReceipt};
             } else if ("대인배상".equals(accidentType)) {
                 System.out.println("피해자 이름을 입력하세요:");
                 String victimName = input();
@@ -321,9 +321,7 @@ public class Main {
                 String injurySeverity = input();
                 System.out.println("피해자 의료기록 및 영수증을 입력하세요:");
                 String medicalRecordsAndReceipts = input();
-
                 additionalParams = new String[]{victimName, victimContact, injurySeverity, medicalRecordsAndReceipts};
-
             } else if ("대물배상".equals(accidentType)) {
                 System.out.println("피해재산종류를 입력하세요:");
                 String propertyType = input();
@@ -331,20 +329,20 @@ public class Main {
                 String accidentPhotoUrl = input();
                 System.out.println("청구비 영수증을 첨부하세요:");
                 String receiptUrl = input();
-
                 additionalParams = new String[]{propertyType, accidentPhotoUrl, receiptUrl};
             } else {
                 System.out.println("유효하지 않은 사고 유형입니다.");
                 return;
             }
 
-            Accident accident = AccidentFactory.createAccident(accidentType, accidentList.get().size() + 1, accidentDetails, date, location, customer,carNumber, additionalParams);
+            Accident accident = AccidentFactory.createAccident(accidentType, accidentDetails, date, location, customer, carNumber, additionalParams);
             accidentList.add(accident);
             System.out.println(MSG_ACCIDENT_REPORTED.getMsg());
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
+
     private static void payInsuranceFee() {
         showList(customerList.get());
 
