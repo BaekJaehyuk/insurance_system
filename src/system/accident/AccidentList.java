@@ -16,5 +16,7 @@ public interface AccidentList {
 
 	public ArrayList<Accident> get();
 
+	public ArrayList<Accident> getReportedAccidentList();
+
 	public void update(long accidentId, Accident updatedAccident);
 }
