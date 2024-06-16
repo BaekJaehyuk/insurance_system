@@ -1,5 +1,7 @@
 package src.system;
 
+import java.util.Date;
+
 public class OwnCar extends Car {
 
 	private int model;

@@ -4,16 +4,16 @@ import java.util.Date;
 
 public class InsuranceFee {
 
-	private int amount;
+	private double amount;
 	private Date dateOfPayment;
 
-	public InsuranceFee(int amount){
+	public InsuranceFee(double amount){
 		this.amount = amount;
 	}
-	public int getAmount() {
+	public double getAmount() {
 		return amount;
 	}
-	public void setAmount(int amount) {
+	public void setAmount(double amount) {
 		this.amount = amount;
 	}
 	public Date getDateOfPayment() {
