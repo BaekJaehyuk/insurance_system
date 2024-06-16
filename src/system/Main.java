@@ -97,7 +97,7 @@ public class Main {
     }
 
     private static void toAssessDamages() {
-       // accidentList.add(new Accident(1, "교통사고", "2024-06-04", "명지대", 1, "Pending", assessmentStatus) {
+        // accidentList.add(new Accident(1, "교통사고", "2024-06-04", "명지대", 1, "Pending", assessmentStatus) {
 //            @Override
 //            public void receiveAccident() {
 //                // 사고 접수 로직
@@ -303,25 +303,36 @@ public class Main {
 
             String[] additionalParams;
             if ("본인상해".equals(accidentType)) {
-                System.out.println("부상자의 수를 입력하세요:");
-                String numInjuries = input();
                 System.out.println("부상의 정도를 입력하세요(1~10):");
                 String severity = input();
-                additionalParams = new String[]{numInjuries, severity};
+                System.out.println("차량피해정도 입력하세요(1~10):");
+                String carDamage = input();
+                System.out.println("의료기록 영수증을 입력하세요:");
+                String medicalReceipt = input();
+                System.out.println("차량수리비 영수증을 입력하세요:");
+                String repairReceipt = input();
+                additionalParams = new String[]{ severity, carDamage, medicalReceipt, repairReceipt};
             } else if ("대인배상".equals(accidentType)) {
-                System.out.println("기록을 입력하세요:");
-                String record = input();
-                System.out.println("손해 비용을 입력하세요:");
-                String damageCost = input();
-                System.out.println("제3자 이름을 입력하세요:");
-                String thirdPartyName = input();
-                System.out.println("제3자 연락처를 입력하세요:");
-                String thirdPartyContact = input();
-                additionalParams = new String[]{record, damageCost, thirdPartyName, thirdPartyContact};
+                System.out.println("피해자 이름을 입력하세요:");
+                String victimName = input();
+                System.out.println("피해자 연락처를 입력하세요:");
+                String victimContact = input();
+                System.out.println("피해자 부상 정도를 입력하세요:");
+                String injurySeverity = input();
+                System.out.println("피해자 의료기록 및 영수증을 입력하세요:");
+                String medicalRecordsAndReceipts = input();
+
+                additionalParams = new String[]{victimName, victimContact, injurySeverity, medicalRecordsAndReceipts};
+
             } else if ("대물배상".equals(accidentType)) {
-                System.out.println("재산 피해를 설명하세요:");
-                String propertyDamage = input();
-                additionalParams = new String[]{propertyDamage};
+                System.out.println("피해재산종류를 입력하세요:");
+                String propertyType = input();
+                System.out.println("사고현장사진을 첨부하세요:");
+                String accidentPhotoUrl = input();
+                System.out.println("청구비 영수증을 첨부하세요:");
+                String receiptUrl = input();
+
+                additionalParams = new String[]{propertyType, accidentPhotoUrl, receiptUrl};
             } else {
                 System.out.println("유효하지 않은 사고 유형입니다.");
                 return;

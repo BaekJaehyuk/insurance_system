@@ -6,49 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="7e084647-5a0e-4ed8-b59e-a8146c583d19" name="Changes" comment="feat: 가입 보험 추가">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/insurance system/src/system/Account.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insurance system/src/system/Account.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/insurance system/src/system/Applicant.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insurance system/src/system/Applicant.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/insurance system/src/system/ApplicantListImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insurance system/src/system/ApplicantListImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/insurance system/src/system/Attendance.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insurance system/src/system/Attendance.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/insurance system/src/system/Campaign.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insurance system/src/system/Campaign.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/insurance system/src/system/CampainListImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insurance system/src/system/CampainListImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/insurance system/src/system/Car.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insurance system/src/system/Car.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/insurance system/src/system/Career.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insurance system/src/system/Career.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/insurance system/src/system/Data.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insurance system/src/system/Data.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/insurance system/src/system/Education.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insurance system/src/system/Education.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/insurance system/src/system/EducationListImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insurance system/src/system/EducationListImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/insurance system/src/system/EmployeeListImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insurance system/src/system/EmployeeListImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/insurance system/src/system/Employment.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insurance system/src/system/Employment.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/insurance system/src/system/ISMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insurance system/src/system/ISMain.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/insurance system/src/system/Interview.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insurance system/src/system/Interview.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/insurance system/src/system/Main$1.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/insurance system/src/system/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insurance system/src/system/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/insurance system/src/system/PersonalInformation.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insurance system/src/system/PersonalInformation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/insurance system/src/system/Policy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insurance system/src/system/Policy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/insurance system/src/system/Product.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insurance system/src/system/Product.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/insurance system/src/system/ProductListImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insurance system/src/system/ProductListImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/insurance system/src/system/Vacation.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insurance system/src/system/Vacation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/insurance system/src/system/accident/Accident.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insurance system/src/system/accident/Accident.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/insurance system/src/system/accident/AccidentFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insurance system/src/system/accident/AccidentFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/insurance system/src/system/accident/LiabilityAccident.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insurance system/src/system/accident/LiabilityAccident.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/insurance system/src/system/accident/PersonalInjuryAccident.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insurance system/src/system/accident/PersonalInjuryAccident.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/insurance system/src/system/accident/PropertyDamageAccident.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insurance system/src/system/accident/PropertyDamageAccident.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/insurance system/src/system/compensation/Compensation.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insurance system/src/system/compensation/Compensation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/insurance system/src/system/loan/Loan.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insurance system/src/system/loan/Loan.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/insurance system/src/system/loan/LoanListImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insurance system/src/system/loan/LoanListImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/insurance system/src/system/loan/LoanStatus.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insurance system/src/system/loan/LoanStatus.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/insurance system/src/system/loan/loanInsuranceDetailsImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insurance system/src/system/loan/loanInsuranceDetailsImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/insurance system/src/system/registeredInsuranceDetailsImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insurance system/src/system/registeredInsuranceDetailsImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/insurance system/src/system/utils/MESSAGE.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insurance system/src/system/utils/MESSAGE.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/insurance system/src/test/accident/AccidentFactoryTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insurance system/src/test/accident/AccidentFactoryTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/system/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/system/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/system/accident/Accident.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/system/accident/Accident.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/system/accident/AccidentFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/system/accident/AccidentFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/system/accident/LiabilityAccident.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/system/accident/LiabilityAccident.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/system/accident/PersonalInjuryAccident.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/system/accident/PersonalInjuryAccident.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/system/accident/PropertyDamageAccident.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/system/accident/PropertyDamageAccident.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/system/utils/MESSAGE.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/system/utils/MESSAGE.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/accident/AccidentListImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/accident/AccidentListImplTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,28 +63,28 @@
     <option name="showLibraryContents" value="true" />
     <option name="showVisibilityIcons" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "Downloaded.Files.Path.Enabled": "false",
-    "JUnit.AccidentFactoryTest.executor": "Run",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/oseo0202/분산1/insurance_system/src/system/loan",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "vcs.Git",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;JUnit.AccidentFactoryTest.executor&quot;: &quot;Run&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/oseo0202/분산1/insurance_system/src/system/loan&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/system/loan" />
