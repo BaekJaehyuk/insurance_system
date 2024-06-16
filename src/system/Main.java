@@ -18,6 +18,8 @@ import src.system.counseling.CounsellingListImpl;
 import src.system.loan.Loan;
 import src.system.loan.LoanListImpl;
 import src.system.loan.LoanStatus;
+import src.system.product.Product;
+import src.system.product.ProductListImpl;
 import src.system.user.Customer;
 import src.system.user.CustomerListImpl;
 
@@ -32,6 +34,7 @@ public class Main {
     private static AccidentListImpl accidentList;
     private static CompensationListImpl compensationList;
     private static LoanListImpl loanList;
+    private static ProductListImpl productList;
 
     private static void setData() {
         customerList = new CustomerListImpl();
@@ -41,6 +44,7 @@ public class Main {
         counselingList = new CounsellingListImpl();
         compensationList = new CompensationListImpl();
         loanList = new LoanListImpl();
+        productList = new ProductListImpl();
     }
 
     public static void main(String[] args) {
@@ -64,7 +68,7 @@ public class Main {
                 registerInsurance();
                 break;
             case "2":
-                // 상품 설계 로직 추가
+                designInsurance();
                 break;
             case "3":
                 payInsuranceFee();
@@ -100,7 +104,35 @@ public class Main {
                 System.out.println(MENU_INVALID_CHOICE.getMsg());
         }
     }
+    private static void designInsurance() throws IOException {
+        System.out.println("설계할 보험 종류를 선택하세요: 1. 운전자 보험 2. 자차 보험");
+        String insuranceType = input();
 
+        System.out.println("보험 이름을 입력하세요:");
+        String insuranceName = input();
+
+        System.out.println("기본 보험료를 입력하세요:");
+        double basePremium = Double.parseDouble(input());
+        System.out.println("보상 한도를 입력하세요:");
+        double coverageLimit = Double.parseDouble(input());
+
+        Product insuranceProduct = new Product(insuranceName, basePremium, coverageLimit);
+
+        switch (insuranceType) {
+            case "1":
+                insuranceProduct.setDescription("운전자 보험");
+                productList.add(insuranceProduct);
+                System.out.println("운전자 보험 설계가 완료되었습니다.");
+                break;
+            case "2":
+                insuranceProduct.setDescription("자차 보험");
+                productList.add(insuranceProduct);
+                System.out.println("자차 보험 설계가 완료되었습니다.");
+                break;
+            default:
+                System.out.println("유효하지 않은 선택입니다.");
+        }
+    }
     private static void toAssessDamages() {
         try {
             if (accidentList.get().isEmpty()) {
@@ -246,7 +278,7 @@ public class Main {
                             new Policy(),
                             100, Integer.parseInt(input()), new Date());
                     registerCustomer.addInsurance(insurance); // 고객의 보험 리스트에 추가
-                    insuranceList.add(insurance); // InsuranceListImpl에 추가
+                   // insuranceList.add(insurance); // InsuranceListImpl에 추가
                     System.out.println(registerCustomer.getName() + "님, 운전자 보험 가입이 완료되었습니다.");
                 } else {
                     System.out.println(registerCustomer.getName() + "님, 운전자 보험 가입 심사에 실패하였습니다.");
@@ -259,7 +291,7 @@ public class Main {
                             new Policy(), 100,
                             Integer.parseInt(input()), Integer.parseInt(input()), Integer.parseInt(input()));
                     registerCustomer.addInsurance(insurance); // 고객의 보험 리스트에 추가
-                    insuranceList.add(insurance); // InsuranceListImpl에 추가
+                    //insuranceList.add(insurance); // InsuranceListImpl에 추가
                     System.out.println(registerCustomer.getName() + "님, 자차 보험 가입이 완료되었습니다.");
                 } else {
                     System.out.println(registerCustomer.getName() + "님, 자차 보험 가입 심사에 실패하였습니다.");
