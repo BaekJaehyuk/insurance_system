@@ -159,13 +159,12 @@ public class Main {
             }
 
             System.out.println("------------사고 접수 내역------------");
-
             showList(accidentList.getReportedAccidentList());
             System.out.println("-----------------------------------");
 
             System.out.println(MSG_ASSESS_DAMAGE.getMsg());
             long accidentId = Long.parseLong(input());
-            Accident accident = accidentList.get(accidentId);
+            Accident accident = accidentList.getReportedAccident(accidentId);
 
             if (accident != null) {
                 handleCompensation(accidentId);
@@ -179,26 +178,55 @@ public class Main {
 
     private static void handleCompensation(long accidentId) throws IOException {
         Accident accident = accidentList.get(accidentId);
+        Customer customer = customerList.get(accident.getCustomerId());
         double insuranceMoney = 0;
-
+        String productName = "";
         if (accident instanceof LiabilityAccident) { // 대인배상
             LiabilityAccident liabilityAccident = (LiabilityAccident) accident;
             System.out.println(liabilityAccident.liabilityAccidentDetail());
 
-            insuranceMoney = Double.parseDouble(liabilityAccident.getMedicalRecords()) * 0.9;
+            insuranceMoney = Double.parseDouble(liabilityAccident.getMedicalRecords());
+
+            for (Insurance insurance : customer.getInsuranceList()) {
+                if (insurance instanceof OwnCar) {
+                    OwnCar ownCar = (OwnCar) insurance;
+                    productName = ownCar.getInsuranceName();
+                }
+            }
+
         } else if (accident instanceof PersonalInjuryAccident) { // 본인상해
             PersonalInjuryAccident personalInjuryAccident = (PersonalInjuryAccident) accident;
             System.out.println(personalInjuryAccident.personalInjuryAccidentDetail());
 
             insuranceMoney = (Double.parseDouble(personalInjuryAccident.getMedicalReceipt()) +
-                    Double.parseDouble(personalInjuryAccident.getRepairReceipt())) * 0.9;
+                    Double.parseDouble(personalInjuryAccident.getRepairReceipt()));
+
+            for (Insurance insurance : customer.getInsuranceList()) {
+                if (insurance instanceof Driver) {
+                    Driver driver = (Driver) insurance;
+                    productName = driver.getInsuranceName();
+                }
+            }
 
         } else if (accident instanceof PropertyDamageAccident) { // 대물배상
             PropertyDamageAccident propertyDamageAccident = (PropertyDamageAccident) accident;
             System.out.println(propertyDamageAccident.propertyDamageAccidentDetail());
 
-            insuranceMoney = Double.parseDouble(propertyDamageAccident.getReceiptUrl()) * 0.9;
+            insuranceMoney = Double.parseDouble(propertyDamageAccident.getReceiptUrl());
+
+            for (Insurance insurance : customer.getInsuranceList()) {
+                if (insurance instanceof OwnCar) {
+                    OwnCar ownCar = (OwnCar) insurance;
+                    productName = ownCar.getInsuranceName();
+                }
+            }
         }
+
+
+        Product product = productList.get(productName);
+        double coverageLimit = product.getCoverageLimit(); // 보상한도;
+
+        insuranceMoney = coverageLimit < insuranceMoney ? coverageLimit : insuranceMoney - coverageLimit;
 
         System.out.println("산정된 보험금: " + insuranceMoney + '\n');
 
@@ -292,9 +320,9 @@ public class Main {
             System.out.println("유효하지 않은 선택입니다.");
             return;
         } else {
+            registerCustomer.addProduct(selectedInsurance.getProductId());
             customerList.add(registerCustomer); // 고객 리스트에 추가
         }
-
 
         String paymentStatus = "X";
         Insurance insurance = null;

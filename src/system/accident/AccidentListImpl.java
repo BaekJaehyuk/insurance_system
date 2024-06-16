@@ -35,6 +35,20 @@ public class AccidentListImpl implements AccidentList {
     }
 
     @Override
+    public Accident getReportedAccident(long accidentId) {
+        ArrayList<Accident> reportedAccitentList = new ArrayList<>();
+        for (Accident accident : accidentList) {
+            if (accident.status.equals("접수됨")) {
+                reportedAccitentList.add(accident);
+            }
+        }
+
+        return reportedAccitentList.stream().
+                filter(accident -> accident.accidentId == accidentId).
+                findFirst().orElse(null);
+    }
+
+    @Override
     public ArrayList<Accident> getReportedAccidentList() {
         ArrayList<Accident> reportedAccitentList = new ArrayList<>();
 
@@ -44,7 +58,6 @@ public class AccidentListImpl implements AccidentList {
             }
         }
         return reportedAccitentList;
-
     }
 
     @Override

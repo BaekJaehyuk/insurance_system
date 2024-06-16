@@ -31,7 +31,6 @@ public class ProductListImpl implements ProductList {
 	}
 
 
-
 	@Override
 	public void update(Product product) {
 		int index = productList.indexOf(product);
@@ -43,4 +42,5 @@ public class ProductListImpl implements ProductList {
 	public ArrayList<Product> getProductList() {
 		return productList;
 	}
+
 }

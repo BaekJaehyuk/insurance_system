@@ -9,6 +9,9 @@
       <change beforePath="$PROJECT_DIR$/src/system/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/system/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/system/accident/AccidentList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/system/accident/AccidentList.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/system/accident/AccidentListImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/system/accident/AccidentListImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/system/product/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/system/product/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/system/product/ProductListImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/system/product/ProductListImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/system/user/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/system/user/Customer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

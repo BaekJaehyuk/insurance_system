@@ -5,6 +5,7 @@ import src.system.accident.Accident;
 import src.system.compensation.Compensation;
 import src.system.counseling.Counseling;
 import src.system.loan.Loan;
+import src.system.product.Product;
 
 import java.util.*;
 
@@ -49,6 +50,7 @@ public class Customer {
 		this.insuranceList = new ArrayList<>();
 		this.drivingExperience = drivingExperience;
 	}
+
 
 	public Loan getLoan() {
 		return loan;
@@ -113,6 +115,7 @@ public class Customer {
 		this.sex = sex;
 	}
 
+	public ArrayList<Long> getProductList() {return this.productList;};
 	public void addProduct(Long productId) {
 		this.productList.add(productId);
 	}
