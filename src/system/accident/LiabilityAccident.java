@@ -48,5 +48,11 @@ public class LiabilityAccident extends Accident {
 
     @Override
     public void receiveAccident() {
+        // Handle liability accident
+    }
+
+    @Override
+    public String getType() {
+        return "Liability Accident";
     }
 }

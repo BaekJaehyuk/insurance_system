@@ -8,6 +8,7 @@ import java.io.InputStreamReader;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import src.system.accident.*;
 import src.system.compensation.Compensation;
@@ -88,6 +89,9 @@ public class Main {
             case "10":
                 judgeLoan();
                 break;
+            case "11":
+                verifyAccidentReport();
+                break;
             case "x":
                 System.exit(0);
                 break;
@@ -95,6 +99,8 @@ public class Main {
                 System.out.println(MENU_INVALID_CHOICE.getMsg());
         }
     }
+
+
 
     private static void toAssessDamages() {
         // accidentList.add(new Accident(1, "교통사고", "2024-06-04", "명지대", 1, "Pending", assessmentStatus) {
@@ -215,6 +221,7 @@ public class Main {
                     insurance = new Driver((int) registerCustomer.getCustomerID(), new InsuranceFee(20000), "X", new Policy(),
                             100, Integer.parseInt(input()), new Date());
                     registerCustomer.addInsurance(insurance); // 고객의 보험 리스트에 추가
+                    insuranceList.add(insurance); // InsuranceListImpl에 추가
                     System.out.println(registerCustomer.getName() + "님, 운전자 보험 가입이 완료되었습니다.");
                 } else {
                     System.out.println(registerCustomer.getName() + "님, 운전자 보험 가입 심사에 실패하였습니다.");
@@ -226,7 +233,7 @@ public class Main {
                     insurance = new OwnCar((int) registerCustomer.getCustomerID(), new InsuranceFee(10000), "X", new Policy(), 100,
                             Integer.parseInt(input()), Integer.parseInt(input()), Integer.parseInt(input()));
                     registerCustomer.addInsurance(insurance); // 고객의 보험 리스트에 추가
-                    insuranceList.add(insurance);
+                    insuranceList.add(insurance); // InsuranceListImpl에 추가
                     System.out.println(registerCustomer.getName() + "님, 자차 보험 가입이 완료되었습니다.");
                 } else {
                     System.out.println(registerCustomer.getName() + "님, 자차 보험 가입 심사에 실패하였습니다.");
@@ -236,10 +243,9 @@ public class Main {
                 System.out.println("유효하지 않은 선택입니다.");
                 return;
         }
-
-        registerCustomer.addInsurance(insurance); // 고객의 보험 리스트에 추가
-        insuranceList.add(insurance); // InsuranceListImpl에 추가
     }
+
+
 
 
     // 운전자 보험 심사 로직
@@ -265,7 +271,7 @@ public class Main {
 
     private static void accidentReport() {
         try {
-            System.out.println(MSG_ASK_CUSTOMER_ID.getMsg());
+            System.out.println("사고를 접수할 고객의 ID를 입력해 주세요");
             long customerId = Long.parseLong(input());
 
             Customer customer = customerList.get(customerId);
@@ -291,6 +297,8 @@ public class Main {
 
             boolean hasDriverInsurance = customer.getInsuranceList().stream().anyMatch(insurance -> insurance instanceof Driver);
             boolean hasAutoInsurance = customer.getInsuranceList().stream().anyMatch(insurance -> insurance instanceof OwnCar);
+
+
             if ("본인상해".equals(accidentType) && !hasDriverInsurance) {
                 System.out.println("운전자 보험에 가입된 고객만 본인 상해 사고를 접수할 수 있습니다.");
                 return;
@@ -340,6 +348,41 @@ public class Main {
             System.out.println(MSG_ACCIDENT_REPORTED.getMsg());
         } catch (IOException e) {
             e.printStackTrace();
+        }
+    }
+    private static void verifyAccidentReport() throws IOException {
+        System.out.println("사고 접수 확인:");
+        List<Accident> accidents = accidentList.get();
+        for (Accident accident : accidents) {
+            System.out.println("접수번호: " + accident.getAccidentId() + ", 사고유형: " + accident.getType());
+        }
+
+        System.out.println("확인할 접수번호를 입력하세요:");
+        long accidentId = Long.parseLong(input());
+
+        Accident accident = accidentList.get(accidentId);
+        if (accident == null) {
+            System.out.println("유효하지 않은 접수번호입니다.");
+            return;
+        }
+
+        System.out.println("사고 접수 상세 정보:");
+        System.out.println(accident);
+
+        System.out.println("고객 가입 상품:");
+        Customer customer = customerList.get(accident.getCustomerId());
+        showList(customer.getInsuranceList());
+
+        System.out.println("[접수하기]를 클릭하려면 '1'을, [반려하기]를 클릭하려면 '2'를 입력하세요:");
+        String choice = input();
+        if ("1".equals(choice)) {
+            accident.setStatus("접수됨");
+            System.out.println("사고가 접수되었습니다.");
+        } else if ("2".equals(choice)) {
+            accidentList.delete(accidentId);
+            System.out.println("사고 접수가 반려되었습니다.");
+        } else {
+            System.out.println("유효하지 않은 선택입니다.");
         }
     }
 
@@ -556,6 +599,7 @@ public class Main {
         System.out.println(MENU_CONPENSATE.getMsg());
         System.out.println(MENU_ACCOUNT.getMsg());
         System.out.println(MENU_LOAN_EMPLOYEE.getMsg());
+        System.out.println(MENU_VERIFY_ACCIDENT_REPORT.getMsg());
         System.out.println(MENU_EXIT.getMsg());
     }
 }
