@@ -1,6 +1,7 @@
 package src.system;
 
 import src.system.compensation.Compensation;
+import src.system.product.Product;
 
 public class Insurance {
 
