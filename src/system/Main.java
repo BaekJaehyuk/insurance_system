@@ -428,11 +428,16 @@ public class Main {
 
     }
 
-    private static void makeAccount() { // 예외처리 안함
+    private static void makeAccount() {
         try {
+            Customer customer = customerList.get(1);
+            if (customer == null) {
+                System.out.println("\n\n보험 가입 고객만 이용 가능합니다.\n\n");
+                return;
+            }
+
             System.out.println("1. 계좌확인");
             System.out.println("2. 계좌등록");
-            Customer customer = customerList.get(1);
             String choice = input();
             switch (choice) {
                 case "1": // 계좌 확인
@@ -589,7 +594,7 @@ public class Main {
                             "\n대출 잔액: " + prevLoanBalance +
                                     "\n상환 회차: " + prevRepaymentPeriod +
                                     "\n월 상환금액: " + monthlyPayment +
-                                    "\n\n상환을 진행하시겠습니까? (1) 계속하기 (2) 돌아가기 \n");
+                                    "\n\n상환을 진행하시겠습니까? (1) 계속하기 \n");
                     String continueRepayment = input();
                     if (!continueRepayment.equals("1"))
                         return;
