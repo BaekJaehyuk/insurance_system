@@ -13,7 +13,7 @@ public interface AccidentList {
 	public void delete(long accidentId);
 
 	public Accident get(long accidentId);
-
+	public Accident getReportedAccident(long accidentId);
 	public ArrayList<Accident> get();
 
 	public ArrayList<Accident> getReportedAccidentList();

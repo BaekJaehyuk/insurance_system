@@ -1,17 +1,26 @@
 package src.system.product;
 
 public class Product {
+	private static long lastID = 0L;
 	private String description;
 	private String name;
 	private double basePremium;
 	private double coverageLimit;
 
+	private long productId;
+
 	public Product() {}
 
 	public Product(String name, double basePremium, double coverageLimit) {
+		lastID++;
+		this.productId = lastID;
 		this.name = name;
 		this.basePremium = basePremium;
 		this.coverageLimit = coverageLimit;
+	}
+
+	public long getProductId() {
+		return productId;
 	}
 
 	public String getDescription() {
