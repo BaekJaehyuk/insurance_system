@@ -4,16 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7e084647-5a0e-4ed8-b59e-a8146c583d19" name="Changes" comment="feat: 보험설계 기능">
+    <list default="true" id="7e084647-5a0e-4ed8-b59e-a8146c583d19" name="Changes" comment="feat: 만들어진 보험을 가입 할 수 있도록 변경">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/insurance system/src/system/Insurance.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insurance system/src/system/Insurance.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/insurance system/src/system/Product.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/insurance system/src/system/ProductList.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/insurance system/src/system/ProductListImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/system/Driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/system/Driver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/system/InsuranceFee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/system/InsuranceFee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/insurance system/src/system/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insurance system/src/system/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/system/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/system/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/system/OwnCar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/system/OwnCar.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -254,7 +248,23 @@
       <option name="project" value="LOCAL" />
       <updated>1718549723297</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="feat: 만들어진 보험을 가입 할 수 있도록 변경">
+      <option name="closed" value="true" />
+      <created>1718556666858</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1718556666858</updated>
+    </task>
+    <task id="LOCAL-00014" summary="feat: 만들어진 보험을 가입 할 수 있도록 변경">
+      <option name="closed" value="true" />
+      <created>1718556689333</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1718556689333</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -283,7 +293,8 @@
     <MESSAGE value="feat: class 파일 수정" />
     <MESSAGE value="feat: 가입 보험 추가" />
     <MESSAGE value="feat: 보험설계 기능" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: 보험설계 기능" />
+    <MESSAGE value="feat: 만들어진 보험을 가입 할 수 있도록 변경" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: 만들어진 보험을 가입 할 수 있도록 변경" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
