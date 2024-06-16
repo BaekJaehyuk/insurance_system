@@ -104,45 +104,63 @@ public class Main {
                 System.out.println(MENU_INVALID_CHOICE.getMsg());
         }
     }
-    private static void designInsurance() throws IOException {
-        System.out.println("설계할 보험 종류를 선택하세요: 1. 운전자 보험 2. 자차 보험");
-        String insuranceType = input();
 
-        System.out.println("보험 이름을 입력하세요:");
-        String insuranceName = input();
+    private static void designInsurance() {
+        try {
+            System.out.println("설계할 보험 종류를 선택하세요: 1. 운전자 보험 2. 자차 보험");
+            String insuranceType = input();
 
-        System.out.println("기본 보험료를 입력하세요:");
-        double basePremium = Double.parseDouble(input());
-        System.out.println("보상 한도를 입력하세요:");
-        double coverageLimit = Double.parseDouble(input());
-
-        Product insuranceProduct = new Product(insuranceName, basePremium, coverageLimit);
-
-        switch (insuranceType) {
-            case "1":
-                insuranceProduct.setDescription("운전자 보험");
-                productList.add(insuranceProduct);
-                System.out.println("운전자 보험 설계가 완료되었습니다.");
-                break;
-            case "2":
-                insuranceProduct.setDescription("자차 보험");
-                productList.add(insuranceProduct);
-                System.out.println("자차 보험 설계가 완료되었습니다.");
-                break;
-            default:
+            while (!insuranceType.equals("1") && !insuranceType.equals("2")) {
                 System.out.println("유효하지 않은 선택입니다.");
+                System.out.println("설계할 보험 종류를 선택하세요: 1. 운전자 보험 2. 자차 보험");
+                insuranceType = input();
+            }
+
+            System.out.println("보험 이름을 입력하세요:");
+            String insuranceName = input();
+
+            System.out.println("기본 보험료를 입력하세요:");
+            double basePremium = Double.parseDouble(input());
+            System.out.println("보상 한도를 입력하세요:");
+            double coverageLimit = Double.parseDouble(input());
+
+            Product insuranceProduct = new Product(insuranceName, basePremium, coverageLimit);
+
+            switch (insuranceType) {
+                case "1":
+                    insuranceProduct.setDescription("운전자 보험");
+                    productList.add(insuranceProduct);
+                    System.out.println("운전자 보험 설계가 완료되었습니다.");
+                    break;
+                case "2":
+                    insuranceProduct.setDescription("자차 보험");
+                    productList.add(insuranceProduct);
+                    System.out.println("자차 보험 설계가 완료되었습니다.");
+                    break;
+                default:
+                    System.out.println("유효하지 않은 선택입니다.");
+            }
+
+        } catch (NumberFormatException e) {
+            System.out.println("입력 값이 올바르지 않습니다. 숫자를 입력해 주세요.");
+        } catch (IOException e) {
+            System.out.println("입력 과정에서 오류가 발생했습니다. 다시 시도해 주세요.");
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("현재 시스템 오류가 발생하였습니다. 잠시 후 다시 시도해주세요.");
         }
     }
+
     private static void toAssessDamages() {
         try {
-            if (accidentList.get().isEmpty()) {
+            if (accidentList.getReportedAccidentList().isEmpty()) {
                 System.out.println("\n\n현재 접수된 사고 건이 없습니다.\n\n");
                 return;
             }
-            System.out.println(gitMENU_INFO.getMsg());
 
             System.out.println("------------사고 접수 내역------------");
-            showList(accidentList.get());
+
+            showList(accidentList.getReportedAccidentList());
             System.out.println("-----------------------------------");
 
             System.out.println(MSG_ASSESS_DAMAGE.getMsg());
@@ -182,7 +200,7 @@ public class Main {
             insuranceMoney = Double.parseDouble(propertyDamageAccident.getReceiptUrl()) * 0.9;
         }
 
-        System.out.println("산정된 보험금: " + insuranceMoney +'\n');
+        System.out.println("산정된 보험금: " + insuranceMoney + '\n');
 
         System.out.println(MSG_COMPENSATION_ASK.getMsg());
         System.out.println(MSG_YES_OR_NO.getMsg());
@@ -220,12 +238,12 @@ public class Main {
                 return;
             }
 
-            if(compensationList.get(compensationId).pay()){
+            if (compensationList.get(compensationId).pay()) {
                 System.out.println(c_customerList.get(customerId).getName() + "고객님에게 "
                         + compensationList.get(compensationId).getMoney() + "원이 지급되었습니디.");
                 compensationList.delete(compensationId);
                 c_customerList.delete(customerId);
-            }else{
+            } else {
                 System.out.println(c_customerList.get(customerId).getName() + "고객님의 계좌 정보가 없습니다.");
             }
 
@@ -263,7 +281,6 @@ public class Main {
         System.out.println("이름, 성별, 전화번호, 생일, 운전경력(개월) 입력");
         Customer registerCustomer = join.register(input(), input(), input(), input(),
                 Integer.parseInt(input()));
-        customerList.add(registerCustomer); // 고객 리스트에 추가
 
         System.out.println("가입할 보험을 선택하세요:");
         showProductList();
@@ -274,6 +291,8 @@ public class Main {
         if (selectedInsurance == null) {
             System.out.println("유효하지 않은 선택입니다.");
             return;
+        } else {
+            customerList.add(registerCustomer); // 고객 리스트에 추가
         }
 
 
@@ -283,7 +302,7 @@ public class Main {
         if ("운전자 보험".equals(selectedInsurance.getDescription())) {
             if (underwritingDriver(registerCustomer)) {
                 System.out.println("고객님께서 이용 중이신 자동차의 주행 거리를 입력해 주세요.");
-                insurance = new Driver((int) registerCustomer.getCustomerID(), selectedInsurance.getName(),new InsuranceFee(selectedInsurance.getBasePremium()), paymentStatus,
+                insurance = new Driver((int) registerCustomer.getCustomerID(), selectedInsurance.getName(), new InsuranceFee(selectedInsurance.getBasePremium()), paymentStatus,
                         new Policy(), (int) selectedInsurance.getCoverageLimit(), Integer.parseInt(input()), new Date());
                 registerCustomer.addInsurance(insurance); // 고객의 보험 리스트에 추가
                 System.out.println(registerCustomer.getName() + "님, 운전자 보험 가입이 완료되었습니다.");
@@ -337,6 +356,7 @@ public class Main {
 
     private static void accidentReport() {
         try {
+            showList(customerList.get());
             System.out.println("사고를 접수할 고객의 ID를 입력해 주세요");
             long customerId = Long.parseLong(input());
 

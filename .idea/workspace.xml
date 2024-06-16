@@ -6,9 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="7e084647-5a0e-4ed8-b59e-a8146c583d19" name="Changes" comment="refactor: 보험금 납부에 보험리스트 뜨도록">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/system/Driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/system/Driver.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/system/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/system/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/system/OwnCar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/system/OwnCar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/system/accident/AccidentList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/system/accident/AccidentList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/system/accident/AccidentListImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/system/accident/AccidentListImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
