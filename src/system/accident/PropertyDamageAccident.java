@@ -45,4 +45,15 @@ public class PropertyDamageAccident extends Accident {
     public String getType() {
         return "Property Damage Accident";
     }
+
+    public String propertyDamageAccidentDetail() {
+        return "접수날짜: " + date + "\n" +
+                "고객ID: " + customerId + "\n" +
+                "사고 위치: " + location + "\n" +
+                "사고 설명: " + accidentDetails + "\n" +
+                "차량 번호: " + assessmentStatus + "\n" +
+                "피해재산종류: " + damagedPropertyType+ "\n" +
+                "사고현장사진: " + accidentPhotoUrl +  "\n"+
+                "재산 손해액: " + receiptUrl +  "\n";
+    }
 }

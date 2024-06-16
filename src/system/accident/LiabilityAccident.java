@@ -55,4 +55,15 @@ public class LiabilityAccident extends Accident {
     public String getType() {
         return "Liability Accident";
     }
+
+    public String liabilityAccidentDetail() {
+        return "접수날짜: " + date + "\n" +
+                "고객ID: " + customerId + "\n" +
+                "사고 위치: " + location + "\n" +
+                "사고 설명: " + accidentDetails + "\n" +
+                "차량 번호: " + assessmentStatus + "\n" +
+                "의료 손해액: " + medicalRecords+ "\n" +
+                "피해자 이름: " + victimName+ "\n" +
+                "피해자 전화번호: " + victimPhoneNumber +  "\n";
+    }
 }
