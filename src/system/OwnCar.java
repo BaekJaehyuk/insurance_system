@@ -1,13 +1,12 @@
 package src.system;
 
-import java.util.Date;
-
 public class OwnCar extends Car {
 
 	private int model;
 	private int vehicleNumber;
+	private String insuranceName;
 
-	public OwnCar(int customerId, InsuranceFee insuranceFee, String paymentStatus, Policy policy, int rate, int mileage, int model, int vehicleNumber) {
+	public OwnCar(int customerId, String insuranceName, InsuranceFee insuranceFee, String paymentStatus, Policy policy, int rate, int mileage, int model, int vehicleNumber) {
 		this.setId();
 		this.setCustomerID((long) customerId); // Set customer ID
 		this.setInsuranceFee(insuranceFee);
@@ -19,6 +18,7 @@ public class OwnCar extends Car {
 		this.setMileage(mileage);
 		this.model = model;
 		this.vehicleNumber = vehicleNumber;
+		this.insuranceName = insuranceName;
 	}
 
 	// Getters and Setters for OwnCar specific fields
@@ -38,11 +38,20 @@ public class OwnCar extends Car {
 		this.vehicleNumber = vehicleNumber;
 	}
 
+	public String getInsuranceName() {
+		return insuranceName;
+	}
+
+	public void setInsuranceName(String insuranceName) {
+		this.insuranceName = insuranceName;
+	}
+
 	@Override
 	public String toString() {
 		return "OwnCar{" +
 				"model=" + model +
 				", vehicleNumber=" + vehicleNumber +
+				", insuranceName='" + insuranceName + '\'' +
 				", insuranceID=" + getInsuranceID() +
 				", insuranceFee=" + getInsuranceFee().getAmount() +
 				", insurancePayment=" + getPaymentStatus() +
