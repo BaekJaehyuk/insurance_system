@@ -265,41 +265,50 @@ public class Main {
                 Integer.parseInt(input()));
         customerList.add(registerCustomer); // 고객 리스트에 추가
 
-        System.out.println("가입할 보험 종류를 선택하세요: 1. 운전자 보험 2. 자차 보험");
-        String insuranceChoice = input();
+        System.out.println("가입할 보험을 선택하세요:");
+        showProductList();
+
+        String selectedInsuranceName = input();
+        Product selectedInsurance = productList.get(selectedInsuranceName);
+
+        if (selectedInsurance == null) {
+            System.out.println("유효하지 않은 선택입니다.");
+            return;
+        }
 
         Insurance insurance = null;
 
-        switch (insuranceChoice) {
-            case "1":
-                if (underwritingDriver(registerCustomer)) {
-                    System.out.println("고객님께서 이용 중이신 자동차의 주행 거리를 입력해 주세요.");
-                    insurance = new Driver((int) registerCustomer.getCustomerID(), new InsuranceFee(20000), "X",
-                            new Policy(),
-                            100, Integer.parseInt(input()), new Date());
-                    registerCustomer.addInsurance(insurance); // 고객의 보험 리스트에 추가
-                   // insuranceList.add(insurance); // InsuranceListImpl에 추가
-                    System.out.println(registerCustomer.getName() + "님, 운전자 보험 가입이 완료되었습니다.");
-                } else {
-                    System.out.println(registerCustomer.getName() + "님, 운전자 보험 가입 심사에 실패하였습니다.");
-                }
-                break;
-            case "2":
-                if (underwritingOwnCar(registerCustomer)) {
-                    System.out.println("고객님께서 이용 중인 자동차의 주행거리, 차량 모델, 차량 번호를 입력해 주세요");
-                    insurance = new OwnCar((int) registerCustomer.getCustomerID(), new InsuranceFee(10000), "X",
-                            new Policy(), 100,
-                            Integer.parseInt(input()), Integer.parseInt(input()), Integer.parseInt(input()));
-                    registerCustomer.addInsurance(insurance); // 고객의 보험 리스트에 추가
-                    //insuranceList.add(insurance); // InsuranceListImpl에 추가
-                    System.out.println(registerCustomer.getName() + "님, 자차 보험 가입이 완료되었습니다.");
-                } else {
-                    System.out.println(registerCustomer.getName() + "님, 자차 보험 가입 심사에 실패하였습니다.");
-                }
-                break;
-            default:
-                System.out.println("유효하지 않은 선택입니다.");
-                return;
+        if ("운전자 보험".equals(selectedInsurance.getDescription())) {
+            if (underwritingDriver(registerCustomer)) {
+                System.out.println("고객님께서 이용 중이신 자동차의 주행 거리를 입력해 주세요.");
+                insurance = new Driver((int) registerCustomer.getCustomerID(), new InsuranceFee(selectedInsurance.getBasePremium()), selectedInsurance.getName(),
+                        new Policy(),
+                        (int) selectedInsurance.getCoverageLimit(), Integer.parseInt(input()), new Date());
+                registerCustomer.addInsurance(insurance); // 고객의 보험 리스트에 추가
+                System.out.println(registerCustomer.getName() + "님, 운전자 보험 가입이 완료되었습니다.");
+            } else {
+                System.out.println(registerCustomer.getName() + "님, 운전자 보험 가입 심사에 실패하였습니다.");
+            }
+        } else if ("자차 보험".equals(selectedInsurance.getDescription())) {
+            if (underwritingOwnCar(registerCustomer)) {
+                System.out.println("고객님께서 이용 중인 자동차의 주행거리, 차량 모델, 차량 번호를 입력해 주세요");
+                insurance = new OwnCar((int) registerCustomer.getCustomerID(), new InsuranceFee(selectedInsurance.getBasePremium()), selectedInsurance.getName(),
+                        new Policy(), (int) selectedInsurance.getCoverageLimit(),
+                        Integer.parseInt(input()), Integer.parseInt(input()), Integer.parseInt(input()));
+                registerCustomer.addInsurance(insurance); // 고객의 보험 리스트에 추가
+                System.out.println(registerCustomer.getName() + "님, 자차 보험 가입이 완료되었습니다.");
+            } else {
+                System.out.println(registerCustomer.getName() + "님, 자차 보험 가입 심사에 실패하였습니다.");
+            }
+        } else {
+            System.out.println("유효하지 않은 선택입니다.");
+        }
+    }
+
+    private static void showProductList() {
+        ArrayList<Product> products = productList.getProductList();
+        for (Product product : products) {
+            System.out.println(product);
         }
     }
 
