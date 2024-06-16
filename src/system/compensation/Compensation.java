@@ -13,7 +13,7 @@ public class Compensation {
     private long customerId;
     private Customer customer;
 
-    private long money;
+    private double money;
 
     public long getCompensationId() {
         return compensationId;
@@ -47,7 +47,7 @@ public class Compensation {
         this.customer = customer;
     }
 
-    public long getMoney() {
+    public double getMoney() {
         return money;
     }
 
@@ -55,7 +55,7 @@ public class Compensation {
         this.money = money;
     }
 
-    public Compensation(long money, long customerId, CustomerListImpl customerList) {
+    public Compensation(double money, long customerId, CustomerListImpl customerList) {
         this.money = money;
         this.customerId = customerId;
         this.customer = customerList.get(customerId);
@@ -77,11 +77,10 @@ public class Compensation {
 
 
     public boolean pay() {
-        if(true){ // 고객 계좌 정보가 없거나 유효하지 않다면
+        if(customer.getAccount() == null){
             return false;
         }
-        // 고객 계좌에 보상금 입금
-        return true;
+        return  true;
     }
 
 }

@@ -55,4 +55,16 @@ public class PersonalInjuryAccident extends Accident {
     public String getType() {
         return "Personal Injury Accident";
     }
+
+    public String personalInjuryAccidentDetail() {
+        return "접수날짜: " + date + "\n" +
+                "고객ID: " + customerId + "\n" +
+                "사고 위치: " + location + "\n" +
+                "사고 설명: " + accidentDetails + "\n" +
+                "차량 번호: " + assessmentStatus + "\n" +
+                "부상정도(1~10): " + injuryDegree+ "\n" +
+                "차량피해정도(1~10): " + vehicleDamageDegree+ "\n" +
+                "의료 손해액: " + medicalReceipt +  "\n"+
+                "처량수리 손해액: " + repairReceipt +  "\n";
+    }
 }

@@ -102,17 +102,16 @@ public class Main {
     }
 
     private static void toAssessDamages() {
-        // accidentList.add(new Accident(1, "교통사고", "2024-06-04", "명지대", 1, "Pending",
-        // assessmentStatus) {
-        // @Override
-        // public void receiveAccident() {
-        // // 사고 접수 로직
-        // }
-        // }); // test data
-
         try {
+            if (accidentList.get().isEmpty()) {
+                System.out.println("\n\n현재 접수된 사고 건이 없습니다.\n\n");
+                return;
+            }
             System.out.println(gitMENU_INFO.getMsg());
+
+            System.out.println("------------사고 접수 내역------------");
             showList(accidentList.get());
+            System.out.println("-----------------------------------");
 
             System.out.println(MSG_ASSESS_DAMAGE.getMsg());
             long accidentId = Long.parseLong(input());
@@ -129,16 +128,38 @@ public class Main {
     }
 
     private static void handleCompensation(long accidentId) throws IOException {
+        Accident accident = accidentList.get(accidentId);
+        double insuranceMoney = 0;
+
+        if (accident instanceof LiabilityAccident) { // 대인배상
+            LiabilityAccident liabilityAccident = (LiabilityAccident) accident;
+            System.out.println(liabilityAccident.liabilityAccidentDetail());
+
+            insuranceMoney = Double.parseDouble(liabilityAccident.getMedicalRecords()) * 0.9;
+        } else if (accident instanceof PersonalInjuryAccident) { // 본인상해
+            PersonalInjuryAccident personalInjuryAccident = (PersonalInjuryAccident) accident;
+            System.out.println(personalInjuryAccident.personalInjuryAccidentDetail());
+
+            insuranceMoney = (Double.parseDouble(personalInjuryAccident.getMedicalReceipt()) +
+                    Double.parseDouble(personalInjuryAccident.getRepairReceipt())) * 0.9;
+
+        } else if (accident instanceof PropertyDamageAccident) { // 대물배상
+            PropertyDamageAccident propertyDamageAccident = (PropertyDamageAccident) accident;
+            System.out.println(propertyDamageAccident.propertyDamageAccidentDetail());
+
+            insuranceMoney = Double.parseDouble(propertyDamageAccident.getReceiptUrl()) * 0.9;
+        }
+
+        System.out.println("산정된 보험금: " + insuranceMoney +'\n');
+
         System.out.println(MSG_COMPENSATION_ASK.getMsg());
         System.out.println(MSG_YES_OR_NO.getMsg());
 
         String choice = input();
         switch (choice) {
             case "1":
-                System.out.println(MSG_CALCULATE_PAYOUT.getMsg());
-                long money = Long.parseLong(input());
                 c_customerList.add(customerList.get(accidentList.get(accidentId).getCustomerId()));
-                Compensation compensation = new Compensation(money, accidentList.get(accidentId).getCustomerId(),
+                Compensation compensation = new Compensation(insuranceMoney, accidentList.get(accidentId).getCustomerId(),
                         customerList);
                 compensationList.add(compensation);
                 break;
@@ -157,21 +178,23 @@ public class Main {
             System.out.println(gitMENU_INFO.getMsg());
             showList(compensationList.get());
             System.out.println(MSG_ASSESS_COMPENSATE.getMsg());
-
             String sCompensationChoice = objReader.readLine().trim();
-            long compensationId = Long.parseLong(sCompensationChoice);
-            if (compensationList.get(compensationId) != null) {
-                long customerId = compensationList.get(compensationId).getCustomerId();
-                if (compensationList.get(compensationId).pay()) {
-                    System.out.println(c_customerList.get(customerId).getName() + "고객님에게 "
-                            + compensationList.get(compensationId).getMoney() + "원이 지급되었습니디.");
-                    customerList.delete(customerId);
-                } else {
-                    System.out.println(c_customerList.get(customerId).getName() + "고객님의 계좌 정보가 없습니다.");
-                }
 
-            } else {
+            long compensationId = Long.parseLong(sCompensationChoice);
+            long customerId = compensationList.get(compensationId).getCustomerId();
+
+            if (compensationList.get(compensationId) == null) {
                 System.out.println(MSG_VALIDATE_COMPENSATE_ID.getMsg());
+                return;
+            }
+
+            if(compensationList.get(compensationId).pay()){
+                System.out.println(c_customerList.get(customerId).getName() + "고객님에게 "
+                        + compensationList.get(compensationId).getMoney() + "원이 지급되었습니디.");
+                compensationList.delete(compensationId);
+                c_customerList.delete(customerId);
+            }else{
+                System.out.println(c_customerList.get(customerId).getName() + "고객님의 계좌 정보가 없습니다.");
             }
 
         } catch (RemoteException e) {
@@ -320,7 +343,7 @@ public class Main {
                 String medicalReceipt = input();
                 System.out.println("차량수리비 영수증을 입력하세요:");
                 String repairReceipt = input();
-                additionalParams = new String[] { severity, carDamage, medicalReceipt, repairReceipt };
+                additionalParams = new String[]{severity, carDamage, medicalReceipt, repairReceipt};
             } else if ("대인배상".equals(accidentType)) {
                 System.out.println("피해자 이름을 입력하세요:");
                 String victimName = input();
@@ -330,8 +353,8 @@ public class Main {
                 String injurySeverity = input();
                 System.out.println("피해자 의료기록 및 영수증을 입력하세요:");
                 String medicalRecordsAndReceipts = input();
-                additionalParams = new String[] { victimName, victimContact, injurySeverity,
-                        medicalRecordsAndReceipts };
+                additionalParams = new String[]{victimName, victimContact, injurySeverity,
+                        medicalRecordsAndReceipts};
             } else if ("대물배상".equals(accidentType)) {
                 System.out.println("피해재산종류를 입력하세요:");
                 String propertyType = input();
@@ -339,7 +362,7 @@ public class Main {
                 String accidentPhotoUrl = input();
                 System.out.println("청구비 영수증을 첨부하세요:");
                 String receiptUrl = input();
-                additionalParams = new String[] { propertyType, accidentPhotoUrl, receiptUrl };
+                additionalParams = new String[]{propertyType, accidentPhotoUrl, receiptUrl};
             } else {
                 System.out.println("유효하지 않은 사고 유형입니다.");
                 return;
@@ -428,11 +451,16 @@ public class Main {
 
     }
 
-    private static void makeAccount() { // 예외처리 안함
+    private static void makeAccount() {
         try {
+            Customer customer = customerList.get(1);
+            if (customer == null) {
+                System.out.println("\n\n보험 가입 고객만 이용 가능합니다.\n\n");
+                return;
+            }
+
             System.out.println("1. 계좌확인");
             System.out.println("2. 계좌등록");
-            Customer customer = customerList.get(1);
             String choice = input();
             switch (choice) {
                 case "1": // 계좌 확인
@@ -589,7 +617,7 @@ public class Main {
                             "\n대출 잔액: " + prevLoanBalance +
                                     "\n상환 회차: " + prevRepaymentPeriod +
                                     "\n월 상환금액: " + monthlyPayment +
-                                    "\n\n상환을 진행하시겠습니까? (1) 계속하기 (2) 돌아가기 \n");
+                                    "\n\n상환을 진행하시겠습니까? (1) 계속하기 \n");
                     String continueRepayment = input();
                     if (!continueRepayment.equals("1"))
                         return;
