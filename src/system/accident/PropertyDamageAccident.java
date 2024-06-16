@@ -2,10 +2,14 @@ package src.system.accident;
 
 public class PropertyDamageAccident extends Accident {
     private String damagedPropertyType;
+    private String accidentPhotoUrl;
+    private String receiptUrl;
 
-    public PropertyDamageAccident(long accidentId, String accidentDetails, String date, String location, long customerId, String carNumber, String damagedPropertyType, String assessmentStatus) {
+    public PropertyDamageAccident(long accidentId, String accidentDetails, String date, String location, long customerId, String carNumber, String damagedPropertyType, String accidentPhotoUrl, String receiptUrl, String assessmentStatus) {
         super(accidentId, accidentDetails, date, location, customerId, carNumber, assessmentStatus);
         this.damagedPropertyType = damagedPropertyType;
+        this.accidentPhotoUrl = accidentPhotoUrl;
+        this.receiptUrl = receiptUrl;
     }
 
     public String getDamagedPropertyType() {
@@ -16,12 +20,24 @@ public class PropertyDamageAccident extends Accident {
         this.damagedPropertyType = damagedPropertyType;
     }
 
-    @Override
-    public void receiveAccident() {
-        //System.out.println("Processing property damage accident: " + getAccidentDetails());
+    public String getAccidentPhotoUrl() {
+        return accidentPhotoUrl;
     }
 
-    public String getAccidentDetails() {
-        return "Accident Details"; // Replace with actual accident details
+    public void setAccidentPhotoUrl(String accidentPhotoUrl) {
+        this.accidentPhotoUrl = accidentPhotoUrl;
+    }
+
+    public String getReceiptUrl() {
+        return receiptUrl;
+    }
+
+    public void setReceiptUrl(String receiptUrl) {
+        this.receiptUrl = receiptUrl;
+    }
+
+    @Override
+    public void receiveAccident() {
+        System.out.println("대물배상 사고를 처리 중입니다: " + getAccidentDetails());
     }
 }

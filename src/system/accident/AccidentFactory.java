@@ -5,8 +5,13 @@ import src.system.Insurance;
 import src.system.OwnCar;
 import src.system.user.Customer;
 
+import java.util.concurrent.atomic.AtomicLong;
+
 public class AccidentFactory {
-    public static Accident createAccident(String type, long accidentId, String accidentDetails, String date, String location, Customer customer, String carNumber, String[] additionalParams) {
+    private static final AtomicLong accidentIdGenerator = new AtomicLong(1);
+
+    public static Accident createAccident(String type, String accidentDetails, String date, String location, Customer customer, String carNumber, String[] additionalParams) {
+        long accidentId = accidentIdGenerator.getAndIncrement();
         boolean hasDriverInsurance = false;
         boolean hasAutoInsurance = false;
 
@@ -19,13 +24,13 @@ public class AccidentFactory {
         }
 
         if ("본인상해".equals(type)) {
-            if (additionalParams.length < 2) {
+            if (additionalParams.length < 4) {
                 throw new IllegalArgumentException("Invalid parameters for Personal Injury Accident");
             }
             if (!hasDriverInsurance) {
-                return new PersonalInjuryAccident(accidentId, accidentDetails, date, location, customer.getCustomerID(), carNumber, Integer.parseInt(additionalParams[0]), Integer.parseInt(additionalParams[1]), "Rejected");
+                return new PersonalInjuryAccident(accidentId, accidentDetails, date, location, customer.getCustomerID(), carNumber, Integer.parseInt(additionalParams[0]), Integer.parseInt(additionalParams[1]), additionalParams[2], additionalParams[3], "Rejected");
             }
-            return new PersonalInjuryAccident(accidentId, accidentDetails, date, location, customer.getCustomerID(), carNumber, Integer.parseInt(additionalParams[0]), Integer.parseInt(additionalParams[1]), "Pending");
+            return new PersonalInjuryAccident(accidentId, accidentDetails, date, location, customer.getCustomerID(), carNumber, Integer.parseInt(additionalParams[0]), Integer.parseInt(additionalParams[1]), additionalParams[2], additionalParams[3], "Pending");
         } else if ("대인배상".equals(type)) {
             if (additionalParams.length < 4) {
                 throw new IllegalArgumentException("Invalid parameters for Liability Accident");
@@ -35,13 +40,13 @@ public class AccidentFactory {
             }
             return new LiabilityAccident(accidentId, accidentDetails, date, location, customer.getCustomerID(), carNumber, additionalParams[0], Integer.parseInt(additionalParams[1]), additionalParams[2], additionalParams[3], "Pending");
         } else if ("대물배상".equals(type)) {
-            if (additionalParams.length < 1) {
+            if (additionalParams.length < 3) {
                 throw new IllegalArgumentException("Invalid parameters for Property Damage Accident");
             }
             if (!hasAutoInsurance) {
-                return new PropertyDamageAccident(accidentId, accidentDetails, date, location, customer.getCustomerID(), carNumber, additionalParams[0], "Rejected");
+                return new PropertyDamageAccident(accidentId, accidentDetails, date, location, customer.getCustomerID(), carNumber, additionalParams[0], additionalParams[1], additionalParams[2], "Rejected");
             }
-            return new PropertyDamageAccident(accidentId, accidentDetails, date, location, customer.getCustomerID(), carNumber, additionalParams[0], "Pending");
+            return new PropertyDamageAccident(accidentId, accidentDetails, date, location, customer.getCustomerID(), carNumber, additionalParams[0], additionalParams[1], additionalParams[2], "Pending");
         } else {
             throw new IllegalArgumentException("Unknown accident type");
         }

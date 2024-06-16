@@ -3,11 +3,15 @@ package src.system.accident;
 public class PersonalInjuryAccident extends Accident {
     private int injuryDegree;
     private int vehicleDamageDegree;
+    private String medicalReceipt;
+    private String repairReceipt;
 
-    public PersonalInjuryAccident(long accidentId, String accidentDetails, String date, String location, long customerId, String carNumber, int injuryDegree, int vehicleDamageDegree, String assessmentStatus) {
-        super(accidentId, accidentDetails, date, location, customerId, carNumber, assessmentStatus); // Pass carNumber to the superclass constructor
+    public PersonalInjuryAccident(long accidentId, String accidentDetails, String date, String location, long customerId, String carNumber, int injuryDegree, int vehicleDamageDegree, String medicalReceipt, String repairReceipt, String assessmentStatus) {
+        super(accidentId, accidentDetails, date, location, customerId, carNumber, assessmentStatus);
         this.injuryDegree = injuryDegree;
         this.vehicleDamageDegree = vehicleDamageDegree;
+        this.medicalReceipt = medicalReceipt;
+        this.repairReceipt = repairReceipt;
     }
 
     public int getInjuryDegree() {
@@ -26,8 +30,23 @@ public class PersonalInjuryAccident extends Accident {
         this.vehicleDamageDegree = vehicleDamageDegree;
     }
 
+    public String getMedicalReceipt() {
+        return medicalReceipt;
+    }
+
+    public void setMedicalReceipt(String medicalReceipt) {
+        this.medicalReceipt = medicalReceipt;
+    }
+
+    public String getRepairReceipt() {
+        return repairReceipt;
+    }
+
+    public void setRepairReceipt(String repairReceipt) {
+        this.repairReceipt = repairReceipt;
+    }
+
     @Override
     public void receiveAccident() {
-        //System.out.println("Processing personal injury accident: " + getAccidentDetails());
     }
 }

@@ -7,7 +7,7 @@ public class LiabilityAccident extends Accident {
     private String victimPhoneNumber;
 
     public LiabilityAccident(long accidentId, String accidentDetails, String date, String location, long customerId, String carNumber, String medicalRecords, int victimInjuryDegree, String victimName, String victimPhoneNumber, String assessmentStatus) {
-        super(accidentId, accidentDetails, date, location, customerId, carNumber, assessmentStatus); // carNumber 추가
+        super(accidentId, accidentDetails, date, location, customerId, carNumber, assessmentStatus);
         this.medicalRecords = medicalRecords;
         this.victimInjuryDegree = victimInjuryDegree;
         this.victimName = victimName;
@@ -48,6 +48,5 @@ public class LiabilityAccident extends Accident {
 
     @Override
     public void receiveAccident() {
-       // System.out.println("대인배상 사고를 처리 중입니다: " + getAccidentDetails());
     }
 }
