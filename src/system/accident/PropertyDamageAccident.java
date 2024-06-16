@@ -38,6 +38,11 @@ public class PropertyDamageAccident extends Accident {
 
     @Override
     public void receiveAccident() {
-        System.out.println("대물배상 사고를 처리 중입니다: " + getAccidentDetails());
+        // Handle property damage accident
+    }
+
+    @Override
+    public String getType() {
+        return "Property Damage Accident";
     }
 }

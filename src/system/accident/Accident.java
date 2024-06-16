@@ -7,6 +7,7 @@ public abstract class Accident {
 	protected String location;
 	protected long customerId;
 	protected String assessmentStatus;
+	protected String status;
 
 	public long getAccidentId() {
 		return accidentId;
@@ -56,6 +57,14 @@ public abstract class Accident {
 		this.assessmentStatus = assessmentStatus;
 	}
 
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
 	public Accident(long accidentId, String accidentDetails, String date, String location, long customerId, String assessmentStatus, String status) {
 		this.accidentId = accidentId;
 		this.accidentDetails = accidentDetails;
@@ -63,9 +72,10 @@ public abstract class Accident {
 		this.location = location;
 		this.customerId = customerId;
 		this.assessmentStatus = assessmentStatus;
+		this.status = "Pending";
 	}
 
-	// 공통 메서드
+	// Abstract method for receiving accident
 	public abstract void receiveAccident();
 
 	@Override
@@ -77,6 +87,10 @@ public abstract class Accident {
 				", location='" + location + '\'' +
 				", customerId=" + customerId +
 				", assessmentStatus='" + assessmentStatus + '\'' +
+				", status='" + status + '\'' +
 				'}';
 	}
+
+	// Abstract method to get the type of accident
+	public abstract String getType();
 }

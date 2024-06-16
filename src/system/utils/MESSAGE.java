@@ -15,6 +15,7 @@ public enum MESSAGE {
 
   MENU_ACCOUNT("9. 입출금 계좌 관리"),
   MENU_LOAN_EMPLOYEE("10. 대출 심사"),
+  MENU_VERIFY_ACCIDENT_REPORT("11. 사고 접수 심사"),
   MENU_EXIT("X. 종료"),
   MENU_INVALID_CHOICE("Invalid Choice !!!"),
 
