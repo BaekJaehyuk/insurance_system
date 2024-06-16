@@ -50,7 +50,6 @@ public class Customer {
 		this.drivingExperience = drivingExperience;
 	}
 
-
 	public Loan getLoan() {
 		return loan;
 	}

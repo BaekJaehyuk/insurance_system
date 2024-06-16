@@ -48,15 +48,13 @@ public class LoanListImpl implements LoanList {
         return loanList;
     }
 
-
     @Override
     public boolean update(long loanId, Loan loan) {
         for (Loan prev : this.loanList) {
             if (prev.getLoanID() == loanId) {
-                prev.setApprovalLoan(loan.isApprovalLoan());
+                prev.setLoanStatus(loan.isLoanStatus());
                 prev.setCopyOfIdenrificationCard((loan.getCopyOfIdenrificationCard()));
                 prev.setIncomeProofDocument(loan.getIncomeProofDocument());
-                prev.setLoanStatus(loan.getLoanStatus());
             }
         }
         return false;
