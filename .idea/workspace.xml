@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7e084647-5a0e-4ed8-b59e-a8146c583d19" name="Changes" comment="feat: 만들어진 보험을 가입 할 수 있도록 변경">
+    <list default="true" id="7e084647-5a0e-4ed8-b59e-a8146c583d19" name="Changes" comment="refactor: 보험금 납부에 보험리스트 뜨도록">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/insurance system/src/system/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insurance system/src/system/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/system/Driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/system/Driver.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/system/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/system/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/system/OwnCar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/system/OwnCar.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -264,7 +265,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718556689333</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="refactor: 보험금 납부에 보험리스트 뜨도록">
+      <option name="closed" value="true" />
+      <created>1718558864581</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1718558864581</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -294,7 +303,8 @@
     <MESSAGE value="feat: 가입 보험 추가" />
     <MESSAGE value="feat: 보험설계 기능" />
     <MESSAGE value="feat: 만들어진 보험을 가입 할 수 있도록 변경" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: 만들어진 보험을 가입 할 수 있도록 변경" />
+    <MESSAGE value="refactor: 보험금 납부에 보험리스트 뜨도록" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: 보험금 납부에 보험리스트 뜨도록" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

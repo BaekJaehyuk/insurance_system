@@ -32,7 +32,7 @@ public enum MESSAGE {
   MSG_PAY_INFO("********************** 결제정보 ***********************"),
   MSG_PAYMENT_FEE("결제금액: "),
   MSG_PAYMENT_DATE(", 납부일자: "),
-  MSG_CHECK_PAY("정말 결제하시겠습니까?"),
+  MSG_CHECK_PAY("정말 결제하시겠습니까? (O)(X)"),
   MSG_ALREADY_PAY("이미 납부한 보험입니다."),
   MSG_CANCEL_PAY("결제가 취소되었습니다."),
   MSG_ASK_INSURANCE_ID("지불할 InsuranceId를 입력해주세요"),
