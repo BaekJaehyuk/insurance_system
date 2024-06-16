@@ -456,41 +456,52 @@ public class Main {
 
     private static void payInsuranceFee() {
         showList(customerList.get());
-
         try {
             System.out.println(MSG_ASK_CUSTOMER_ID.getMsg());
             long customerId = Long.parseLong(input());
-            showList(insuranceList.get());
+            Customer customer = customerList.get(customerId);
+
+            if (customer == null) {
+                System.out.println(MSG_VALIDATE_ID.getMsg());
+                return;
+            }
+
+            showList(customer.getInsuranceList());
             System.out.println(MSG_ASK_INSURANCE_ID.getMsg());
             long insuranceId = Long.parseLong(input());
-            Customer customer = customerList.get(customerId);
-            Insurance insurance = insuranceList.get(insuranceId);
-            if (customer != null && insurance != null) {
-                if (insurance.getPaymentStatus().equals(MSG_FALSE.getMsg())) {
-                    System.out.println(MSG_CHECK_PAY.getMsg());
-                    String checkPay = input();
-                    if (checkPay.equals(MSG_TRUE.getMsg())) {
-                        System.out.println(MSG_PAY_INFO.getMsg());
-                        customer.pay(insurance);
-                        System.out.println(MSG_COMPLETE_INSURANCE_FEE.getMsg());
-                        System.out.println(MSG_PAYMENT_FEE.getMsg() + insurance.getInsuranceFee().getAmount()
-                                + MSG_PAYMENT_DATE.getMsg() + insurance.getInsuranceFee().getDateOfPayment());
-                        System.out.println();
-                    } else {
-                        System.out.println(MSG_CANCEL_PAY.getMsg());
-                    }
-                } else {
-                    System.out.println(MSG_ALREADY_PAY.getMsg());
+
+            Insurance insurance = customer.getInsuranceList().stream()
+                    .filter(ins -> ins.getInsuranceID() == insuranceId)
+                    .findFirst()
+                    .orElse(null);
+
+            if (insurance == null) {
+                System.out.println(MSG_VALIDATE_ID.getMsg());
+                return;
+            }
+
+            if (insurance.getPaymentStatus().equals(MSG_FALSE.getMsg())) {
+                System.out.println(MSG_CHECK_PAY.getMsg());
+                String checkPay = input();
+                if (checkPay.equals(MSG_TRUE.getMsg())) {
+                    System.out.println(MSG_PAY_INFO.getMsg());
+                    customer.pay(insurance);
+                    System.out.println(MSG_COMPLETE_INSURANCE_FEE.getMsg());
+                    System.out.println(MSG_PAYMENT_FEE.getMsg() + insurance.getInsuranceFee().getAmount()
+                            + MSG_PAYMENT_DATE.getMsg() + insurance.getInsuranceFee().getDateOfPayment());
                     System.out.println();
+                } else {
+                    System.out.println(MSG_CANCEL_PAY.getMsg());
                 }
             } else {
-                System.out.println(MSG_VALIDATE_ID.getMsg());
+                System.out.println(MSG_ALREADY_PAY.getMsg());
+                System.out.println();
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
+
 
     private static void makeAccount() {
         try {
