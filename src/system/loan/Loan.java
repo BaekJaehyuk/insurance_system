@@ -9,9 +9,10 @@ public class Loan {
     private String copyOfIdenrificationCard;
     private String incomeProofDocument;
     private long loanID;
-    private boolean loanStatus;
+    private boolean approvalLoan;
     private Customer customer;
     private String rejectionReason;
+    private LoanStatus loanStatus;
 
 
     public Loan(String copyOfIdenrificationCard, String incomeProofDocument, Customer customer) {
@@ -20,8 +21,17 @@ public class Loan {
         this.copyOfIdenrificationCard = copyOfIdenrificationCard;
         this.incomeProofDocument = incomeProofDocument;
         this.customer = customer;
-        loanStatus = false;
+        approvalLoan = false;
         rejectionReason = "대출 심사 중입니다.";
+        this.loanStatus = null;
+    }
+
+    public LoanStatus getLoanStatus(){
+        return loanStatus;
+    }
+
+    public void setLoanStatus(LoanStatus loanStatus) {
+        this.loanStatus = loanStatus;
     }
 
     public String getRejectionReason(){
@@ -56,12 +66,12 @@ public class Loan {
         this.loanID = loanID;
     }
 
-    public boolean isLoanStatus() {
-        return loanStatus;
+    public boolean isApprovalLoan() {
+        return approvalLoan;
     }
 
-    public void setLoanStatus(boolean loanStatus) {
-        this.loanStatus = loanStatus;
+    public void setApprovalLoan(boolean approvalLoan) {
+        this.approvalLoan = approvalLoan;
     }
 
     public void finalize() throws Throwable {
