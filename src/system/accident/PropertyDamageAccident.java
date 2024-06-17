@@ -43,7 +43,7 @@ public class PropertyDamageAccident extends Accident {
 
     @Override
     public String getType() {
-        return "Property Damage Accident";
+        return "대물배상";
     }
 
     public String propertyDamageAccidentDetail() {

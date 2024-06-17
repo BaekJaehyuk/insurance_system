@@ -6,6 +6,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.rmi.RemoteException;
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -35,6 +36,7 @@ public class Main {
     private static CompensationListImpl compensationList;
     private static LoanListImpl loanList;
     private static ProductListImpl productList;
+
 
     private static void setData() {
         customerList = new CustomerListImpl();
@@ -493,7 +495,7 @@ public class Main {
         System.out.println("사고 접수 상세 정보:");
         System.out.println(accident);
 
-        System.out.println("고객 가입 상품:");
+        System.out.println("고객 가입 상품과 가입 정보:");
         Customer customer = customerList.get(accident.getCustomerId());
         showList(customer.getInsuranceList());
 
@@ -511,6 +513,9 @@ public class Main {
     }
 
     private static void payInsuranceFee() {
+        NumberFormat nf = NumberFormat.getInstance();
+        nf.setGroupingUsed(true);
+        nf.setMaximumFractionDigits(0);
         showList(customerList.get());
         try {
             System.out.println(MSG_ASK_CUSTOMER_ID.getMsg());
@@ -543,7 +548,7 @@ public class Main {
                     System.out.println(MSG_PAY_INFO.getMsg());
                     customer.pay(insurance);
                     System.out.println(MSG_COMPLETE_INSURANCE_FEE.getMsg());
-                    System.out.println(MSG_PAYMENT_FEE.getMsg() + insurance.getInsuranceFee().getAmount()
+                    System.out.println(MSG_PAYMENT_FEE.getMsg() + nf.format(insurance.getInsuranceFee().getAmount())+ "원"
                             + MSG_PAYMENT_DATE.getMsg() + insurance.getInsuranceFee().getDateOfPayment());
                     System.out.println();
                 } else {

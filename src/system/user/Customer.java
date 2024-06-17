@@ -135,14 +135,13 @@ public class Customer {
 
 	@Override
 	public String toString() {
-		return "Customer{" +
-				"customerID=" + customerID +
-				", name='" + name + '\'' +
-				", sex='" + sex + '\'' +
-				", phoneNumber='" + phoneNumber + '\'' +
-				", birthDay='" + birthDay + '\'' +
-				", Account='" + account + '\'' +
-				'}';
+		return
+				"고객아이디:" + customerID +
+				", 이름:'" + name + '\'' +
+				", 상품:'" + sex + '\'' +
+				", 전화번호:'" + phoneNumber + '\'' +
+				", 생년월일:'" + birthDay + '\'' +
+				", 계좌정보:'" + (account != null ? account : "없음");
 	}
 
 	public void finalize() throws Throwable {

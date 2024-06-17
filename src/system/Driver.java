@@ -1,5 +1,7 @@
 package src.system;
 
+import java.text.NumberFormat;
+
 public class Driver extends Car {
 
 	private int drivingExperience;
@@ -17,9 +19,6 @@ public class Driver extends Car {
 		this.drivingExperience = date;
 		this.insuranceName = insuranceName;
 	}
-
-
-
 
 	public int getDrivingExperience() {
 		return drivingExperience;
@@ -39,16 +38,19 @@ public class Driver extends Car {
 
 	@Override
 	public String toString() {
-		return "Driver{" +
-				"drivingExperience=" + drivingExperience +
-				", insuranceName='" + insuranceName + '\'' +
-				", insuranceID=" + getInsuranceID() +
-				", insuranceFee=" + getInsuranceFee().getAmount() +
-				", insurancePayment=" + getPaymentStatus() +
-				", policy=" + getPolicy() +
-				", rate=" + getRate() +
-				", mileage=" + getMileage() +
-				'}';
+		NumberFormat nf = NumberFormat.getInstance();
+		nf.setGroupingUsed(true);
+		nf.setMaximumFractionDigits(0);
+		return "가입 상품" +
+				" 보험 아이디: " + getInsuranceID() +
+				", 보험이름: '" + insuranceName + '\'' +
+				", 보험료: " + nf.format(getInsuranceFee().getAmount()) + "원" +
+				", 보험금 한도: " + nf.format(getRate()) + "원" +
+				", 정책: " +  getPolicy().toString()+ "\n" +
+				"고객 가입 정보" +
+				" 운전경력: " + drivingExperience +
+				", 주행거리: " + nf.format(getMileage()) + "km" +
+				", 보험금 납입 확인: " + getPaymentStatus();
 	}
 
 	@Override

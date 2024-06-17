@@ -53,7 +53,7 @@ public class LiabilityAccident extends Accident {
 
     @Override
     public String getType() {
-        return "Liability Accident";
+        return "대물배상";
     }
 
     public String liabilityAccidentDetail() {

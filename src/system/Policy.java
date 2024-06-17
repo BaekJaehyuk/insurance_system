@@ -18,7 +18,10 @@ public class Policy {
 //	public void setMemberId(int memberID) {
 //		this.memberID = memberID;
 //	}
-
+@Override
+public String toString() {
+	return policyDetails;
+}
 	public void setPolicyDetails(String policyDetails) {
 		this.policyDetails = policyDetails;
 	}
@@ -26,3 +29,4 @@ public class Policy {
         return this.policyDetails;
     }
 }
+
