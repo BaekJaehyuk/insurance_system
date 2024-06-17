@@ -41,13 +41,13 @@ public class Driver extends Car {
 		NumberFormat nf = NumberFormat.getInstance();
 		nf.setGroupingUsed(true);
 		nf.setMaximumFractionDigits(0);
-		return "가입 상품" +
+		return "가입 상품\n" +
 				" 보험 아이디: " + getInsuranceID() +
 				", 보험이름: '" + insuranceName + '\'' +
 				", 보험료: " + nf.format(getInsuranceFee().getAmount()) + "원" +
 				", 보험금 한도: " + nf.format(getRate()) + "원" +
 				", 정책: " +  getPolicy().toString()+ "\n" +
-				"고객 가입 정보" +
+				"고객 가입 정보\n" +
 				" 운전경력: " + drivingExperience +
 				", 주행거리: " + nf.format(getMileage()) + "km" +
 				", 보험금 납입 확인: " + getPaymentStatus();

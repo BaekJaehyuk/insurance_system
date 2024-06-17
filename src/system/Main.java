@@ -187,6 +187,7 @@ public class Main {
         Customer customer = customerList.get(accident.getCustomerId());
         double insuranceMoney = 0;
         String productName = "";
+
         if (accident instanceof LiabilityAccident) { // 대인배상
             LiabilityAccident liabilityAccident = (LiabilityAccident) accident;
             System.out.println(liabilityAccident.liabilityAccidentDetail());
@@ -228,11 +229,12 @@ public class Main {
             }
         }
 
-
         Product product = productList.get(productName);
-        double coverageLimit = product.getCoverageLimit(); // 보상한도;
+        double coverageLimit = product.getCoverageLimit(); // 보상한도
 
-        insuranceMoney = coverageLimit < insuranceMoney ? coverageLimit : insuranceMoney - coverageLimit;
+        if (coverageLimit < insuranceMoney) {
+            insuranceMoney = coverageLimit;
+        }
 
         System.out.println("산정된 보험금: " + insuranceMoney + '\n');
 
