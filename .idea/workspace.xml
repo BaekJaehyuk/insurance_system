@@ -4,12 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7e084647-5a0e-4ed8-b59e-a8146c583d19" name="Changes" comment="refactor: 보험료납부, 사고 접수 심사 출력 수정">
+    <list default="true" id="7e084647-5a0e-4ed8-b59e-a8146c583d19" name="Changes" comment="refactor: 출력내용 수정">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/insurance system/src/system/user/Customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insurance system/src/system/user/Customer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/system/Driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/system/Driver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/insurance system/src/system/Driver.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insurance system/src/system/Driver.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/insurance system/src/system/OwnCar.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insurance system/src/system/OwnCar.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/system/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/system/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/system/OwnCar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/system/OwnCar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/system/compensation/Compensation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/system/compensation/Compensation.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -298,7 +298,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718597189024</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="refactor: 출력내용 수정">
+      <option name="closed" value="true" />
+      <created>1718597996855</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1718597996855</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -332,7 +340,8 @@
     <MESSAGE value="refactor: 보험 정책 설정 변경, 보험경력 수정" />
     <MESSAGE value="refactor: 보험설계 출력 수정" />
     <MESSAGE value="refactor: 보험료납부, 사고 접수 심사 출력 수정" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: 보험료납부, 사고 접수 심사 출력 수정" />
+    <MESSAGE value="refactor: 출력내용 수정" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: 출력내용 수정" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

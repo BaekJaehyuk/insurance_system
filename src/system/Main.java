@@ -183,6 +183,9 @@ public class Main {
     }
 
     private static void handleCompensation(long accidentId) throws IOException {
+        NumberFormat nf = NumberFormat.getInstance();
+        nf.setGroupingUsed(true);
+        nf.setMaximumFractionDigits(0);
         Accident accident = accidentList.get(accidentId);
         Customer customer = customerList.get(accident.getCustomerId());
         double insuranceMoney = 0;
@@ -236,7 +239,7 @@ public class Main {
             insuranceMoney = coverageLimit;
         }
 
-        System.out.println("산정된 보험금: " + insuranceMoney + '\n');
+        System.out.println("산정된 보험금: " + nf.format(insuranceMoney)+ '\n');
 
         System.out.println(MSG_COMPENSATION_ASK.getMsg());
         System.out.println(MSG_YES_OR_NO.getMsg());
