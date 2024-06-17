@@ -2,8 +2,7 @@ package src.system;
 
 public class Policy {
 
-	private int insuranceID;
-	private int memberID;
+	private String policyDetails;
 
 	public Policy(){
 
@@ -13,10 +12,17 @@ public class Policy {
 
 	}
 
-	public void setInsuranceId(Long insuranceID) {
-		this.insuranceID = insuranceID.intValue();
+//	public void setInsuranceId(Long insuranceID) {
+//		this.insuranceID = insuranceID.intValue();
+//	}
+//	public void setMemberId(int memberID) {
+//		this.memberID = memberID;
+//	}
+
+	public void setPolicyDetails(String policyDetails) {
+		this.policyDetails = policyDetails;
 	}
-	public void setMemberId(int memberID) {
-		this.memberID = memberID;
-	}
+	public String getPolicyDetails() {
+        return this.policyDetails;
+    }
 }

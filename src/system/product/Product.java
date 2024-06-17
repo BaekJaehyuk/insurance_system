@@ -6,18 +6,20 @@ public class Product {
 	private String name;
 	private double basePremium;
 	private double coverageLimit;
-
 	private long productId;
+	private String policyDetails;
 
 	public Product() {}
 
-	public Product(String name, double basePremium, double coverageLimit) {
+	public Product(String name, double basePremium, double coverageLimit,String policyDetails) {
 		lastID++;
 		this.productId = lastID;
 		this.name = name;
 		this.basePremium = basePremium;
 		this.coverageLimit = coverageLimit;
+		this.policyDetails = policyDetails;
 	}
+
 
 	public long getProductId() {
 		return productId;
@@ -63,6 +65,10 @@ public class Product {
 		// 확인 로직
 	}
 
+	public String getPolicyDetails() {
+		return policyDetails;
+	}
+
 	public void makePlan() {
 		// 계획 수립 로직
 	}
@@ -75,4 +81,10 @@ public class Product {
 				", coverageLimit=" + coverageLimit +
 				'}';
 	}
+
+	public void setPolicyDetails(String policyDetails) {
+	}
+
+
+
 }

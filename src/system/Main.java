@@ -124,7 +124,11 @@ public class Main {
             System.out.println("보상 한도를 입력하세요:");
             double coverageLimit = Double.parseDouble(input());
 
-            Product insuranceProduct = new Product(insuranceName, basePremium, coverageLimit);
+            System.out.println("보험 정책을 입력하세요:");
+            String policyDetails = input();
+
+            Product insuranceProduct = new Product(insuranceName, basePremium, coverageLimit,policyDetails);
+
 
             switch (insuranceType) {
                 case "1":
@@ -150,6 +154,7 @@ public class Main {
             System.out.println("현재 시스템 오류가 발생하였습니다. 잠시 후 다시 시도해주세요.");
         }
     }
+
 
     private static void toAssessDamages() {
         try {
@@ -326,12 +331,14 @@ public class Main {
 
         String paymentStatus = "X";
         Insurance insurance = null;
+        Policy policy = new Policy();
+        policy.setPolicyDetails(selectedInsurance.getPolicyDetails());
 
         if ("운전자 보험".equals(selectedInsurance.getDescription())) {
             if (underwritingDriver(registerCustomer)) {
                 System.out.println("고객님께서 이용 중이신 자동차의 주행 거리를 입력해 주세요.");
                 insurance = new Driver((int) registerCustomer.getCustomerID(), selectedInsurance.getName(), new InsuranceFee(selectedInsurance.getBasePremium()), paymentStatus,
-                        new Policy(), (int) selectedInsurance.getCoverageLimit(), Integer.parseInt(input()), new Date());
+                        policy, (int) selectedInsurance.getCoverageLimit(), Integer.parseInt(input()), registerCustomer.getDrivingExperience());
                 registerCustomer.addInsurance(insurance); // 고객의 보험 리스트에 추가
                 System.out.println(registerCustomer.getName() + "님, 운전자 보험 가입이 완료되었습니다.");
             } else {
@@ -341,7 +348,7 @@ public class Main {
             if (underwritingOwnCar(registerCustomer)) {
                 System.out.println("고객님께서 이용 중인 자동차의 주행거리, 차량 모델, 차량 번호를 입력해 주세요");
                 insurance = new OwnCar((int) registerCustomer.getCustomerID(), selectedInsurance.getName(), new InsuranceFee(selectedInsurance.getBasePremium()), paymentStatus,
-                        new Policy(), (int) selectedInsurance.getCoverageLimit(),
+                        policy, (int) selectedInsurance.getCoverageLimit(),
                         Integer.parseInt(input()), Integer.parseInt(input()), Integer.parseInt(input()));
                 registerCustomer.addInsurance(insurance); // 고객의 보험 리스트에 추가
                 System.out.println(registerCustomer.getName() + "님, 자차 보험 가입이 완료되었습니다.");

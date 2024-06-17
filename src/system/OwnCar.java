@@ -11,8 +11,7 @@ public class OwnCar extends Car {
 		this.setCustomerID((long) customerId); // Set customer ID
 		this.setInsuranceFee(insuranceFee);
 		this.setPaymentStatus(paymentStatus);
-		policy.setInsuranceId(getInsuranceID());
-		policy.setMemberId(customerId);
+		this.setPolicy(policy);
 		this.setPolicy(policy);
 		this.setRate(rate);
 		this.setMileage(mileage);
