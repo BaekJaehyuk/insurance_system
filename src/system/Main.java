@@ -263,6 +263,9 @@ public class Main {
     }
 
     private static void compensate() {
+        NumberFormat nf = NumberFormat.getInstance();
+        nf.setGroupingUsed(true);
+        nf.setMaximumFractionDigits(0);
         try {
             System.out.println(gitMENU_INFO.getMsg());
             showList(compensationList.get());
@@ -279,7 +282,7 @@ public class Main {
 
             if (compensationList.get(compensationId).pay()) {
                 System.out.println(c_customerList.get(customerId).getName() + "고객님에게 "
-                        + compensationList.get(compensationId).getMoney() + "원이 지급되었습니디.");
+                        +  nf.format(compensationList.get(compensationId).getMoney()) + "원이 지급되었습니디.");
                 compensationList.delete(compensationId);
                 c_customerList.delete(customerId);
             } else {
