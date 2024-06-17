@@ -183,10 +183,14 @@ public class Main {
     }
 
     private static void handleCompensation(long accidentId) throws IOException {
+        NumberFormat nf = NumberFormat.getInstance();
+        nf.setGroupingUsed(true);
+        nf.setMaximumFractionDigits(0);
         Accident accident = accidentList.get(accidentId);
         Customer customer = customerList.get(accident.getCustomerId());
         double insuranceMoney = 0;
         String productName = "";
+
         if (accident instanceof LiabilityAccident) { // 대인배상
             LiabilityAccident liabilityAccident = (LiabilityAccident) accident;
             System.out.println(liabilityAccident.liabilityAccidentDetail());
@@ -228,13 +232,14 @@ public class Main {
             }
         }
 
-
         Product product = productList.get(productName);
-        double coverageLimit = product.getCoverageLimit(); // 보상한도;
+        double coverageLimit = product.getCoverageLimit(); // 보상한도
 
-        insuranceMoney = coverageLimit < insuranceMoney ? coverageLimit : insuranceMoney - coverageLimit;
+        if (coverageLimit < insuranceMoney) {
+            insuranceMoney = coverageLimit;
+        }
 
-        System.out.println("산정된 보험금: " + insuranceMoney + '\n');
+        System.out.println("산정된 보험금: " + nf.format(insuranceMoney)+ '\n');
 
         System.out.println(MSG_COMPENSATION_ASK.getMsg());
         System.out.println(MSG_YES_OR_NO.getMsg());

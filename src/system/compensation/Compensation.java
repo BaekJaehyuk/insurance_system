@@ -3,6 +3,8 @@ package src.system.compensation;
 import src.system.user.Customer;
 import src.system.user.CustomerListImpl;
 
+import java.text.NumberFormat;
+
 
 public class Compensation {
 
@@ -63,13 +65,15 @@ public class Compensation {
 
     @Override
     public String toString() {
-        return "Compensation{" +
-                "compensationId='" + compensationId + '\'' +
-                "customerId='" + customerId + '\'' +
-                ", money='" + money + '\'' +
-                ", customer='" + customer + '\'' +
-                '}';
+        NumberFormat nf = NumberFormat.getInstance();
+        nf.setGroupingUsed(true);
+        nf.setMaximumFractionDigits(0);
+        return
+                "보상아이디: '" + compensationId + '\'' +
+                "고객아이디: '" + customerId + '\'' +
+                ", 보상금: '" + nf.format(money)+ '\'' ;
     }
+
 
     public void finalize() throws Throwable {
 
