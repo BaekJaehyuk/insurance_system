@@ -126,9 +126,8 @@ public class Main {
 
             System.out.println("보험 정책을 입력하세요:");
             String policyDetails = input();
-
-            Product insuranceProduct = new Product(insuranceName, basePremium, coverageLimit,policyDetails);
-
+            String typeDescription = insuranceType.equals("1") ? "운전자 보험" : "자차 보험";
+            Product insuranceProduct = new Product(insuranceName, basePremium, coverageLimit, policyDetails, typeDescription);
 
             switch (insuranceType) {
                 case "1":

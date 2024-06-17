@@ -1,5 +1,7 @@
 package src.system.product;
 
+import java.text.NumberFormat;
+
 public class Product {
 	private static long lastID = 0L;
 	private String description;
@@ -8,18 +10,19 @@ public class Product {
 	private double coverageLimit;
 	private long productId;
 	private String policyDetails;
+	private String insuranceType;
 
 	public Product() {}
 
-	public Product(String name, double basePremium, double coverageLimit,String policyDetails) {
+	public Product(String name, double basePremium, double coverageLimit, String policyDetails, String insuranceType) {
 		lastID++;
 		this.productId = lastID;
 		this.name = name;
 		this.basePremium = basePremium;
 		this.coverageLimit = coverageLimit;
 		this.policyDetails = policyDetails;
+		this.insuranceType = insuranceType;
 	}
-
 
 	public long getProductId() {
 		return productId;
@@ -73,18 +76,27 @@ public class Product {
 		// 계획 수립 로직
 	}
 
+	public String getInsuranceType() {
+		return insuranceType;
+	}
+
+	public void setInsuranceType(String insuranceType) {
+		this.insuranceType = insuranceType;
+	}
+
 	@Override
 	public String toString() {
-		return "Product{" +
-				"name='" + name + '\'' +
-				", basePremium=" + basePremium +
-				", coverageLimit=" + coverageLimit +
-				'}';
+		NumberFormat nf = NumberFormat.getInstance();
+		nf.setGroupingUsed(true);
+		return
+				"보험 종류: '" + insuranceType + '\'' +
+						", 보험 이름: '" + name + '\'' +
+						", 보험료: 매월 " + nf.format(basePremium) + "원" +
+						", 보상 한도: " + nf.format(coverageLimit) + "원" +
+						", 보험 정책: " + policyDetails;
 	}
 
 	public void setPolicyDetails(String policyDetails) {
+		this.policyDetails = policyDetails;
 	}
-
-
-
 }
