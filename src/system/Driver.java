@@ -1,19 +1,16 @@
 package src.system;
 
-import java.util.Date;
-
 public class Driver extends Car {
 
-	private Date drivingExperience;
+	private int drivingExperience;
 	private String insuranceName;
 
-	public Driver(int customerId, String insuranceName, InsuranceFee insuranceFee, String paymentStatus, Policy policy, int rate, int mileage, Date date) {
+	public Driver(int customerId, String insuranceName, InsuranceFee insuranceFee, String paymentStatus, Policy policy, int rate, int mileage, int date) {
 		this.setId();
 		this.setCustomerID((long) customerId); // Set customer ID
 		this.setInsuranceFee(insuranceFee);
 		this.setPaymentStatus(paymentStatus);
-		policy.setInsuranceId(getInsuranceID());
-		policy.setMemberId(customerId);
+		this.setPolicy(policy);
 		this.setPolicy(policy);
 		this.setRate(rate);
 		this.setMileage(mileage);
@@ -21,11 +18,14 @@ public class Driver extends Car {
 		this.insuranceName = insuranceName;
 	}
 
-	public Date getDrivingExperience() {
+
+
+
+	public int getDrivingExperience() {
 		return drivingExperience;
 	}
 
-	public void setDrivingExperience(Date drivingExperience) {
+	public void setDrivingExperience(int drivingExperience) {
 		this.drivingExperience = drivingExperience;
 	}
 
