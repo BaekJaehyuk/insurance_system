@@ -4,12 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7e084647-5a0e-4ed8-b59e-a8146c583d19" name="Changes" comment="refactor: 보험 정책 설정 변경, 보험경력 수정">
+    <list default="true" id="7e084647-5a0e-4ed8-b59e-a8146c583d19" name="Changes" comment="refactor: 보험설계 출력 수정">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/insurance system/src/system/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/insurance system/src/system/product/Product.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insurance system/src/system/product/Product.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/insurance system/src/system/Driver.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insurance system/src/system/Driver.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/insurance system/src/system/OwnCar.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insurance system/src/system/OwnCar.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/insurance system/src/system/Policy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insurance system/src/system/Policy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/insurance system/src/system/accident/Accident.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insurance system/src/system/accident/Accident.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/insurance system/src/system/accident/LiabilityAccident.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insurance system/src/system/accident/LiabilityAccident.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/insurance system/src/system/accident/PersonalInjuryAccident.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insurance system/src/system/accident/PersonalInjuryAccident.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/insurance system/src/system/accident/PropertyDamageAccident.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insurance system/src/system/accident/PropertyDamageAccident.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/system/Driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/system/Driver.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/system/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/system/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/system/product/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/system/product/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/system/OwnCar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/system/OwnCar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/system/Policy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/system/Policy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/system/accident/Accident.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/system/accident/Accident.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/system/accident/LiabilityAccident.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/system/accident/LiabilityAccident.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/system/accident/PersonalInjuryAccident.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/system/accident/PersonalInjuryAccident.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/system/accident/PropertyDamageAccident.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/system/accident/PropertyDamageAccident.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/system/user/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/system/user/Customer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -282,7 +294,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718592410424</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="refactor: 보험설계 출력 수정">
+      <option name="closed" value="true" />
+      <created>1718593474372</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1718593474372</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -314,7 +334,8 @@
     <MESSAGE value="feat: 만들어진 보험을 가입 할 수 있도록 변경" />
     <MESSAGE value="refactor: 보험금 납부에 보험리스트 뜨도록" />
     <MESSAGE value="refactor: 보험 정책 설정 변경, 보험경력 수정" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: 보험 정책 설정 변경, 보험경력 수정" />
+    <MESSAGE value="refactor: 보험설계 출력 수정" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: 보험설계 출력 수정" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -82,7 +82,8 @@ public abstract class Accident {
     public String toString() {
         return "[ " + accidentId + " ]\n" +
                 "접수 날짜: " + date + "\n" +
-                "고객ID: " + customerId + "\n";
+                "고객ID: " + customerId + "\n"+
+                "사고 설명: " + accidentDetails + "\n";
     }
 
 
