@@ -71,10 +71,6 @@ public class Insurance {
 	public Car m_car;
 	public Product m_Product;
 
-	public void finalize() throws Throwable {
-
-	}
-
 	public void design() {
 
 	}

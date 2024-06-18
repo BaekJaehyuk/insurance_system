@@ -20,7 +20,7 @@ public enum MESSAGE {
   MENU_INVALID_CHOICE("Invalid Choice !!!"),
 
   MSG_ASSESS_DAMAGE("위 사고 접수 리스트에서 손해사정을 진행할 사고 번호를 입력해주세요"),
-  MSG_ASSESS_COMPENSATE("보상 확정 리스트에서 보상금을 지급할 compensationId를 입력해주세요"),
+  MSG_ASSESS_COMPENSATE("보상 확정 리스트에서 보상금을 지급할 보상아이디를 입력해주세요"),
 
   MSG_COMPENSATION_ASK("해당 고객에게 보상을 진행하겠습니까?"),
   MSG_CALCULATE_PAYOUT("고객에게 지급할 보험금을 산정해주세요."),

@@ -224,8 +224,7 @@ public class Main {
     private static void toAssessDamages() {
         try {
             if (accidentList.getReportedAccidentList().isEmpty()) {
-                System.out.println("\n\n현재 접수된 사고 건이 없습니다.\n\n");
-                return;
+                throw new IllegalArgumentException("\n\n현재 접수된 사고 건이 없습니다.\n\n");
             }
 
             System.out.println("------------사고 접수 내역------------");
@@ -255,43 +254,37 @@ public class Main {
         double insuranceMoney = 0;
         String productName = "";
 
-        if (accident instanceof LiabilityAccident) { // 대인배상
-            LiabilityAccident liabilityAccident = (LiabilityAccident) accident;
-            System.out.println(liabilityAccident.liabilityAccidentDetail());
+        if (accident instanceof LiabilityAccident liabilityAccident) { // 대인배상
+          System.out.println(liabilityAccident.liabilityAccidentDetail());
 
             insuranceMoney = Double.parseDouble(liabilityAccident.getMedicalRecords());
 
             for (Insurance insurance : customer.getInsuranceList()) {
-                if (insurance instanceof OwnCar) {
-                    OwnCar ownCar = (OwnCar) insurance;
-                    productName = ownCar.getInsuranceName();
+                if (insurance instanceof OwnCar ownCar) {
+                  productName = ownCar.getInsuranceName();
                 }
             }
 
-        } else if (accident instanceof PersonalInjuryAccident) { // 본인상해
-            PersonalInjuryAccident personalInjuryAccident = (PersonalInjuryAccident) accident;
-            System.out.println(personalInjuryAccident.personalInjuryAccidentDetail());
+        } else if (accident instanceof PersonalInjuryAccident personalInjuryAccident) { // 본인상해
+          System.out.println(personalInjuryAccident.personalInjuryAccidentDetail());
 
             insuranceMoney = (Double.parseDouble(personalInjuryAccident.getMedicalReceipt()) +
                     Double.parseDouble(personalInjuryAccident.getRepairReceipt()));
 
             for (Insurance insurance : customer.getInsuranceList()) {
-                if (insurance instanceof Driver) {
-                    Driver driver = (Driver) insurance;
-                    productName = driver.getInsuranceName();
+                if (insurance instanceof Driver driver) {
+                  productName = driver.getInsuranceName();
                 }
             }
 
-        } else if (accident instanceof PropertyDamageAccident) { // 대물배상
-            PropertyDamageAccident propertyDamageAccident = (PropertyDamageAccident) accident;
-            System.out.println(propertyDamageAccident.propertyDamageAccidentDetail());
+        } else if (accident instanceof PropertyDamageAccident propertyDamageAccident) { // 대물배상
+          System.out.println(propertyDamageAccident.propertyDamageAccidentDetail());
 
             insuranceMoney = Double.parseDouble(propertyDamageAccident.getReceiptUrl());
 
             for (Insurance insurance : customer.getInsuranceList()) {
-                if (insurance instanceof OwnCar) {
-                    OwnCar ownCar = (OwnCar) insurance;
-                    productName = ownCar.getInsuranceName();
+                if (insurance instanceof OwnCar ownCar) {
+                  productName = ownCar.getInsuranceName();
                 }
             }
         }
@@ -463,13 +456,7 @@ public class Main {
 
     // 자차 보험 심사 로직
     public static boolean underwritingOwnCar(Customer customer) {
-        if (customer.getDrivingExperience() < 3) {
-            System.out.println("운전 경력이 3년 미만인 경우 운전자 보험에 가입할 수 없습니다.");
-            return false;
-        }
-
-        // 추가적인 심사 조건들을 여기에 추가할 수 있습니다.
-        return true;
+      return underwritingDriver(customer);
     }
 
     private static void accidentReport() {
