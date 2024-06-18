@@ -347,37 +347,47 @@ public class Main {
         nf.setMaximumFractionDigits(0);
         try {
             System.out.println(gitMENU_INFO.getMsg());
-            showList(compensationList.get());
+            List<Compensation> compensations = compensationList.get();
+
+            if (compensations == null || compensations.isEmpty()) {
+                System.out.println("고객 보상 확정 내역이 없습니다.");
+                return;
+            }
+
+            showList((ArrayList<?>) compensations);
             System.out.println(MSG_ASSESS_COMPENSATE.getMsg());
             String sCompensationChoice = objReader.readLine().trim();
 
-            long compensationId = Long.parseLong(sCompensationChoice);
-            Compensation compensation = compensationList.get(compensationId);
+            try {
+                long compensationId = Long.parseLong(sCompensationChoice);
+                Compensation compensation = compensationList.get(compensationId);
 
-            if (compensation == null) {
-                System.out.println(MSG_VALIDATE_COMPENSATE_ID.getMsg());
-                return;
+                if (compensation == null) {
+                    System.out.println("유효한 compensationId를 입력해 주세요.");
+                    return;
+                }
+
+                long customerId = compensation.getCustomerId();
+                Customer customer = c_customerList.get(customerId);
+
+                if (customer == null) {
+                    System.out.println("유효하지 않은 고객 ID입니다.");
+                    return;
+                }
+
+                if (compensation.pay()) {
+                    System.out.println(customer.getName() + " 고객님에게 "
+                            + nf.format(compensation.getMoney()) + "원이 지급되었습니다.");
+                    compensationList.delete(compensationId);
+                    c_customerList.delete(customerId);
+                } else {
+                    System.out.println(customer.getName() + " 고객님의 계좌 정보가 없습니다.");
+                }
+
+            } catch (NumberFormatException e) {
+                System.out.println("유효하지 않은 값을 입력하였습니다. 숫자를 입력해 주세요.");
             }
 
-            long customerId = compensation.getCustomerId();
-            Customer customer = c_customerList.get(customerId);
-
-            if (customer == null) {
-                System.out.println("유효하지 않은 고객 ID입니다.");
-                return;
-            }
-
-            if (compensation.pay()) {
-                System.out.println(customer.getName() + " 고객님에게 "
-                        + nf.format(compensation.getMoney()) + "원이 지급되었습니다.");
-                compensationList.delete(compensationId);
-                c_customerList.delete(customerId);
-            } else {
-                System.out.println(customer.getName() + " 고객님의 계좌 정보가 없습니다.");
-            }
-
-        } catch (NumberFormatException e) {
-            System.out.println("입력 값이 올바르지 않습니다. 숫자를 입력해 주세요.");
         } catch (RemoteException e) {
             e.printStackTrace();
         } catch (IOException e) {
@@ -386,6 +396,7 @@ public class Main {
             System.out.println("현재 시스템 오류가 발생하였습니다. 잠시 후 다시 시도해주세요.");
         }
     }
+
 
     private static void counselling() throws InterruptedException {
         try {
@@ -413,7 +424,7 @@ public class Main {
         return objReader.readLine().trim();
     }
 
-    private static void registerInsurance()  {
+    private static void registerInsurance() {
         Join join = new Join();
         try {
             System.out.println("이름, 성별, 전화번호, 생일, 운전경력(년) 입력");
@@ -429,14 +440,14 @@ public class Main {
                 throw new IllegalArgumentException("유효하지 않은 선택입니다.");
             }
 
-            registerCustomer.addProduct(selectedInsurance.getProductId());
-            customerList.add(registerCustomer); // 고객 리스트에 추가
-
             String paymentStatus = "X";
             Insurance insurance = null;
             Policy policy = new Policy();
             policy.setPolicyDetails(selectedInsurance.getPolicyDetails());
             double finalPremium = calculateFinalPremium(selectedInsurance.getBasePremium(), registerCustomer.getDrivingExperience());
+
+            boolean isApproved = false;
+
             if ("운전자 보험".equals(selectedInsurance.getDescription())) {
                 if (underwritingDriver(registerCustomer)) {
                     System.out.println("고객님께서 이용 중이신 자동차의 주행 거리를 입력해 주세요.");
@@ -446,6 +457,7 @@ public class Main {
                             registerCustomer.getDrivingExperience());
                     registerCustomer.addInsurance(insurance); // 고객의 보험 리스트에 추가
                     System.out.println(registerCustomer.getName() + "님, 운전자 보험 가입이 완료되었습니다.");
+                    isApproved = true;
                 } else {
                     System.out.println(registerCustomer.getName() + "님, 운전자 보험 가입 심사에 실패하였습니다.");
                 }
@@ -458,11 +470,17 @@ public class Main {
                             Integer.parseInt(input()), Integer.parseInt(input()));
                     registerCustomer.addInsurance(insurance); // 고객의 보험 리스트에 추가
                     System.out.println(registerCustomer.getName() + "님, 자차 보험 가입이 완료되었습니다.");
+                    isApproved = true;
                 } else {
                     System.out.println(registerCustomer.getName() + "님, 자차 보험 가입 심사에 실패하였습니다.");
                 }
             } else {
                 throw new IllegalArgumentException("유효하지 않은 선택입니다.");
+            }
+
+            if (isApproved) {
+                registerCustomer.addProduct(selectedInsurance.getProductId());
+                customerList.add(registerCustomer); // 고객 리스트에 추가
             }
         } catch (NumberFormatException e) {
             System.out.println("입력 값이 올바르지 않습니다. 숫자를 입력해 주세요.");
@@ -473,6 +491,20 @@ public class Main {
         } catch (Exception e) {
             System.out.println("현재 시스템 오류가 발생하였습니다. 잠시 후 다시 시도해주세요.");
         }
+    }
+
+    // 운전자 보험 심사 로직
+    public static boolean underwritingDriver(Customer customer) {
+        if (customer.getDrivingExperience() < 3) {
+            System.out.println("운전 경력이 3년 미만인 경우 운전자 보험에 가입할 수 없습니다.");
+            return false;
+        }
+        return true;
+    }
+
+    // 자차 보험 심사 로직
+    public static boolean underwritingOwnCar(Customer customer) {
+        return underwritingDriver(customer);
     }
 
     public static double calculateFinalPremium(double basePremium, int drivingExperienceYears) {
@@ -490,19 +522,7 @@ public class Main {
         }
     }
 
-    // 운전자 보험 심사 로직
-    public static boolean underwritingDriver(Customer customer) {
-        if (customer.getDrivingExperience() < 3) {
-            System.out.println("운전 경력이 3년 미만인 경우 운전자 보험에 가입할 수 없습니다.");
-            return false;
-        }
-        return true;
-    }
 
-    // 자차 보험 심사 로직
-    public static boolean underwritingOwnCar(Customer customer) {
-        return underwritingDriver(customer);
-    }
 
     private static void accidentReport() {
         try {
