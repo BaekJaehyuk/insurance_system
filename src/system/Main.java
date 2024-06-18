@@ -151,10 +151,67 @@ public class Main {
         } catch (IOException e) {
             System.out.println("입력 과정에서 오류가 발생했습니다. 다시 시도해 주세요.");
         } catch (Exception e) {
-            e.printStackTrace();
             System.out.println("현재 시스템 오류가 발생하였습니다. 잠시 후 다시 시도해주세요.");
         }
     }
+
+    private static void payInsuranceFee() {
+        NumberFormat nf = NumberFormat.getInstance();
+        nf.setGroupingUsed(true);
+        nf.setMaximumFractionDigits(0);
+        showList(customerList.get());
+
+        try {
+            System.out.println(MSG_ASK_CUSTOMER_ID.getMsg());
+            long customerId = Long.parseLong(input());
+            Customer customer = customerList.get(customerId);
+
+            if (customer == null) {
+                throw new IllegalArgumentException(MSG_VALIDATE_ID.getMsg());
+            }
+
+            showList(customer.getInsuranceList());
+            System.out.println(MSG_ASK_INSURANCE_ID.getMsg());
+            long insuranceId = Long.parseLong(input());
+
+            Insurance insurance = customer.getInsuranceList().stream()
+                .filter(ins -> ins.getInsuranceID() == insuranceId)
+                .findFirst()
+                .orElse(null);
+
+            if (insurance == null) {
+                throw new IllegalArgumentException(MSG_VALIDATE_ID.getMsg());
+            }
+
+            if (insurance.getPaymentStatus().equals(MSG_FALSE.getMsg())) {
+                System.out.println(MSG_CHECK_PAY.getMsg());
+                String checkPay = input();
+                if (checkPay.equals(MSG_TRUE.getMsg())) {
+                    System.out.println(MSG_PAY_INFO.getMsg());
+                    customer.pay(insurance);
+                    System.out.println(MSG_COMPLETE_INSURANCE_FEE.getMsg());
+                    System.out.println(MSG_PAYMENT_FEE.getMsg() + nf.format(insurance.getInsuranceFee().getAmount()) + "원"
+                        + MSG_PAYMENT_DATE.getMsg() + insurance.getInsuranceFee().getDateOfPayment());
+                    System.out.println();
+                } else {
+                    System.out.println(MSG_CANCEL_PAY.getMsg());
+                }
+            } else {
+                System.out.println(MSG_ALREADY_PAY.getMsg());
+                System.out.println();
+            }
+        } catch (NumberFormatException e) {
+            System.out.println("입력 값이 올바르지 않습니다. 숫자를 입력해 주세요.");
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+        } catch (IOException e) {
+            System.out.println("입력 과정에서 오류가 발생했습니다. 다시 시도해 주세요.");
+        } catch (Exception e) {
+            System.out.println("현재 시스템 오류가 발생하였습니다. 잠시 후 다시 시도해주세요.");
+        }
+    }
+
+
 
 
     private static void toAssessDamages() {
@@ -595,11 +652,15 @@ public class Main {
 
 
     private static void loan() {
+        if (customerList.get().isEmpty()) {
+            System.out.println("\n\n대출은 보험사 고객만 이용가능합니다.\n\n");
+            return;
+        }
         try {
+
             if (customerList.get().isEmpty()) {
                 throw new IllegalStateException("\n\n대출은 보험사 고객만 이용가능합니다.\n\n");
             }
-
             Customer customer = customerList.get(1); // test code
 
             System.out.println("1. 대출 정보 확인");
