@@ -174,7 +174,7 @@ public class Main {
             Customer customer = customerList.get(customerId);
 
             if (customer == null) {
-                throw new IllegalArgumentException(MSG_VALIDATE_ID.getMsg());
+                throw new IllegalArgumentException(MSG_VALIDATE_CUSTOMER_ID.getMsg());
             }
 
             showList(customer.getInsuranceList());
