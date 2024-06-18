@@ -6,7 +6,27 @@
   <component name="ChangeListManager">
     <list default="true" id="7e084647-5a0e-4ed8-b59e-a8146c583d19" name="Changes" comment="refactor: 예외 처리 수정">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/system/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/system/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/insurance system/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insurance system/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/system/Applicant.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/system/ApplicantList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/system/ApplicantListImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/system/Attendance.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/system/Campaign.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/system/CampainList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/system/CampainListImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/system/Career.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/system/Data.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/system/Education.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/system/EducationList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/system/EducationListImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/system/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/system/Employee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/system/Employment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/system/ISMain.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/system/Interview.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/system/Vacation.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/system/accident/LiabilityAccident.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/system/accident/LiabilityAccident.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/system/registeredInsuranceDetails.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/system/registeredInsuranceDetailsImpl.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -166,7 +186,7 @@
       <workItem from="1717572805732" duration="5518000" />
       <workItem from="1718451242890" duration="2651000" />
       <workItem from="1718533909139" duration="3467000" />
-      <workItem from="1718692577514" duration="1281000" />
+      <workItem from="1718692577514" duration="2216000" />
     </task>
     <task id="LOCAL-00002" summary="[feat]: Main 구성">
       <option name="closed" value="true" />
@@ -328,7 +348,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718693617570</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="refactor: 예외 처리 수정">
+      <option name="closed" value="true" />
+      <created>1718694089593</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1718694089593</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

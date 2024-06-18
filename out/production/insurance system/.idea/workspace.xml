@@ -4,11 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7e084647-5a0e-4ed8-b59e-a8146c583d19" name="Changes" comment="feat: 가입 보험 추가" />
+    <list default="true" id="7e084647-5a0e-4ed8-b59e-a8146c583d19" name="Changes" comment="refactor: 예외 처리 수정">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/system/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/system/Main.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -83,6 +93,9 @@
   }
 }</component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="src.system" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/system/loan" />
     </key>
@@ -93,7 +106,7 @@
       <module name="insurance system" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="src.system.*" />
+          <option name="PATTERN" value="src.system.insurance.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -123,6 +136,14 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.15989.150" />
+        <option value="bundled-js-predefined-1d06a55b98c1-91d5c284f522-JavaScript-IU-241.15989.150" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task id="LOCAL-00001" summary="[refactor]: gitignore 설정">
@@ -145,6 +166,7 @@
       <workItem from="1717572805732" duration="5518000" />
       <workItem from="1718451242890" duration="2651000" />
       <workItem from="1718533909139" duration="3467000" />
+      <workItem from="1718692577514" duration="1281000" />
     </task>
     <task id="LOCAL-00002" summary="[feat]: Main 구성">
       <option name="closed" value="true" />
@@ -226,7 +248,87 @@
       <option name="project" value="LOCAL" />
       <updated>1718429481888</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="feat: 보험설계 기능">
+      <option name="closed" value="true" />
+      <created>1718549723297</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1718549723297</updated>
+    </task>
+    <task id="LOCAL-00013" summary="feat: 만들어진 보험을 가입 할 수 있도록 변경">
+      <option name="closed" value="true" />
+      <created>1718556666858</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1718556666858</updated>
+    </task>
+    <task id="LOCAL-00014" summary="feat: 만들어진 보험을 가입 할 수 있도록 변경">
+      <option name="closed" value="true" />
+      <created>1718556689333</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1718556689333</updated>
+    </task>
+    <task id="LOCAL-00015" summary="refactor: 보험금 납부에 보험리스트 뜨도록">
+      <option name="closed" value="true" />
+      <created>1718558864581</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1718558864581</updated>
+    </task>
+    <task id="LOCAL-00016" summary="refactor: 보험 정책 설정 변경, 보험경력 수정">
+      <option name="closed" value="true" />
+      <created>1718592410424</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1718592410424</updated>
+    </task>
+    <task id="LOCAL-00017" summary="refactor: 보험설계 출력 수정">
+      <option name="closed" value="true" />
+      <created>1718593474372</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1718593474372</updated>
+    </task>
+    <task id="LOCAL-00018" summary="refactor: 보험료납부, 사고 접수 심사 출력 수정">
+      <option name="closed" value="true" />
+      <created>1718597189024</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1718597189024</updated>
+    </task>
+    <task id="LOCAL-00019" summary="refactor: 출력내용 수정">
+      <option name="closed" value="true" />
+      <created>1718597996855</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1718597996855</updated>
+    </task>
+    <task id="LOCAL-00020" summary="refactor: 출력내용 수정">
+      <option name="closed" value="true" />
+      <created>1718599538653</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1718599538653</updated>
+    </task>
+    <task id="LOCAL-00021" summary="refactor: 예외 처리 수정">
+      <option name="closed" value="true" />
+      <created>1718693617570</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1718693617570</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -254,7 +356,15 @@
     <MESSAGE value="feat: 고객 심사 로직 추가" />
     <MESSAGE value="feat: class 파일 수정" />
     <MESSAGE value="feat: 가입 보험 추가" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: 가입 보험 추가" />
+    <MESSAGE value="feat: 보험설계 기능" />
+    <MESSAGE value="feat: 만들어진 보험을 가입 할 수 있도록 변경" />
+    <MESSAGE value="refactor: 보험금 납부에 보험리스트 뜨도록" />
+    <MESSAGE value="refactor: 보험 정책 설정 변경, 보험경력 수정" />
+    <MESSAGE value="refactor: 보험설계 출력 수정" />
+    <MESSAGE value="refactor: 보험료납부, 사고 접수 심사 출력 수정" />
+    <MESSAGE value="refactor: 출력내용 수정" />
+    <MESSAGE value="refactor: 예외 처리 수정" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: 예외 처리 수정" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

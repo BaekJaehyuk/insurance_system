@@ -17,16 +17,10 @@ public class Employee {
 	private String department;
 	private String enteringDate;
 
-	private ArrayList<Attendance> m_attendance;
-	public Attendance m_Attendance;
 	public Accident m_Accident;
 	public Counseling m_Counseling;
 	public Insurance m_Insurance;
 	public Loan m_Loan;
-	public Employment m_Employment;
-	public Interview m_Interview;
-	public Education m_Education;
-	public Campaign m_Campaign;
 
 	public Employee(int employeeID, String id, String password, String name, String sex, String phoneNumber, String department, String enteringDate) {
 		this.employeeID = employeeID;
@@ -104,7 +98,6 @@ public class Employee {
 	}
 
 	public Employee() {
-		this.m_attendance = new ArrayList<>();
 	}
 
 	public void finalize() throws Throwable {
