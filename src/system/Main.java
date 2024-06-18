@@ -378,7 +378,7 @@ public class Main {
     private static void registerInsurance()  {
         Join join = new Join();
         try {
-            System.out.println("이름, 성별, 전화번호, 생일, 운전경력(개월) 입력");
+            System.out.println("이름, 성별, 전화번호, 생일, 운전경력(년) 입력");
             Customer registerCustomer = join.register(input(), input(), input(), input(), Integer.parseInt(input()));
 
             System.out.println("가입할 보험을 선택하세요:");
@@ -398,14 +398,14 @@ public class Main {
             Insurance insurance = null;
             Policy policy = new Policy();
             policy.setPolicyDetails(selectedInsurance.getPolicyDetails());
-
+            double finalPremium = calculateFinalPremium(selectedInsurance.getBasePremium(),registerCustomer.getDrivingExperience());
             if ("운전자 보험".equals(selectedInsurance.getDescription())) {
                 if (underwritingDriver(registerCustomer)) {
                     System.out.println("고객님께서 이용 중이신 자동차의 주행 거리를 입력해 주세요.");
                     insurance = new Driver((int) registerCustomer.getCustomerID(), selectedInsurance.getName(),
-                        new InsuranceFee(selectedInsurance.getBasePremium()), paymentStatus, policy,
-                        (int) selectedInsurance.getCoverageLimit(), Integer.parseInt(input()),
-                        registerCustomer.getDrivingExperience());
+                            new InsuranceFee(finalPremium), paymentStatus, policy,
+                            (int) selectedInsurance.getCoverageLimit(), Integer.parseInt(input()),
+                            registerCustomer.getDrivingExperience());
                     registerCustomer.addInsurance(insurance); // 고객의 보험 리스트에 추가
                     System.out.println(registerCustomer.getName() + "님, 운전자 보험 가입이 완료되었습니다.");
                 } else {
@@ -415,9 +415,9 @@ public class Main {
                 if (underwritingOwnCar(registerCustomer)) {
                     System.out.println("고객님께서 이용 중인 자동차의 주행거리, 차량 모델, 차량 번호를 입력해 주세요");
                     insurance = new OwnCar((int) registerCustomer.getCustomerID(), selectedInsurance.getName(),
-                        new InsuranceFee(selectedInsurance.getBasePremium()), paymentStatus, policy,
-                        (int) selectedInsurance.getCoverageLimit(), Integer.parseInt(input()),
-                        Integer.parseInt(input()), Integer.parseInt(input()));
+                            new InsuranceFee(finalPremium), paymentStatus, policy,
+                            (int) selectedInsurance.getCoverageLimit(), Integer.parseInt(input()),
+                            Integer.parseInt(input()), Integer.parseInt(input()));
                     registerCustomer.addInsurance(insurance); // 고객의 보험 리스트에 추가
                     System.out.println(registerCustomer.getName() + "님, 자차 보험 가입이 완료되었습니다.");
                 } else {
@@ -433,6 +433,15 @@ public class Main {
         } catch (IOException e) {
             System.out.println("입력 과정에서 오류가 발생했습니다. 다시 시도해 주세요.");
         }
+    }
+
+    public static double calculateFinalPremium(double basePremium, int drivingExperienceYears) {
+        // 1년당 1% 할인율 적용
+        double discountRate = 0.01 * drivingExperienceYears;
+        // 최대 할인율 50% 제한
+        discountRate = Math.min(discountRate, 0.5);
+        double finalPremium = basePremium - (basePremium * discountRate);
+        return finalPremium;
     }
 
 
