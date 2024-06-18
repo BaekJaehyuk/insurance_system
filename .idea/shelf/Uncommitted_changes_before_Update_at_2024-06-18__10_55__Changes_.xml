@@ -1,0 +1,14 @@
+<changelist name="Uncommitted_changes_before_Update_at_2024-06-18_오후_10_55_[Changes]" date="1718718958972" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2024-06-18_오후_10_55_[Changes]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 2024-06-18 오후 10:55 [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/insurance system/src/system/utils/MESSAGE.class" />
+    <option name="AFTER_PATH" value="out/production/insurance system/src/system/utils/MESSAGE.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2024-06-18_오후_10_55_[Changes]/MESSAGE.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/insurance system/src/system/Main.class" />
+    <option name="AFTER_PATH" value="out/production/insurance system/src/system/Main.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2024-06-18_오후_10_55_[Changes]/Main.class" />
+  </binary>
+</changelist>
