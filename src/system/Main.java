@@ -311,9 +311,11 @@ public class Main {
                         customerList);
                 compensationList.add(compensation);
                 accident.setStatus("손해사정 완료");
+                System.out.println("해당 사고에 대한 보험금이 산정되었습니다. 보험금 지급을 진행해주세요. ");
                 break;
             case "2":
                 accidentList.delete(accidentId);
+                System.out.println("해당 사고에 대한 보험금이 산정이 반려되었습니다.");
                 break;
             case "x":
                 return;
