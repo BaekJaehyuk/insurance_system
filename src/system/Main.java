@@ -651,7 +651,12 @@ public class Main {
 
     private static void makeAccount() {
         try {
-            Customer customer = customerList.get(1);
+            System.out.println("고객 목록:");
+            showList(customerList.get()); // 고객 목록 출력
+            System.out.println("계좌를 관리할 고객의 ID를 입력해 주세요:");
+            long customerId = Long.parseLong(input());
+
+            Customer customer = customerList.get(customerId);
             if (customer == null) {
                 throw new IllegalArgumentException("\n\n보험 가입 고객만 이용 가능합니다.\n\n");
             }
@@ -696,6 +701,8 @@ public class Main {
                 default:
                     throw new IllegalArgumentException(MENU_INVALID_CHOICE.getMsg());
             }
+        } catch (NumberFormatException e) {
+            System.out.println("입력 값이 올바르지 않습니다. 숫자를 입력해 주세요.");
         } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());
         } catch (IOException e) {
@@ -704,6 +711,8 @@ public class Main {
             System.out.println("현재 시스템 오류가 발생하였습니다. 잠시 후 다시 시도해주세요.");
         }
     }
+
+
 
     private static void loan() {
         try {
