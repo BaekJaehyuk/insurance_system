@@ -174,7 +174,7 @@ public class Main {
             Customer customer = customerList.get(customerId);
 
             if (customer == null) {
-                throw new IllegalArgumentException(MSG_VALIDATE_ID.getMsg());
+                throw new IllegalArgumentException(MSG_VALIDATE_CUSTOMER_ID.getMsg());
             }
 
             showList(customer.getInsuranceList());
@@ -187,7 +187,7 @@ public class Main {
                     .orElse(null);
 
             if (insurance == null) {
-                throw new IllegalArgumentException(MSG_VALIDATE_ID.getMsg());
+                throw new IllegalArgumentException(MSG_VALIDATE_INSURANCE_ID.getMsg());
             }
 
             if (insurance.getPaymentStatus().equals(MSG_FALSE.getMsg())) {
@@ -532,7 +532,7 @@ public class Main {
 
             Customer customer = customerList.get(customerId);
             if (customer == null) {
-                throw new IllegalArgumentException(MSG_VALIDATE_ID.getMsg());
+                throw new IllegalArgumentException(MSG_VALIDATE_CUSTOMER_ID.getMsg());
             }
 
             System.out.println(MSG_ASK_ACCIDENT_DETAILS.getMsg());
