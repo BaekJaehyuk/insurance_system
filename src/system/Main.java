@@ -706,15 +706,16 @@ public class Main {
     }
 
     private static void loan() {
-        if (customerList.get().isEmpty()) {
-            System.out.println("\n\n대출은 보험사 고객만 이용가능합니다.\n\n");
-            return;
-        }
         try {
-            if (customerList.get().isEmpty()) {
-                throw new IllegalStateException("\n\n대출은 보험사 고객만 이용가능합니다.\n\n");
+            showList(customerList.get());
+            System.out.println("대출을 진행할 고객의 ID를 입력해 주세요:");
+            long customerId = Long.parseLong(input());
+
+            Customer customer = customerList.get(customerId);
+            if (customer == null) {
+                System.out.println("\n\n대출은 보험사 고객만 이용가능합니다.\n\n");
+                return;
             }
-            Customer customer = customerList.get(1); // test code
 
             System.out.println("1. 대출 정보 확인");
             System.out.println("2. 대출 신청");
@@ -858,6 +859,7 @@ public class Main {
             System.out.println("현재 시스템 오류가 발생하였습니다. 잠시 후 다시 시도해주세요.");
         }
     }
+
 
     private static void judgeLoan() {
         if (loanList.get().isEmpty()) {
