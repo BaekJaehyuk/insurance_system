@@ -220,19 +220,26 @@ public class Main {
 
     private static void toAssessDamages() {
         try {
-            if (accidentList.getReportedAccidentList().isEmpty()) {
+            List<Accident> pendingAccidents = new ArrayList<>();
+            for (Accident accident : accidentList.getReportedAccidentList()) {
+                if (!"손해사정 완료".equals(accident.getStatus())) {
+                    pendingAccidents.add(accident);
+                }
+            }
+
+            if (pendingAccidents.isEmpty()) {
                 throw new IllegalArgumentException("\n\n현재 접수된 사고 건이 없습니다.\n\n");
             }
 
             System.out.println("------------사고 접수 내역------------");
-            showList(accidentList.getReportedAccidentList());
+            showList((ArrayList<?>) pendingAccidents);
             System.out.println("-----------------------------------");
 
             System.out.println(MSG_ASSESS_DAMAGE.getMsg());
             long accidentId = Long.parseLong(input());
             Accident accident = accidentList.getReportedAccident(accidentId);
 
-            if (accident != null) {
+            if (accident != null && !"손해사정 완료".equals(accident.getStatus())) {
                 handleCompensation(accidentId);
             } else {
                 System.out.println(MSG_VALIDATE_ACCIDENT_ID.getMsg());
@@ -252,92 +259,68 @@ public class Main {
         NumberFormat nf = NumberFormat.getInstance();
         nf.setGroupingUsed(true);
         nf.setMaximumFractionDigits(0);
-        try {
-            Accident accident = accidentList.get(accidentId);
-            if (accident == null) {
-                throw new IllegalArgumentException("유효하지 않은 사고 ID입니다.");
-            }
-            Customer customer = customerList.get(accident.getCustomerId());
-            if (customer == null) {
-                throw new IllegalArgumentException("유효하지 않은 고객 ID입니다.");
-            }
-            double insuranceMoney = 0;
-            String productName = "";
+        Accident accident = accidentList.get(accidentId);
+        Customer customer = customerList.get(accident.getCustomerId());
+        double insuranceMoney = 0;
+        String productName = "";
 
-            if (accident instanceof LiabilityAccident liabilityAccident) { // 대인배상
-                System.out.println(liabilityAccident.liabilityAccidentDetail());
-
-                insuranceMoney = Double.parseDouble(liabilityAccident.getMedicalRecords());
-
-                for (Insurance insurance : customer.getInsuranceList()) {
-                    if (insurance instanceof OwnCar ownCar) {
-                        productName = ownCar.getInsuranceName();
-                    }
-                }
-
-            } else if (accident instanceof PersonalInjuryAccident personalInjuryAccident) { // 본인상해
-                System.out.println(personalInjuryAccident.personalInjuryAccidentDetail());
-
-                insuranceMoney = (Double.parseDouble(personalInjuryAccident.getMedicalReceipt()) +
-                        Double.parseDouble(personalInjuryAccident.getRepairReceipt()));
-
-                for (Insurance insurance : customer.getInsuranceList()) {
-                    if (insurance instanceof Driver driver) {
-                        productName = driver.getInsuranceName();
-                    }
-                }
-
-            } else if (accident instanceof PropertyDamageAccident propertyDamageAccident) { // 대물배상
-                System.out.println(propertyDamageAccident.propertyDamageAccidentDetail());
-
-                insuranceMoney = Double.parseDouble(propertyDamageAccident.getReceiptUrl());
-
-                for (Insurance insurance : customer.getInsuranceList()) {
-                    if (insurance instanceof OwnCar ownCar) {
-                        productName = ownCar.getInsuranceName();
-                    }
+        if (accident instanceof LiabilityAccident liabilityAccident) { // 대인배상
+            System.out.println(liabilityAccident.liabilityAccidentDetail());
+            insuranceMoney = Double.parseDouble(liabilityAccident.getMedicalRecords());
+            for (Insurance insurance : customer.getInsuranceList()) {
+                if (insurance instanceof OwnCar ownCar) {
+                    productName = ownCar.getInsuranceName();
                 }
             }
-
-            Product product = productList.get(productName);
-            if (product == null) {
-                throw new IllegalArgumentException("유효하지 않은 제품 이름입니다.");
+        } else if (accident instanceof PersonalInjuryAccident personalInjuryAccident) { // 본인상해
+            System.out.println(personalInjuryAccident.personalInjuryAccidentDetail());
+            insuranceMoney = (Double.parseDouble(personalInjuryAccident.getMedicalReceipt()) +
+                    Double.parseDouble(personalInjuryAccident.getRepairReceipt()));
+            for (Insurance insurance : customer.getInsuranceList()) {
+                if (insurance instanceof Driver driver) {
+                    productName = driver.getInsuranceName();
+                }
             }
-            double coverageLimit = product.getCoverageLimit(); // 보상한도
-
-            if (coverageLimit < insuranceMoney) {
-                insuranceMoney = coverageLimit;
+        } else if (accident instanceof PropertyDamageAccident propertyDamageAccident) { // 대물배상
+            System.out.println(propertyDamageAccident.propertyDamageAccidentDetail());
+            insuranceMoney = Double.parseDouble(propertyDamageAccident.getReceiptUrl());
+            for (Insurance insurance : customer.getInsuranceList()) {
+                if (insurance instanceof OwnCar ownCar) {
+                    productName = ownCar.getInsuranceName();
+                }
             }
+        }
 
-            System.out.println("산정된 보험금: " + nf.format(insuranceMoney) + '\n');
+        Product product = productList.get(productName);
+        double coverageLimit = product.getCoverageLimit(); // 보상한도
 
-            System.out.println(MSG_COMPENSATION_ASK.getMsg());
-            System.out.println(MSG_YES_OR_NO.getMsg());
+        if (coverageLimit < insuranceMoney) {
+            insuranceMoney = coverageLimit;
+        }
 
-            String choice = input();
-            switch (choice) {
-                case "1":
-                    c_customerList.add(customerList.get(accidentList.get(accidentId).getCustomerId()));
-                    Compensation compensation = new Compensation(insuranceMoney, accidentList.get(accidentId).getCustomerId(),
-                            customerList);
-                    compensationList.add(compensation);
-                    break;
-                case "2":
-                    accidentList.delete(accidentId);
-                    break;
-                case "x":
-                    return;
-                default:
-                    System.out.println(MENU_INVALID_CHOICE.getMsg());
-            }
-        } catch (NumberFormatException e) {
-            System.out.println("입력 값이 올바르지 않습니다. 숫자를 입력해 주세요.");
-        } catch (IllegalArgumentException e) {
-            System.out.println(e.getMessage());
-        } catch (IOException e) {
-            System.out.println("입력 과정에서 오류가 발생했습니다. 다시 시도해 주세요.");
-        } catch (Exception e) {
-            System.out.println("현재 시스템 오류가 발생하였습니다. 잠시 후 다시 시도해주세요.");
+        System.out.println("산정된 보험금: " + nf.format(insuranceMoney) + '\n');
+
+        System.out.println(MSG_COMPENSATION_ASK.getMsg());
+        System.out.println(MSG_YES_OR_NO.getMsg());
+
+        String choice = input();
+        switch (choice) {
+            case "1":
+                c_customerList.add(customerList.get(accidentList.get(accidentId).getCustomerId()));
+                Compensation compensation = new Compensation(insuranceMoney, accidentList.get(accidentId).getCustomerId(),
+                        customerList);
+                compensationList.add(compensation);
+                accident.setStatus("손해사정 완료");
+                System.out.println("해당 사고에 대한 보험금이 산정되었습니다. 보험금 지급을 진행해주세요. ");
+                break;
+            case "2":
+                accidentList.delete(accidentId);
+                System.out.println("해당 사고에 대한 보험금이 산정이 반려되었습니다.");
+                break;
+            case "x":
+                return;
+            default:
+                System.out.println(MENU_INVALID_CHOICE.getMsg());
         }
     }
 
@@ -611,19 +594,29 @@ public class Main {
         }
     }
 
-    private static void verifyAccidentReport()  {
+    private static void verifyAccidentReport() {
         try {
             System.out.println("사고 접수 확인:");
             List<Accident> accidents = accidentList.get();
+
+            boolean hasPendingAccidents = false;
             for (Accident accident : accidents) {
-                System.out.println("접수번호: " + accident.getAccidentId() + ", 사고유형: " + accident.getType());
+                if (!"접수됨".equals(accident.getStatus())) {
+                    System.out.println("접수번호: " + accident.getAccidentId() + ", 사고유형: " + accident.getType());
+                    hasPendingAccidents = true;
+                }
+            }
+
+            if (!hasPendingAccidents) {
+                System.out.println("현재 확인할 수 있는 접수된 사고가 없습니다.");
+                return;
             }
 
             System.out.println("확인할 접수번호를 입력하세요:");
             long accidentId = Long.parseLong(input());
 
             Accident accident = accidentList.get(accidentId);
-            if (accident == null) {
+            if (accident == null || "접수됨".equals(accident.getStatus())) {
                 throw new IllegalArgumentException("유효하지 않은 접수번호입니다.");
             }
 
