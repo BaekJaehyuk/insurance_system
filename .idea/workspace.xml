@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7e084647-5a0e-4ed8-b59e-a8146c583d19" name="Changes" comment="refactor: 유동적 보험료로 수정">
+    <list default="true" id="7e084647-5a0e-4ed8-b59e-a8146c583d19" name="Changes" comment="refactor: 보상 익셉션 추가+ 보험가입로직 수정">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/insurance system/src/system/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insurance system/src/system/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/system/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/system/Main.java" afterDir="false" />
@@ -362,7 +362,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718698672171</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="refactor: 보상 익셉션 추가+ 보험가입로직 수정">
+      <option name="closed" value="true" />
+      <created>1718715716996</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1718715716996</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -401,7 +409,8 @@
     <MESSAGE value="refactor: 클래스 삭제 및 수정" />
     <MESSAGE value="refactor: 패키지 수정" />
     <MESSAGE value="refactor: 유동적 보험료로 수정" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: 유동적 보험료로 수정" />
+    <MESSAGE value="refactor: 보상 익셉션 추가+ 보험가입로직 수정" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: 보상 익셉션 추가+ 보험가입로직 수정" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
