@@ -788,6 +788,9 @@ public class Main {
                         return;
 
                     if (customer.getLoan().isApprovalLoan()) { // 대출 심사에 의해 대출이 승인된 경우
+                        if(customer.getAccount() == null){
+                            throw new IllegalArgumentException("\n\n입출금 계좌를 등록한 다음 실행해주세요.\n\n");
+                        }
 
                         System.out.println("대출 가능 금액: " + capacity + "원");
 
