@@ -1,4 +1,4 @@
-package src.system;
+package src.system.insurance;
 
 import java.util.Date;
 

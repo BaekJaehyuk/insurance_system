@@ -1,11 +1,10 @@
 package src.system.user;
 
-import src.system.*;
 import src.system.accident.Accident;
 import src.system.compensation.Compensation;
 import src.system.counseling.Counseling;
+import src.system.insurance.Insurance;
 import src.system.loan.Loan;
-import src.system.product.Product;
 
 import java.util.*;
 

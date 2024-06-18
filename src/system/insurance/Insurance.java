@@ -1,5 +1,6 @@
-package src.system;
+package src.system.insurance;
 
+import src.system.user.Join;
 import src.system.compensation.Compensation;
 import src.system.product.Product;
 

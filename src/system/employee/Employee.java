@@ -1,10 +1,9 @@
-package src.system;
+package src.system.employee;
 
+import src.system.insurance.Insurance;
 import src.system.accident.Accident;
 import src.system.counseling.Counseling;
 import src.system.loan.Loan;
-
-import java.util.ArrayList;
 
 public class Employee {
 

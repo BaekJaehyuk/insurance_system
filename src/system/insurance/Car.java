@@ -1,10 +1,9 @@
-package src.system;
+package src.system.insurance;
 
 
 public class Car extends Insurance {
 
 	private float mileage;
-
 
 	public float getMileage(){
 		return this.mileage;

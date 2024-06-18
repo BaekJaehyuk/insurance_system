@@ -1,4 +1,4 @@
-package src.system;
+package src.system.employee;
 
 
 public interface EmployeeList {

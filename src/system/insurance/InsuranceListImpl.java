@@ -1,6 +1,4 @@
-package src.system;
-
-import src.system.user.Customer;
+package src.system.insurance;
 
 import java.util.ArrayList;
 

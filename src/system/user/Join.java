@@ -1,8 +1,5 @@
-package src.system;
+package src.system.user;
 
-
-import src.system.user.Customer;
-import src.system.user.CustomerListImpl;
 
 public class Join {
 

@@ -1,8 +1,8 @@
 package src.system.accident;
 
-import src.system.Driver;
-import src.system.Insurance;
-import src.system.OwnCar;
+import src.system.insurance.Driver;
+import src.system.insurance.Insurance;
+import src.system.insurance.OwnCar;
 import src.system.user.Customer;
 
 import java.util.concurrent.atomic.AtomicLong;
